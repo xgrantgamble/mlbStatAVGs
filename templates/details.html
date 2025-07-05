@@ -1,0 +1,317 @@
+{% extends "base.html" %}
+
+{% block title %}{{ home_team.name }} vs {{ away_team.name }} - Details{% endblock %}
+
+{% block extra_css %}
+<style>
+    .team-view { background: white; border-radius: 12px; padding: 30px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); }
+    .team-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 25px; padding-bottom: 15px; border-bottom: 2px solid #f0f4f8; }
+    .team-comparison { display: flex; gap: 32px; margin-bottom: 30px; justify-content: center; }
+    .team-card { border: 1px solid #ddd; border-radius: 12px; background: #fafcfe; box-shadow: 0 2px 8px rgba(0,0,0,0.06); padding: 25px; min-width: 320px; text-align: center; flex: 1; max-width: 400px; }
+    .team-card h4 { color: #333; margin-bottom: 10px; font-size: 1.4rem; font-weight: bold; border-bottom: 2px solid #667eea; padding-bottom: 10px; }
+    .game-log { display: flex; justify-content: center; gap: 8px; margin-bottom: 20px; font-size: 1rem; }
+    .game-log-item { display: flex; flex-direction: column; align-items: center; }
+    .game-log-opponent { font-size: 0.75rem; color: #666; font-weight: 500; margin-bottom: 3px; }
+    .game-log-result { font-size: 1.2rem; line-height: 1; }
+    .game-log-date { font-size: 0.75rem; color: #666; margin-top: 3px; }
+    .record { font-size: 1rem; color: #666; margin-bottom: 20px; font-weight: bold; }
+    .team-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; font-size: 1rem; margin-bottom: 25px; }
+    .stat-item { padding: 12px; background: white; border-radius: 8px; border: 1px solid #e9ecef; transition: transform 0.2s ease; }
+    .stat-item:hover { transform: translateY(-2px); box-shadow: 0 4px 8px rgba(0,0,0,0.1); }
+    .stat-label { font-weight: bold; color: #667eea; font-size: 0.9rem; margin-bottom: 4px; }
+    .stat-value { font-size: 1.3rem; color: #333; font-weight: bold; }
+    .stats-controls { display: flex; gap: 4px; margin-bottom: 25px; justify-content: center; }
+    .tab-btn { padding: 12px 24px; border: 2px solid #667eea; background: white; color: #667eea; border-radius: 8px; cursor: pointer; transition: all 0.2s ease; font-weight: 600; font-size: 1rem; }
+    .tab-btn:disabled { opacity: 0.6; cursor: not-allowed; }
+    .tab-btn.active-tab { background: #667eea; color: white; transform: translateY(-2px); box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3); }
+    .roster-section { margin-bottom: 40px; }
+    .section-title { font-size: 1.6rem; color: #333; margin-bottom: 20px; padding-bottom: 10px; border-bottom: 3px solid #667eea; display: flex; align-items: center; gap: 10px; }
+    .roster-columns { display: flex; gap: 40px; align-items: flex-start; }
+    .team-column { flex: 1; min-width: 400px; }
+    .team-column h4 { color: white; margin-bottom: 15px; font-size: 1.3rem; text-align: center; padding: 15px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); border-radius: 8px; font-weight: bold; }
+    .stats-table { width: 100%; border-collapse: collapse; background: #f8f9fa; border-radius: 8px; overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,0.1); margin-bottom: 25px; }
+    .stats-table th { background: #667eea; color: white; padding: 12px 8px; text-align: center; font-weight: 600; font-size: 0.9rem; }
+    .stats-table td { padding: 10px 8px; border-bottom: 1px solid #dee2e6; font-size: 0.9rem; text-align: center; transition: background-color 0.2s ease; }
+    .stats-table tr:hover { background: #e9ecef; }
+    .player-name { font-weight: 600; color: #333; text-align: left !important; }
+    .position { background: #e9ecef; padding: 2px 6px; border-radius: 4px; font-size: 0.8rem; color: #666; }
+    .favorite-control { text-align: center; }
+    .favorite-checkbox { display: flex; align-items: center; justify-content: center; gap: 8px; font-size: 1rem; background: #f8f9fa; padding: 10px; border-radius: 8px; border: 1px solid #e9ecef; }
+    .favorite-checkbox input[type="checkbox"] { transform: scale(1.2); }
+    .stat-good { background-color: #d4edda !important; color: #155724; font-weight: bold; }
+    .stat-bad { background-color: #f8d7da !important; color: #721c24; font-weight: bold; }
+    .stat-light-red { background-color: #f5c6cb !important; color: #856404; font-weight: bold; }
+    .loading-message { text-align: center; color: #666; font-style: italic; padding: 8px; font-size: 0.8rem; }
+    @media (max-width: 768px) { .roster-columns { flex-direction: column; } .team-column { min-width: auto; } .team-comparison { flex-direction: column; } }
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="team-view" data-home-id="{{ home_team.id }}" data-away-id="{{ away_team.id }}">
+    <div class="team-header">
+        <h2>{{ away_team.name }} @ {{ home_team.name }}</h2>
+        <a href="{{ url_for('main.home') }}" class="back-btn">← Back to Games</a>
+    </div>
+
+    <div class="stats-controls">
+        <button class="tab-btn active-tab" id="tab-7">7 Days</button>
+        <button class="tab-btn" id="tab-10">10 Days</button>
+        <button class="tab-btn" id="tab-21">21 Days</button>
+    </div>
+
+    <div class="roster-section">
+        <h3 class="section-title">⚡ Team Comparisons</h3>
+        {% for period in ['7', '10', '21'] %}
+        <div class="team-comparison stat-window stat-{{ period }}" {% if period != '7' %}style="display:none"{% endif %}>
+            
+            <div class="team-card">
+                <h4>{{ away_team.name }}</h4>
+
+                {% if period == '7' %}
+                <div class="game-log">
+                    {% for game in away_team.gameHistory.get(period, {}).get('game_log', [])[:7] %}
+                        <div class="game-log-item">
+                            <span class="game-log-opponent">{{ game.opponent }}</span>
+                            <span class="game-log-result">{% if game.result == 'W' %}✅{% else %}❌{% endif %}</span>
+                            <span class="game-log-date">{{ game.date }}</span>
+                        </div>
+                    {% else %}
+                        <span style="font-size: 0.8rem; color: #666;">No recent game data</span>
+                    {% endfor %}
+                </div>
+                {% else %}
+                <div class="record">
+                    ({{ away_team.gameHistory.get(period, {}).get('record', '0-0') }})
+                </div>
+                {% endif %}
+
+                <div class="team-stats">
+                    <div class="stat-item"><div class="stat-label">Team AVG</div><div class="stat-value">{{ away_team.rollingTeamStats.get(period, {}).get('AVG', '.000') }}</div></div>
+                    <div class="stat-item"><div class="stat-label">Team OBP</div><div class="stat-value">{{ away_team.rollingTeamStats.get(period, {}).get('OBP', '.000') }}</div></div>
+                    <div class="stat-item"><div class="stat-label">Team SLG</div><div class="stat-value">{{ away_team.rollingTeamStats.get(period, {}).get('SLG', '.000') }}</div></div>
+                    <div class="stat-item"><div class="stat-label">Home Runs</div><div class="stat-value">{{ away_team.rollingTeamStats.get(period, {}).get('HR', '0') }}</div></div>
+                    <div class="stat-item"><div class="stat-label">Avg Hits</div><div class="stat-value">{{ away_team.rollingTeamStats.get(period, {}).get('AVG_HITS', '0.0') }}</div></div>
+                    <div class="stat-item"><div class="stat-label">Avg K</div><div class="stat-value">{{ away_team.rollingTeamStats.get(period, {}).get('AVG_K', '0.0') }}</div></div>
+                </div>
+                <div class="favorite-control">
+                    <form method="post" action="{{ url_for('main.toggle_favorite') }}"><label class="favorite-checkbox"><input type="checkbox" name="favorite" value="{{ away_team.name }}" {% if away_team.name in favorites %}checked{% endif %} onchange="this.form.submit()">⭐ Favorite this team</label></form>
+                </div>
+            </div>
+
+            <div class="team-card">
+                <h4>{{ home_team.name }}</h4>
+
+                {% if period == '7' %}
+                <div class="game-log">
+                    {% for game in home_team.gameHistory.get(period, {}).get('game_log', [])[:7] %}
+                        <div class="game-log-item">
+                            <span class="game-log-opponent">{{ game.opponent }}</span>
+                            <span class="game-log-result">{% if game.result == 'W' %}✅{% else %}❌{% endif %}</span>
+                            <span class="game-log-date">{{ game.date }}</span>
+                        </div>
+                    {% else %}
+                        <span style="font-size: 0.8rem; color: #666;">No recent game data</span>
+                    {% endfor %}
+                </div>
+                {% else %}
+                <div class="record">
+                    ({{ home_team.gameHistory.get(period, {}).get('record', '0-0') }})
+                </div>
+                {% endif %}
+
+                <div class="team-stats">
+                    <div class="stat-item"><div class="stat-label">Team AVG</div><div class="stat-value">{{ home_team.rollingTeamStats.get(period, {}).get('AVG', '.000') }}</div></div>
+                    <div class="stat-item"><div class="stat-label">Team OBP</div><div class="stat-value">{{ home_team.rollingTeamStats.get(period, {}).get('OBP', '.000') }}</div></div>
+                    <div class="stat-item"><div class="stat-label">Team SLG</div><div class="stat-value">{{ home_team.rollingTeamStats.get(period, {}).get('SLG', '.000') }}</div></div>
+                    <div class="stat-item"><div class="stat-label">Home Runs</div><div class="stat-value">{{ home_team.rollingTeamStats.get(period, {}).get('HR', '0') }}</div></div>
+                    <div class="stat-item"><div class="stat-label">Avg Hits</div><div class="stat-value">{{ home_team.rollingTeamStats.get(period, {}).get('AVG_HITS', '0.0') }}</div></div>
+                    <div class="stat-item"><div class="stat-label">Avg K</div><div class="stat-value">{{ home_team.rollingTeamStats.get(period, {}).get('AVG_K', '0.0') }}</div></div>
+                </div>
+                 <div class="favorite-control">
+                    <form method="post" action="{{ url_for('main.toggle_favorite') }}"><label class="favorite-checkbox"><input type="checkbox" name="favorite" value="{{ home_team.name }}" {% if home_team.name in favorites %}checked{% endif %} onchange="this.form.submit()">⭐ Favorite this team</label></form>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+
+    <div class="roster-section">
+        <h3 class="section-title">👥 Team Rosters</h3>
+        <div class="roster-columns">
+            <div class="team-column" id="away-team-column">
+                <h4>{{ away_team.name }} Batters</h4>
+                {% for period in ['7', '10', '21'] %}
+                <div class="stat-window stat-{{ period }}" {% if period != '7' %}style="display:none"{% endif %}>
+                    <table class="stats-table batters-table">
+                        <thead>
+                            <tr>
+                                <th>Player</th>
+                                <th>Pos</th>
+                                <th>AVG</th>
+                                <th>SLG</th>
+                                <th>OBP</th>
+                                <th>HR</th>
+                                <th>RBI</th>
+                                <th>K</th>
+                                <th>H</th>
+                                <th>AB</th>
+                                
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for batter in away_team.fullRoster.batters %}
+                                {% set stats = batter.stats_by_period[period] %}
+                                <tr>
+                                    <td class="player-name">{{ batter.name }}</td>
+                                    <td><span class="position">{{ batter.position }}</span></td>
+                                    <td class="{{ stats.avg | get_stat_class('avg') }}">{{ stats.avg }}</td>
+                                    <td class="{{ stats.slg | get_stat_class('slg') }}">{{ stats.slg }}</td>
+                                    <td class="{{ stats.obp | get_stat_class('obp') }}">{{ stats.obp }}</td>
+                                    <td>{{ stats.hr }}</td>
+                                    <td>{{ stats.rbi }}</td>
+                                    <td>{{ stats.h }}</td>
+                                    <td>{{ stats.ab }}</td>
+                                    <td>{{ stats.k }}</td>
+                                </tr>
+                            {% else %}
+                                <tr><td colspan="10" class="loading-message">No batter data.</td></tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+                {% endfor %}
+                
+                <h4 style="margin-top: 25px;">{{ away_team.name }} Pitchers</h4>
+                {% for period in ['7', '10', '21'] %}
+                <div class="stat-window stat-{{ period }}" {% if period != '7' %}style="display:none"{% endif %}>
+                    <table class="stats-table pitchers-table">
+                        <thead>
+                            <tr>
+                                <th>Player</th>
+                                <th>ERA</th>
+                                <th>WHIP</th>
+                                <th>GS</th>
+                                <th>IP</th>
+                                <th>H</th>
+                                <th>R</th>
+                                <th>K</th>
+                                <th>BB</th>
+                                <th>SV</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for pitcher in away_team.fullRoster.pitchers %}
+                                {% set stats = pitcher.stats_by_period[period] %}
+                                <tr>
+                                    <td class="player-name">{{ pitcher.name }}</td>
+                                    <td class="{{ stats.era | get_stat_class('era') }}">{{ stats.era }}</td>
+                                    <td class="{{ stats.whip | get_stat_class('whip') }}">{{ stats.whip }}</td>
+                                    <td>{{ stats.gs }}</td>
+                                    <td>{{ stats.sv }}</td>
+                                    <td>{{ stats.k }}</td>
+                                    <td>{{ stats.bb }}</td>
+                                    <td>{{ stats.ip }}</td>
+                                    <td>{{ stats.h }}</td>
+                                    <td>{{ stats.r }}</td>
+                                </tr>
+                            {% else %}
+                                <tr><td colspan="10" class="loading-message">No pitcher data.</td></tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+                {% endfor %}
+            </div>
+
+            <div class="team-column" id="home-team-column">
+                <h4>{{ home_team.name }} Batters</h4>
+                {% for period in ['7', '10', '21'] %}
+                <div class="stat-window stat-{{ period }}" {% if period != '7' %}style="display:none"{% endif %}>
+                    <table class="stats-table batters-table">
+                        <thead>
+                            <tr>
+                                <th>Player</th>
+                                <th>Pos</th>
+                                <th>AVG</th>
+                                <th>SLG</th>
+                                <th>OBP</th>
+                                <th>HR</th>
+                                <th>RBI</th>
+                                <th>K</th>
+                                <th>H</th>
+                                <th>AB</th>
+                                
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for batter in home_team.fullRoster.batters %}
+                                {% set stats = batter.stats_by_period[period] %}
+                                <tr>
+                                    <td class="player-name">{{ batter.name }}</td>
+                                    <td><span class="position">{{ batter.position }}</span></td>
+                                    <td class="{{ stats.avg | get_stat_class('avg') }}">{{ stats.avg }}</td>
+                                    <td class="{{ stats.slg | get_stat_class('slg') }}">{{ stats.slg }}</td>
+                                    <td class="{{ stats.obp | get_stat_class('obp') }}">{{ stats.obp }}</td>
+                                    <td>{{ stats.hr }}</td>
+                                    <td>{{ stats.rbi }}</td>
+                                    <td>{{ stats.h }}</td>
+                                    <td>{{ stats.ab }}</td>
+                                    <td>{{ stats.k }}</td>
+                                </tr>
+                            {% else %}
+                                <tr><td colspan="10" class="loading-message">No batter data.</td></tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+                {% endfor %}
+
+                <h4 style="margin-top: 25px;">{{ home_team.name }} Pitchers</h4>
+                {% for period in ['7', '10', '21'] %}
+                <div class="stat-window stat-{{ period }}" {% if period != '7' %}style="display:none"{% endif %}>
+                    <table class="stats-table pitchers-table">
+                        <thead>
+                            <tr>
+                                <th>Player</th>
+                                <th>ERA</th>
+                                <th>WHIP</th>
+                                <th>GS</th>
+                                <th>IP</th>
+                                <th>H</th>
+                                <th>R</th>
+                                <th>K</th>
+                                <th>BB</th>
+                                <th>SV</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for pitcher in home_team.fullRoster.pitchers %}
+                                {% set stats = pitcher.stats_by_period[period] %}
+                                <tr>
+                                    <td class="player-name">{{ pitcher.name }}</td>
+                                    <td class="{{ stats.era | get_stat_class('era') }}">{{ stats.era }}</td>
+                                    <td class="{{ stats.whip | get_stat_class('whip') }}">{{ stats.whip }}</td>
+                                    <td>{{ stats.gs }}</td>
+                                    <td>{{ stats.sv }}</td>
+                                    <td>{{ stats.k }}</td>
+                                    <td>{{ stats.bb }}</td>
+                                    <td>{{ stats.ip }}</td>
+                                    <td>{{ stats.h }}</td>
+                                    <td>{{ stats.r }}</td>
+                                </tr>
+                            {% else %}
+                                <tr><td colspan="10" class="loading-message">No pitcher data.</td></tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block extra_js %}
+<script src="{{ url_for('static', filename='js/stats.js') }}"></script>
+{% endblock %}

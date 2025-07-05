@@ -1,0 +1,20 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environment
+.venv
+venv/
+venv.bak
+env/
+env.bak
+
+# Cache files
+.pytest_cache/
+.mypy_cache/
+/tmp/mlb-cache/
+
+# OS-specific files
+.DS_Store
+Thumbs.db
