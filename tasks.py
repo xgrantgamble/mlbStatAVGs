@@ -1,6 +1,7 @@
 # tasks.py
+
 """
-Background caching tasks for the application.
+Background caching tasks for the app.
 """
 import time
 import logging
@@ -9,7 +10,6 @@ import pytz
 
 from mlb_api import MLBStatsAPI
 from extensions import cache
-# FIX: Import the new, more efficient function
 from utils import process_team_roster_in_parallel
 
 logger = logging.getLogger(__name__)
@@ -44,7 +44,7 @@ def warm_cache_on_startup(app):
                 home_roster = MLBStatsAPI.get_team_roster(home_id)
                 away_roster = MLBStatsAPI.get_team_roster(away_id)
 
-                # FIX: Use the new function to cache all periods at once, with fewer workers
+                # cache all periods at once, with fewer workers
                 if home_roster.get('batters'):
                     process_team_roster_in_parallel(home_roster['batters'][:15], 'hitting', hitter_periods, max_workers=5)
                 if home_roster.get('pitchers'):
@@ -56,7 +56,7 @@ def warm_cache_on_startup(app):
                     process_team_roster_in_parallel(away_roster['pitchers'][:15], 'pitching', pitcher_periods, max_workers=5)
 
                 logger.info(f" ✓ Cached initial data for game {i+1}")
-                time.sleep(5) # Increased delay to further avoid rate limits
+                time.sleep(5) 
 
             logger.info("✅ Cache warming complete for ALL games!")
             

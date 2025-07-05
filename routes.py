@@ -1,7 +1,9 @@
 # routes.py
+
 """
 Flask routes for the MLB Stats Tracker application.
 """
+
 import logging
 from datetime import datetime
 import pytz

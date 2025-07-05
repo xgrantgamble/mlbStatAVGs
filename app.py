@@ -1,4 +1,5 @@
 # app.py
+
 """
 Main application file for the MLB Stats Tracker.
 """
@@ -17,7 +18,7 @@ def create_app(config_name: str = 'development') -> Flask:
     """
     Creates and configures an instance of the Flask application.
     """
-    # Point to the root-level static and templates folders
+    # Points to the static and templates folders
     app = Flask(__name__, static_folder='static', template_folder='templates')
     
     config_object = config_by_name.get(config_name, 'development')
@@ -45,9 +46,8 @@ config_name = os.getenv('FLASK_CONFIG', 'production')
 app = create_app(config_name)
 
 if __name__ == '__main__':
-    # The reloader is helpful for local dev, but starts threads twice.
-    # For local testing of background tasks, run with: flask run --no-reload
-    # Gunicorn on Railway does not use the reloader, so this check is not needed there.
+
+    # Start background tasks for warming cache and daily refresh
     if not app.debug or os.environ.get('WERKZEUG_RUN_MAIN') == 'true':
         warmup_thread = threading.Thread(target=warm_cache_on_startup, args=(app,), daemon=True)
         refresh_thread = threading.Thread(target=daily_cache_refresh, args=(app,), daemon=True)
@@ -55,6 +55,6 @@ if __name__ == '__main__':
         refresh_thread.start()
 
     port = int(os.environ.get('PORT', 5005))
-    # The 'debug' flag is now controlled by the Config object.
-    # use_reloader=False prevents the duplicate thread issue on Windows.
+    
+    # prevents the duplicate thread issue on Windows.
     app.run(host='0.0.0.0', port=port, use_reloader=False)

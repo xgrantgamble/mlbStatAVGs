@@ -1,3 +1,5 @@
+#extensions.py
+
 """
 Initializes Flask extensions to avoid circular imports.
 """

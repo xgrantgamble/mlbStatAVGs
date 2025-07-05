@@ -1,3 +1,5 @@
+#config.py
+
 """
 Configuration settings for the MLB Stats Tracker application.
 """
@@ -12,7 +14,7 @@ class Config:
     # Flask-Caching settings
     CACHE_TYPE = 'FileSystemCache'
     CACHE_DIR = '/tmp/mlb-cache'
-    CACHE_DEFAULT_TIMEOUT = 86400  # 24 hours in seconds
+    CACHE_DEFAULT_TIMEOUT = 86400  
 
 class DevelopmentConfig(Config):
     """Development configuration."""

@@ -1,3 +1,5 @@
+# mlb_api.py
+
 """
 Module for interacting with the MLB Stats API.
 
@@ -11,7 +13,7 @@ import threading
 from datetime import datetime, timedelta
 from typing import Dict, Any, List, Optional
 
-from extensions import cache # Import cache instance
+from extensions import cache 
 
 # Configure logging
 logger = logging.getLogger(__name__)
@@ -20,7 +22,7 @@ logger = logging.getLogger(__name__)
 MLB_API_BASE = "https://statsapi.mlb.com/api/v1"
 
 class RateLimiter:
-    """A simple thread-safe rate limiter."""
+    """A simple thread-safe rate limiter. Prevents exceeding the API call limit."""
     def __init__(self, max_calls: int = 80, time_window: int = 60):
         self.max_calls = max_calls
         self.time_window = time_window

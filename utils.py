@@ -1,13 +1,15 @@
 # utils.py
+
 """
 Helper functions for data processing, calculations, and team data construction.
 """
+
 import logging
 from datetime import datetime, timedelta
 import pytz
 from typing import List, Dict, Any, Optional
 from concurrent.futures import ThreadPoolExecutor, as_completed
-import json # Import json for pretty printing
+import json 
 
 from mlb_api import MLBStatsAPI, MLB_API_BASE
 
@@ -26,7 +28,6 @@ TEAM_ABBREVIATIONS = {
     'Texas Rangers': 'TEX', 'Toronto Blue Jays': 'TOR', 'Washington Nationals': 'WSH'
 }
 
-# (All other functions remain the same as the previous version)
 def get_team_logo_url(team_id: int) -> str:
     """Generates the URL for a team's logo."""
     if not team_id:
@@ -85,13 +86,11 @@ def get_stat_class(value: Any, stat: str) -> str:
 
 def _get_default_stats(stat_type: str) -> Dict[str, Any]:
     if stat_type == 'hitting':
-        # Add 'k' for strikeouts to the default hitting stats
         return {'avg': '.000', 'obp': '.000', 'slg': '.000', 'hr': 0, 'rbi': 0, 'h': 0, 'ab': 0, 'k': 0}
     return {'era': '0.00', 'whip': '0.00', 'k': 0, 'bb': 0, 'ip': '0.0', 'h': 0, 'r': 0, 'gs': 0, 'sv': 0}
 
 def _aggregate_hitting_stats(game_logs: List[Dict[str, Any]]) -> Dict[str, Any]:
     if not game_logs: return _get_default_stats('hitting')
-    # Add 'k' for strikeouts to the totals dictionary
     totals = {'ab': 0, 'h': 0, 'hr': 0, 'rbi': 0, 'bb': 0, 'tb': 0, 'k': 0}
     for game in game_logs:
         stat = game.get('stat', {})
@@ -101,14 +100,12 @@ def _aggregate_hitting_stats(game_logs: List[Dict[str, Any]]) -> Dict[str, Any]:
         totals['rbi'] += stat.get('rbi', 0)
         totals['bb'] += stat.get('baseOnBalls', 0)
         totals['tb'] += stat.get('totalBases', 0)
-        # Aggregate strikeouts from the game log
         totals['k'] += stat.get('strikeOuts', 0)
         
     avg = f"{(totals['h'] / totals['ab']):.3f}" if totals['ab'] > 0 else ".000"
     obp = f"{((totals['h'] + totals['bb']) / (totals['ab'] + totals['bb'])):.3f}" if (totals['ab'] + totals['bb']) > 0 else ".000"
     slg = f"{(totals['tb'] / totals['ab']):.3f}" if totals['ab'] > 0 else ".000"
     
-    # Add 'k' to the returned dictionary
     return {
         'avg': avg, 'obp': obp, 'slg': slg, 
         'hr': totals['hr'], 'rbi': totals['rbi'], 
@@ -147,7 +144,7 @@ def get_player_stats_for_periods(player_id: int, stat_type: str, periods: Dict[s
         played_games = [g for g in game_logs if g.get('stat', {}).get('atBats', 0) > 0]
         for period_name, num_games in periods.items():
             stats_by_period[period_name] = _aggregate_hitting_stats(played_games[:num_games])
-    else: # pitching
+    else: 
         pitched_games = [g for g in game_logs if float(str(g.get('stat', {}).get('inningsPitched', '0'))) > 0]
         for period_name, num_starts in periods.items():
             stats_by_period[period_name] = _aggregate_pitching_stats(pitched_games[:num_starts])
@@ -246,7 +243,7 @@ def get_team_game_history(team_id: int, days: int) -> Dict[str, Any]:
                 game_date_utc = datetime.fromisoformat(game_date_str.replace('Z', '+00:00'))
                 game_date_pacific = game_date_utc.astimezone(pacific)
                 
-                # FIX: Use a cross-platform compatible way to format the date.
+                
                 formatted_date = f"{game_date_pacific.month}/{game_date_pacific.day}"
 
                 game_log.append({'result': result, 'date': formatted_date, 'opponent': opponent_abbr})

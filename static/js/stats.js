@@ -1,4 +1,5 @@
 // static/js/stats.js
+
 document.addEventListener('DOMContentLoaded', function() {
     const statsControls = document.querySelector('.stats-controls');
     if (!statsControls) return; // Exit if not on the details page
