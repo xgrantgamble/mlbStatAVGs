@@ -239,6 +239,13 @@ body {
     align-items: flex-start;
 }
 
+.team-comparison {
+    display: flex;
+    gap: 32px;
+    margin-bottom: 30px;
+    justify-content: center;
+}
+
 .team-column {
     flex: 1;
     min-width: 400px;
@@ -337,7 +344,25 @@ body {
     .team-logo { width: 24px; height: 24px; }
     .view-details-btn { padding: 10px 20px; font-size: 0.9rem; }
     .game-card { padding: 15px; }
-    .roster-columns { flex-direction: column; }
-    .team-column { min-width: auto; width: 100%; }
-    .stats-table { display: block; overflow-x: auto; }
+
+    /* --- MOBILE STACKING FIXES --- */
+    .roster-columns, .team-comparison {
+        flex-direction: column;
+    }
+    
+    .team-column {
+        min-width: auto;
+        width: 100%;
+    }
+
+    /* --- COMPACT MOBILE TABLE --- */
+    .stats-table th, .stats-table td {
+        padding: 8px 3px;
+        font-size: 0.7rem;
+    }
+    
+    .player-name {
+        white-space: normal;
+        font-size: 0.70rem !important;
+    }
 }

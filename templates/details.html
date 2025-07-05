@@ -4,6 +4,7 @@
 
 {% block extra_css %}
 <style>
+    /* Desktop-specific styles can remain here if needed */
     .team-view { background: white; border-radius: 12px; padding: 30px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); }
     .team-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 25px; padding-bottom: 15px; border-bottom: 2px solid #f0f4f8; }
     .team-comparison { display: flex; gap: 32px; margin-bottom: 30px; justify-content: center; }
@@ -20,29 +21,6 @@
     .stat-item:hover { transform: translateY(-2px); box-shadow: 0 4px 8px rgba(0,0,0,0.1); }
     .stat-label { font-weight: bold; color: #667eea; font-size: 0.9rem; margin-bottom: 4px; }
     .stat-value { font-size: 1.3rem; color: #333; font-weight: bold; }
-    .stats-controls { display: flex; gap: 4px; margin-bottom: 25px; justify-content: center; }
-    .tab-btn { padding: 12px 24px; border: 2px solid #667eea; background: white; color: #667eea; border-radius: 8px; cursor: pointer; transition: all 0.2s ease; font-weight: 600; font-size: 1rem; }
-    .tab-btn:disabled { opacity: 0.6; cursor: not-allowed; }
-    .tab-btn.active-tab { background: #667eea; color: white; transform: translateY(-2px); box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3); }
-    .roster-section { margin-bottom: 40px; }
-    .section-title { font-size: 1.6rem; color: #333; margin-bottom: 20px; padding-bottom: 10px; border-bottom: 3px solid #667eea; display: flex; align-items: center; gap: 10px; }
-    .roster-columns { display: flex; gap: 40px; align-items: flex-start; }
-    .team-column { flex: 1; min-width: 400px; }
-    .team-column h4 { color: white; margin-bottom: 15px; font-size: 1.3rem; text-align: center; padding: 15px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); border-radius: 8px; font-weight: bold; }
-    .stats-table { width: 100%; border-collapse: collapse; background: #f8f9fa; border-radius: 8px; overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,0.1); margin-bottom: 25px; }
-    .stats-table th { background: #667eea; color: white; padding: 12px 8px; text-align: center; font-weight: 600; font-size: 0.9rem; }
-    .stats-table td { padding: 10px 8px; border-bottom: 1px solid #dee2e6; font-size: 0.9rem; text-align: center; transition: background-color 0.2s ease; }
-    .stats-table tr:hover { background: #e9ecef; }
-    .player-name { font-weight: 600; color: #333; text-align: left !important; }
-    .position { background: #e9ecef; padding: 2px 6px; border-radius: 4px; font-size: 0.8rem; color: #666; }
-    .favorite-control { text-align: center; }
-    .favorite-checkbox { display: flex; align-items: center; justify-content: center; gap: 8px; font-size: 1rem; background: #f8f9fa; padding: 10px; border-radius: 8px; border: 1px solid #e9ecef; }
-    .favorite-checkbox input[type="checkbox"] { transform: scale(1.2); }
-    .stat-good { background-color: #d4edda !important; color: #155724; font-weight: bold; }
-    .stat-bad { background-color: #f8d7da !important; color: #721c24; font-weight: bold; }
-    .stat-light-red { background-color: #f5c6cb !important; color: #856404; font-weight: bold; }
-    .loading-message { text-align: center; color: #666; font-style: italic; padding: 8px; font-size: 0.8rem; }
-    @media (max-width: 768px) { .roster-columns { flex-direction: column; } .team-column { min-width: auto; } .team-comparison { flex-direction: column; } }
 </style>
 {% endblock %}
 
@@ -151,8 +129,8 @@
                                 <th>SLG</th>
                                 <th>OBP</th>
                                 <th>HR</th>
-                                <th>RBI</th>
                                 <th>K</th>
+                                <th>RBI</th>
                                 <th>H</th>
                                 <th>AB</th>
                                 
@@ -192,11 +170,11 @@
                                 <th>WHIP</th>
                                 <th>GS</th>
                                 <th>IP</th>
+                                <th>SV</th>
                                 <th>H</th>
                                 <th>R</th>
                                 <th>K</th>
-                                <th>BB</th>
-                                <th>SV</th>
+                                <th>BB</th>                                                                
                             </tr>
                         </thead>
                         <tbody>
@@ -236,8 +214,8 @@
                                 <th>SLG</th>
                                 <th>OBP</th>
                                 <th>HR</th>
-                                <th>RBI</th>
                                 <th>K</th>
+                                <th>RBI</th>
                                 <th>H</th>
                                 <th>AB</th>
                                 
@@ -277,11 +255,11 @@
                                 <th>WHIP</th>
                                 <th>GS</th>
                                 <th>IP</th>
+                                <th>SV</th>
                                 <th>H</th>
                                 <th>R</th>
                                 <th>K</th>
                                 <th>BB</th>
-                                <th>SV</th>
                             </tr>
                         </thead>
                         <tbody>
