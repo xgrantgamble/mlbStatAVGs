@@ -78,15 +78,19 @@ def game_details(home_id: int, away_id: int):
         home_pitchers = process_team_roster_in_parallel(home_roster['pitchers'][:15], 'pitching', pitcher_periods)
         away_pitchers = process_team_roster_in_parallel(away_roster['pitchers'][:15], 'pitching', pitcher_periods)
 
-        home_team: Dict[str, Any] = {'id': home_id, 'name': home_team_info.get('name'), 'fullRoster': {}, 'rollingTeamStats': {}, 'gameHistory': {}}
-        away_team: Dict[str, Any] = {'id': away_id, 'name': away_team_info.get('name'), 'fullRoster': {}, 'rollingTeamStats': {}, 'gameHistory': {}}
-
-        home_team['fullRoster']['batters'] = sorted(home_batters, key=lambda x: x.get('stats_by_period', {}).get('7', {}).get('ab', 0), reverse=True)
-        away_team['fullRoster']['batters'] = sorted(away_batters, key=lambda x: x.get('stats_by_period', {}).get('7', {}).get('ab', 0), reverse=True)
-        home_team['fullRoster']['pitchers'] = sorted(home_pitchers, key=lambda x: x.get('stats_by_period', {}).get('7', {}).get('gs', 0), reverse=True)
-        away_team['fullRoster']['pitchers'] = sorted(away_pitchers, key=lambda x: x.get('stats_by_period', {}).get('7', {}).get('gs', 0), reverse=True)
+        home_team = {'id': home_id, 'name': home_team_info.get('name'), 'fullRoster': {'batters': {}, 'pitchers': {}}, 'rollingTeamStats': {}, 'gameHistory': {}}
+        away_team = {'id': away_id, 'name': away_team_info.get('name'), 'fullRoster': {'batters': {}, 'pitchers': {}}, 'rollingTeamStats': {}, 'gameHistory': {}}
 
         for period in ['7', '10', '21']:
+            # Sort batters by At-Bats (ab) for the current period
+            home_team['fullRoster']['batters'][period] = sorted(home_batters, key=lambda p: p['stats_by_period'][period].get('ab', 0), reverse=True)
+            away_team['fullRoster']['batters'][period] = sorted(away_batters, key=lambda p: p['stats_by_period'][period].get('ab', 0), reverse=True)
+            
+            # Sort pitchers by Games Started (gs) for the current period
+            home_team['fullRoster']['pitchers'][period] = sorted(home_pitchers, key=lambda p: p['stats_by_period'][period].get('gs', 0), reverse=True)
+            away_team['fullRoster']['pitchers'][period] = sorted(away_pitchers, key=lambda p: p['stats_by_period'][period].get('gs', 0), reverse=True)
+
+            # Get game history and calculate rolling team stats
             home_history = get_team_game_history(home_id, int(period))
             away_history = get_team_game_history(away_id, int(period))
             home_team['gameHistory'][period] = home_history

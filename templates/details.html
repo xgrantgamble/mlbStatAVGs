@@ -41,10 +41,8 @@
         <h3 class="section-title">⚡ Team Comparisons</h3>
         {% for period in ['7', '10', '21'] %}
         <div class="team-comparison stat-window stat-{{ period }}" {% if period != '7' %}style="display:none"{% endif %}>
-            
             <div class="team-card">
                 <h4>{{ away_team.name }}</h4>
-
                 {% if period == '7' %}
                 <div class="game-log">
                     {% for game in away_team.gameHistory.get(period, {}).get('game_log', [])[:7] %}
@@ -53,16 +51,9 @@
                             <span class="game-log-result">{% if game.result == 'W' %}✅{% else %}❌{% endif %}</span>
                             <span class="game-log-date">{{ game.date }}</span>
                         </div>
-                    {% else %}
-                        <span style="font-size: 0.8rem; color: #666;">No recent game data</span>
-                    {% endfor %}
+                    {% else %}<span style="font-size: 0.8rem; color: #666;">No recent game data</span>{% endfor %}
                 </div>
-                {% else %}
-                <div class="record">
-                    ({{ away_team.gameHistory.get(period, {}).get('record', '0-0') }})
-                </div>
-                {% endif %}
-
+                {% else %}<div class="record">({{ away_team.gameHistory.get(period, {}).get('record', '0-0') }})</div>{% endif %}
                 <div class="team-stats">
                     <div class="stat-item"><div class="stat-label">Team AVG</div><div class="stat-value">{{ away_team.rollingTeamStats.get(period, {}).get('AVG', '.000') }}</div></div>
                     <div class="stat-item"><div class="stat-label">Team OBP</div><div class="stat-value">{{ away_team.rollingTeamStats.get(period, {}).get('OBP', '.000') }}</div></div>
@@ -78,7 +69,6 @@
 
             <div class="team-card">
                 <h4>{{ home_team.name }}</h4>
-
                 {% if period == '7' %}
                 <div class="game-log">
                     {% for game in home_team.gameHistory.get(period, {}).get('game_log', [])[:7] %}
@@ -87,16 +77,9 @@
                             <span class="game-log-result">{% if game.result == 'W' %}✅{% else %}❌{% endif %}</span>
                             <span class="game-log-date">{{ game.date }}</span>
                         </div>
-                    {% else %}
-                        <span style="font-size: 0.8rem; color: #666;">No recent game data</span>
-                    {% endfor %}
+                    {% else %}<span style="font-size: 0.8rem; color: #666;">No recent game data</span>{% endfor %}
                 </div>
-                {% else %}
-                <div class="record">
-                    ({{ home_team.gameHistory.get(period, {}).get('record', '0-0') }})
-                </div>
-                {% endif %}
-
+                {% else %}<div class="record">({{ home_team.gameHistory.get(period, {}).get('record', '0-0') }})</div>{% endif %}
                 <div class="team-stats">
                     <div class="stat-item"><div class="stat-label">Team AVG</div><div class="stat-value">{{ home_team.rollingTeamStats.get(period, {}).get('AVG', '.000') }}</div></div>
                     <div class="stat-item"><div class="stat-label">Team OBP</div><div class="stat-value">{{ home_team.rollingTeamStats.get(period, {}).get('OBP', '.000') }}</div></div>
@@ -121,23 +104,9 @@
                 {% for period in ['7', '10', '21'] %}
                 <div class="stat-window stat-{{ period }}" {% if period != '7' %}style="display:none"{% endif %}>
                     <table class="stats-table batters-table">
-                        <thead>
-                            <tr>
-                                <th>Player</th>
-                                <th>Pos</th>
-                                <th>AVG</th>
-                                <th>SLG</th>
-                                <th>OBP</th>
-                                <th>HR</th>
-                                <th>K</th>
-                                <th>RBI</th>
-                                <th>H</th>
-                                <th>AB</th>
-                                
-                            </tr>
-                        </thead>
+                        <thead><tr><th>Player</th><th>Pos</th><th>AVG</th><th>SLG</th><th>OBP</th><th>HR</th><th>K</th><th>RBI</th><th>H</th><th>AB</th></tr></thead>
                         <tbody>
-                            {% for batter in away_team.fullRoster.batters %}
+                            {% for batter in away_team.fullRoster.batters[period] %}
                                 {% set stats = batter.stats_by_period[period] %}
                                 <tr>
                                     <td class="player-name">{{ batter.name }}</td>
@@ -146,14 +115,12 @@
                                     <td class="{{ stats.slg | get_stat_class('slg') }}">{{ stats.slg }}</td>
                                     <td class="{{ stats.obp | get_stat_class('obp') }}">{{ stats.obp }}</td>
                                     <td>{{ stats.hr }}</td>
+                                    <td>{{ stats.k }}</td>
                                     <td>{{ stats.rbi }}</td>
                                     <td>{{ stats.h }}</td>
                                     <td>{{ stats.ab }}</td>
-                                    <td>{{ stats.k }}</td>
                                 </tr>
-                            {% else %}
-                                <tr><td colspan="10" class="loading-message">No batter data.</td></tr>
-                            {% endfor %}
+                            {% else %}<tr><td colspan="10" class="loading-message">No batter data.</td></tr>{% endfor %}
                         </tbody>
                     </table>
                 </div>
@@ -163,38 +130,23 @@
                 {% for period in ['7', '10', '21'] %}
                 <div class="stat-window stat-{{ period }}" {% if period != '7' %}style="display:none"{% endif %}>
                     <table class="stats-table pitchers-table">
-                        <thead>
-                            <tr>
-                                <th>Player</th>
-                                <th>ERA</th>
-                                <th>WHIP</th>
-                                <th>GS</th>
-                                <th>IP</th>
-                                <th>SV</th>
-                                <th>H</th>
-                                <th>R</th>
-                                <th>K</th>
-                                <th>BB</th>                                                                
-                            </tr>
-                        </thead>
+                        <thead><tr><th>Player</th><th>ERA</th><th>WHIP</th><th>GS</th><th>IP</th><th>SV</th><th>H</th><th>R</th><th>K</th><th>BB</th></tr></thead>
                         <tbody>
-                            {% for pitcher in away_team.fullRoster.pitchers %}
+                            {% for pitcher in away_team.fullRoster.pitchers[period] %}
                                 {% set stats = pitcher.stats_by_period[period] %}
                                 <tr>
                                     <td class="player-name">{{ pitcher.name }}</td>
                                     <td class="{{ stats.era | get_stat_class('era') }}">{{ stats.era }}</td>
                                     <td class="{{ stats.whip | get_stat_class('whip') }}">{{ stats.whip }}</td>
                                     <td>{{ stats.gs }}</td>
-                                    <td>{{ stats.sv }}</td>
-                                    <td>{{ stats.k }}</td>
-                                    <td>{{ stats.bb }}</td>
                                     <td>{{ stats.ip }}</td>
+                                    <td>{{ stats.sv }}</td>
                                     <td>{{ stats.h }}</td>
                                     <td>{{ stats.r }}</td>
+                                    <td>{{ stats.k }}</td>
+                                    <td>{{ stats.bb }}</td>
                                 </tr>
-                            {% else %}
-                                <tr><td colspan="10" class="loading-message">No pitcher data.</td></tr>
-                            {% endfor %}
+                            {% else %}<tr><td colspan="10" class="loading-message">No pitcher data.</td></tr>{% endfor %}
                         </tbody>
                     </table>
                 </div>
@@ -206,23 +158,9 @@
                 {% for period in ['7', '10', '21'] %}
                 <div class="stat-window stat-{{ period }}" {% if period != '7' %}style="display:none"{% endif %}>
                     <table class="stats-table batters-table">
-                        <thead>
-                            <tr>
-                                <th>Player</th>
-                                <th>Pos</th>
-                                <th>AVG</th>
-                                <th>SLG</th>
-                                <th>OBP</th>
-                                <th>HR</th>
-                                <th>K</th>
-                                <th>RBI</th>
-                                <th>H</th>
-                                <th>AB</th>
-                                
-                            </tr>
-                        </thead>
+                        <thead><tr><th>Player</th><th>Pos</th><th>AVG</th><th>SLG</th><th>OBP</th><th>HR</th><th>K</th><th>RBI</th><th>H</th><th>AB</th></tr></thead>
                         <tbody>
-                            {% for batter in home_team.fullRoster.batters %}
+                            {% for batter in home_team.fullRoster.batters[period] %}
                                 {% set stats = batter.stats_by_period[period] %}
                                 <tr>
                                     <td class="player-name">{{ batter.name }}</td>
@@ -231,14 +169,12 @@
                                     <td class="{{ stats.slg | get_stat_class('slg') }}">{{ stats.slg }}</td>
                                     <td class="{{ stats.obp | get_stat_class('obp') }}">{{ stats.obp }}</td>
                                     <td>{{ stats.hr }}</td>
+                                    <td>{{ stats.k }}</td>
                                     <td>{{ stats.rbi }}</td>
                                     <td>{{ stats.h }}</td>
                                     <td>{{ stats.ab }}</td>
-                                    <td>{{ stats.k }}</td>
                                 </tr>
-                            {% else %}
-                                <tr><td colspan="10" class="loading-message">No batter data.</td></tr>
-                            {% endfor %}
+                            {% else %}<tr><td colspan="10" class="loading-message">No batter data.</td></tr>{% endfor %}
                         </tbody>
                     </table>
                 </div>
@@ -248,38 +184,23 @@
                 {% for period in ['7', '10', '21'] %}
                 <div class="stat-window stat-{{ period }}" {% if period != '7' %}style="display:none"{% endif %}>
                     <table class="stats-table pitchers-table">
-                        <thead>
-                            <tr>
-                                <th>Player</th>
-                                <th>ERA</th>
-                                <th>WHIP</th>
-                                <th>GS</th>
-                                <th>IP</th>
-                                <th>SV</th>
-                                <th>H</th>
-                                <th>R</th>
-                                <th>K</th>
-                                <th>BB</th>
-                            </tr>
-                        </thead>
+                        <thead><tr><th>Player</th><th>ERA</th><th>WHIP</th><th>GS</th><th>IP</th><th>SV</th><th>H</th><th>R</th><th>K</th><th>BB</th></tr></thead>
                         <tbody>
-                            {% for pitcher in home_team.fullRoster.pitchers %}
+                            {% for pitcher in home_team.fullRoster.pitchers[period] %}
                                 {% set stats = pitcher.stats_by_period[period] %}
                                 <tr>
                                     <td class="player-name">{{ pitcher.name }}</td>
                                     <td class="{{ stats.era | get_stat_class('era') }}">{{ stats.era }}</td>
                                     <td class="{{ stats.whip | get_stat_class('whip') }}">{{ stats.whip }}</td>
                                     <td>{{ stats.gs }}</td>
-                                    <td>{{ stats.sv }}</td>
-                                    <td>{{ stats.k }}</td>
-                                    <td>{{ stats.bb }}</td>
                                     <td>{{ stats.ip }}</td>
+                                    <td>{{ stats.sv }}</td>
                                     <td>{{ stats.h }}</td>
                                     <td>{{ stats.r }}</td>
+                                    <td>{{ stats.k }}</td>
+                                    <td>{{ stats.bb }}</td>
                                 </tr>
-                            {% else %}
-                                <tr><td colspan="10" class="loading-message">No pitcher data.</td></tr>
-                            {% endfor %}
+                            {% else %}<tr><td colspan="10" class="loading-message">No pitcher data.</td></tr>{% endfor %}
                         </tbody>
                     </table>
                 </div>
