@@ -1,6 +1,6 @@
 # MLB Stats Tracker
 
-![MLB Stats Tracker](https://i.imgur.com/NDy5sGI.mp4) An advanced, full-stack web application that provides daily MLB game schedules and detailed, real-time team and player statistics. The application is designed with a focus on performance, featuring background data fetching, a robust caching system, and a responsive front-end for both desktop and mobile viewing.
+An advanced, full-stack web application that provides daily MLB game schedules and detailed, real-time team and player statistics. The application is designed with a focus on performance, featuring background data fetching, a robust caching system, and a responsive front-end for both desktop and mobile viewing.
 
 **Live Demo:** [MLB Stats](https://mlb.up.railway.app/)
 
@@ -46,7 +46,7 @@ To run this project locally, follow these steps:
 
 1.  **Clone the repository:**
     ```bash
-    git clone [GitHub](https://github.com/xgrantgamble/mlbStatAVGs.git)
+    git clone https://github.com/xgrantgamble/mlbStatAVGs.git
     cd your-repo-name
     ```
 
