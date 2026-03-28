@@ -1,0 +1,2297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Compass — March 27, 2026</title>
+<style>
+@media only screen and (max-width: 600px) {
+  /* Layout */
+  .email-wrapper { width: 100% !important; max-width: 100% !important; }
+  .content-pad { padding: 0 12px !important; }
+  .header-pad { padding: 16px 12px 0 !important; }
+  .date-strip { padding: 8px 12px !important; }
+  .footer-pad { padding: 14px 12px !important; flex-direction: column !important; gap: 10px; }
+
+  /* Header */
+  .header-top { flex-direction: column !important; gap: 8px; }
+  .brand-name { font-size: 26px !important; }
+
+  /* Two column grids stack vertically */
+  .two-col { display: block !important; }
+  .two-col > div {
+    width: 100% !important;
+    border-left: none !important;
+    border-right: none !important;
+    border-top: 1px solid #E0DDD6 !important;
+    box-sizing: border-box !important;
+  }
+  .two-col > div:first-child { border-top: none !important; }
+
+  /* Game card score */
+  .game-card-header { flex-direction: column !important; gap: 8px; }
+  .game-score { border-left: none !important; border-top: 1px solid #E0DDD6 !important; margin-left: 0 !important; }
+
+  /* Tables — hide less critical columns, tighten padding */
+  .hide-mobile { display: none !important; }
+  table { width: 100% !important; table-layout: fixed; }
+  table td, table th { padding: 6px 4px !important; font-size: 10px !important; word-break: break-word; }
+  table td:first-child, table th:first-child { width: 28px !important; }
+  table td:nth-child(2), table th:nth-child(2) { width: 44px !important; font-size: 11px !important; }
+
+  /* App card */
+  .app-card-inner { flex-direction: column !important; }
+  .app-card-btn { margin-left: 0 !important; margin-top: 14px !important; align-items: flex-start !important; }
+
+  /* SP pitcher line — allow wrapping */
+  .pitcher-line { white-space: normal !important; word-break: break-word !important; }
+
+  /* Nav — allow wrapping */
+  .header-nav { flex-wrap: wrap !important; }
+
+  /* Signal badge — shrink text */
+  .signal-badge { font-size: 8px !important; padding: 2px 4px !important; letter-spacing: 0 !important; }
+
+  /* Footer — stack vertically */
+  .footer-pad { flex-direction: column !important; align-items: flex-start !important; gap: 12px !important; }
+  .footer-links { flex-wrap: wrap !important; gap: 10px !important; }
+
+  /* Prevent any horizontal scroll */
+  body { overflow-x: hidden !important; }
+  .email-wrapper { overflow: hidden !important; }
+
+  /* Table signal column — fixed narrow width */
+  table td:last-child, table th:last-child { width: 52px !important; }
+
+  /* Disclaimer padding */
+  .disclaimer-pad { padding: 14px 12px !important; }
+}
+</style>
+</head>
+<body style="margin:0;padding:2rem 1rem;background:#D8D5CE;font-family:'DM Sans',sans-serif;color:#111111;">
+
+<!-- VIEW IN BROWSER BAR -->
+<div style="text-align:center;padding:10px 16px;background:#D8D5CE;">
+  <span style="font-family:'DM Mono',monospace;font-size:10px;letter-spacing:1.5px;text-transform:uppercase;color:#6B6860;">
+    Having trouble viewing this email?
+    <a href="https://compass.beehiiv.com" target="_blank" rel="noopener" style="color:#1B3A6B;text-decoration:underline;font-weight:600;">View in browser →</a>
+  </span>
+</div>
+
+<!-- EMAIL WRAPPER -->
+<div class="email-wrapper" style="max-width:660px;margin:0 auto;background:#F7F5F0;box-shadow:0 2px 24px rgba(0,0,0,0.10);">
+
+  <!-- HEADER -->
+  <div class="header-pad" style="padding:36px 40px 0;background:#FFFFFF;border-bottom:1px solid #E0DDD6;">
+    <div class="header-top" style="display:flex;align-items:flex-end;justify-content:space-between;padding-bottom:20px;border-bottom:1px solid #E0DDD6;">
+      <div style="display:flex;align-items:center;gap:14px;">
+        <!-- Compass rose icon -->
+        <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="18" cy="18" r="17" stroke="#1B3A6B" stroke-width="1.5"/>
+          <circle cx="18" cy="18" r="3" fill="#1B3A6B"/>
+          <path d="M18 4 L20.5 16 L18 15 L15.5 16 Z" fill="#1B3A6B"/>
+          <path d="M18 32 L20.5 20 L18 21 L15.5 20 Z" fill="#E0DDD6"/>
+          <line x1="32" y1="18" x2="29" y2="18" stroke="#1B3A6B" stroke-width="1.5" stroke-linecap="round"/>
+          <line x1="4" y1="18" x2="7" y2="18" stroke="#1B3A6B" stroke-width="1.5" stroke-linecap="round"/>
+          <text x="18" y="10.5" text-anchor="middle" font-family="Arial" font-size="4.5" font-weight="700" fill="#1B3A6B">N</text>
+        </svg>
+        <div>
+          <div class="brand-name" style="font-family:'Playfair Display',serif;font-size:34px;font-weight:600;letter-spacing:-0.5px;color:#111111;line-height:1;">Compass</div>
+          <div style="font-family:'DM Mono',monospace;font-size:10px;letter-spacing:2.5px;text-transform:uppercase;color:#6B6860;margin-top:4px;">Sports intelligence · MLB edition</div>
+        </div>
+      </div>
+      <div style="text-align:right;">
+        <div style="font-family:'DM Mono',monospace;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:#6B6860;">Issue 1</div>
+        <div style="font-family:'DM Mono',monospace;font-size:13px;color:#111111;margin-top:2px;font-weight:500;">March 27, 2026</div>
+      </div>
+    </div>
+    <!-- Nav -->
+    <div class="header-nav" style="display:flex;gap:0;padding:12px 0 0;">
+      <a href="#recaps" style="font-family:'DM Mono',monospace;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:#1B3A6B;text-decoration:none;padding:0 20px 12px 0;margin-right:20px;border-right:1px solid #E0DDD6;border-bottom:2px solid #1B3A6B;">Recaps</a>
+      <a href="#rankings" style="font-family:'DM Mono',monospace;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:#6B6860;text-decoration:none;padding:0 20px 12px 0;margin-right:20px;border-right:1px solid #E0DDD6;">Rankings</a>
+      <a href="#insights" style="font-family:'DM Mono',monospace;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:#6B6860;text-decoration:none;padding:0 20px 12px 0;margin-right:20px;border-right:1px solid #E0DDD6;">Insights</a>
+      <a href="#injuries" style="font-family:'DM Mono',monospace;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:#6B6860;text-decoration:none;padding:0 20px 12px 0;margin-right:20px;border-right:none;">Injuries</a>
+    </div>
+  </div>
+
+  <!-- DATE STRIP -->
+  <div class="date-strip" style="background:#1B3A6B;padding:10px 40px;display:flex;justify-content:space-between;align-items:center;">
+    <span style="font-family:'DM Sans',sans-serif;font-size:13px;font-weight:600;color:#FFFFFF;letter-spacing:0.3px;">Friday, March 27</span>
+    <span style="font-family:'DM Mono',monospace;font-size:10px;letter-spacing:1.5px;text-transform:uppercase;color:rgba(255,255,255,0.55);">8 games · 8 games</span>
+  </div>
+
+  <!-- CONTENT -->
+  <div class="content-pad" style="padding:0 40px;" id="recaps">
+
+    <!-- GAME RECAPS -->
+    <div style="font-family:'DM Mono',monospace;font-size:10px;letter-spacing:3px;text-transform:uppercase;color:#6B6860;padding:28px 0 12px;border-bottom:1px solid #E0DDD6;margin-bottom:20px;">Game recaps</div>
+
+    
+    <!-- GAME CARD -->
+    <div style="background:#FFFFFF;border:1px solid #E0DDD6;margin-bottom:16px;">
+
+      <!-- Card header -->
+      <div class="game-card-header" style="display:flex;justify-content:space-between;align-items:stretch;padding:16px 20px;border-bottom:1px solid #E0DDD6;background:#F7F5F0;">
+        <div>
+          <div style="font-family:'DM Sans',sans-serif;font-size:16px;font-weight:600;color:#111111;letter-spacing:-0.2px;">
+            
+              <span>ATH</span>
+            
+            <span style="color:#E0DDD6;margin:0 6px;font-weight:300;">@</span>
+            
+              <span style="color:#1B3A6B;">TOR</span>
+            
+          </div>
+          <div style="font-family:'DM Mono',monospace;font-size:10px;color:#6B6860;margin-top:5px;letter-spacing:0.5px;">Rogers Centre</div>
+        </div>
+        <div class="game-score" style="display:flex;align-items:stretch;gap:0;border-left:1px solid #E0DDD6;margin-left:16px;">
+          <div style="display:flex;flex-direction:column;align-items:center;justify-content:center;padding:6px 16px;min-width:52px;">
+            <div style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:2px;color:#6B6860;text-transform:uppercase;">ATH</div>
+            <div style="font-family:'Playfair Display',serif;font-size:24px;font-weight:600;line-height:1.1;color:#111111;">2</div>
+          </div>
+          <div style="display:flex;flex-direction:column;align-items:center;justify-content:center;padding:6px 16px;min-width:52px;border-left:1px solid #E0DDD6;">
+            <div style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:2px;color:#6B6860;text-transform:uppercase;">TOR</div>
+            <div style="font-family:'Playfair Display',serif;font-size:24px;font-weight:600;line-height:1.1;color:#1B3A6B;">3</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Polymarket strip deferred to v2 -->
+
+      <!-- Quick read -->
+      
+
+      <!-- Away team: starter + performers -->
+      <div class="two-col" style="display:grid;grid-template-columns:1fr 1fr;border-bottom:1px solid #E0DDD6;">
+        <div style="padding:14px 20px;border-right:1px solid #E0DDD6;">
+          <div style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:#6B6860;margin-bottom:6px;">ATH starter</div>
+          
+          
+          <div style="font-weight:600;font-size:14px;margin-bottom:5px;">Luis Severino</div>
+          <div class="pitcher-line" style="font-family:'DM Mono',monospace;font-size:11px;background:#F7F5F0;padding:4px 8px;color:#111111;margin-bottom:5px;">5.0 IP · 2 ER · 3 K · 3 H · 84 pitches</div>
+          
+          
+        </div>
+        <div style="padding:14px 20px;">
+          <div style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:#6B6860;margin-bottom:6px;">TOR starter</div>
+          
+          
+          <div style="font-weight:600;font-size:14px;margin-bottom:5px;">Kevin Gausman</div>
+          <div class="pitcher-line" style="font-family:'DM Mono',monospace;font-size:11px;background:#F7F5F0;padding:4px 8px;color:#111111;margin-bottom:5px;">6.0 IP · 1 ER · 11 K · 1 H · 83 pitches</div>
+          
+          
+        </div>
+      </div>
+
+      <!-- Top batters: away left, home right -->
+      <div class="two-col" style="border-bottom:1px solid #E0DDD6;display:grid;grid-template-columns:1fr 1fr;">
+        <div style="padding:10px 20px 12px;border-right:1px solid #E0DDD6;">
+          <div style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:#6B6860;margin-bottom:8px;">ATH performers</div>
+          
+          
+            
+            <div style="font-size:12px;margin-bottom:5px;">
+              <span style="font-weight:600;">Shea Langeliers</span>
+              <span style="font-family:'DM Mono',monospace;font-size:11px;color:#1B3A6B;margin-left:6px;">3-4 (2 HR, 2 RBI)</span>
+            </div>
+            
+          
+        </div>
+        <div style="padding:10px 20px 12px;">
+          <div style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:#6B6860;margin-bottom:8px;">TOR performers</div>
+          
+          
+            
+            <div style="font-size:12px;margin-bottom:5px;">
+              <span style="font-weight:600;">Andrés Giménez</span>
+              <span style="font-family:'DM Mono',monospace;font-size:11px;color:#1B3A6B;margin-left:6px;">2-3 (3 RBI, 1 BB)</span>
+            </div>
+            
+            <div style="font-size:12px;margin-bottom:5px;">
+              <span style="font-weight:600;">Kazuma Okamoto</span>
+              <span style="font-family:'DM Mono',monospace;font-size:11px;color:#1B3A6B;margin-left:6px;">2-3 (2 R, 1 BB)</span>
+            </div>
+            
+            <div style="font-size:12px;margin-bottom:5px;">
+              <span style="font-weight:600;">Ernie Clement</span>
+              <span style="font-family:'DM Mono',monospace;font-size:11px;color:#1B3A6B;margin-left:6px;">2-4 (1 R)</span>
+            </div>
+            
+          
+        </div>
+      </div>
+
+      <!-- Takes - full width rows -->
+      <div style="border-top:1px solid #E0DDD6;padding:12px 20px;background:#F7F5F0;">
+        <span style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:#1B3A6B;">Bettor signal</span>
+        <span style="font-size:12px;color:#111111;margin-left:10px;">Data pending — rolling signal analysis available above.</span>
+      </div>
+      <div style="border-top:1px solid #E0DDD6;padding:12px 20px;background:#F7F5F0;">
+        <span style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:#1A6B3C;">Fantasy signal</span>
+        <span style="font-size:12px;color:#111111;margin-left:10px;">Data pending — check injury log for lineup impact.</span>
+      </div>
+
+    </div><!-- /game-card -->
+    
+    <!-- GAME CARD -->
+    <div style="background:#FFFFFF;border:1px solid #E0DDD6;margin-bottom:16px;">
+
+      <!-- Card header -->
+      <div class="game-card-header" style="display:flex;justify-content:space-between;align-items:stretch;padding:16px 20px;border-bottom:1px solid #E0DDD6;background:#F7F5F0;">
+        <div>
+          <div style="font-family:'DM Sans',sans-serif;font-size:16px;font-weight:600;color:#111111;letter-spacing:-0.2px;">
+            
+              <span>CLE</span>
+            
+            <span style="color:#E0DDD6;margin:0 6px;font-weight:300;">@</span>
+            
+              <span style="color:#1B3A6B;">SEA</span>
+            
+          </div>
+          <div style="font-family:'DM Mono',monospace;font-size:10px;color:#6B6860;margin-top:5px;letter-spacing:0.5px;">T-Mobile Park</div>
+        </div>
+        <div class="game-score" style="display:flex;align-items:stretch;gap:0;border-left:1px solid #E0DDD6;margin-left:16px;">
+          <div style="display:flex;flex-direction:column;align-items:center;justify-content:center;padding:6px 16px;min-width:52px;">
+            <div style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:2px;color:#6B6860;text-transform:uppercase;">CLE</div>
+            <div style="font-family:'Playfair Display',serif;font-size:24px;font-weight:600;line-height:1.1;color:#111111;">1</div>
+          </div>
+          <div style="display:flex;flex-direction:column;align-items:center;justify-content:center;padding:6px 16px;min-width:52px;border-left:1px solid #E0DDD6;">
+            <div style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:2px;color:#6B6860;text-transform:uppercase;">SEA</div>
+            <div style="font-family:'Playfair Display',serif;font-size:24px;font-weight:600;line-height:1.1;color:#1B3A6B;">5</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Polymarket strip deferred to v2 -->
+
+      <!-- Quick read -->
+      
+
+      <!-- Away team: starter + performers -->
+      <div class="two-col" style="display:grid;grid-template-columns:1fr 1fr;border-bottom:1px solid #E0DDD6;">
+        <div style="padding:14px 20px;border-right:1px solid #E0DDD6;">
+          <div style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:#6B6860;margin-bottom:6px;">CLE starter</div>
+          
+          
+          <div style="font-weight:600;font-size:14px;margin-bottom:5px;">Gavin Williams</div>
+          <div class="pitcher-line" style="font-family:'DM Mono',monospace;font-size:11px;background:#F7F5F0;padding:4px 8px;color:#111111;margin-bottom:5px;">5.0 IP · 3 ER · 7 K · 2 H · 89 pitches</div>
+          
+          
+        </div>
+        <div style="padding:14px 20px;">
+          <div style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:#6B6860;margin-bottom:6px;">SEA starter</div>
+          
+          
+          <div style="font-weight:600;font-size:14px;margin-bottom:5px;">George Kirby</div>
+          <div class="pitcher-line" style="font-family:'DM Mono',monospace;font-size:11px;background:#F7F5F0;padding:4px 8px;color:#111111;margin-bottom:5px;">6.0 IP · 1 ER · 6 K · 2 H · 90 pitches</div>
+          
+          
+        </div>
+      </div>
+
+      <!-- Top batters: away left, home right -->
+      <div class="two-col" style="border-bottom:1px solid #E0DDD6;display:grid;grid-template-columns:1fr 1fr;">
+        <div style="padding:10px 20px 12px;border-right:1px solid #E0DDD6;">
+          <div style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:#6B6860;margin-bottom:8px;">CLE performers</div>
+          
+          
+            
+            <div style="font-size:12px;margin-bottom:5px;">
+              <span style="font-weight:600;">Steven Kwan</span>
+              <span style="font-family:'DM Mono',monospace;font-size:11px;color:#1B3A6B;margin-left:6px;">2-4</span>
+            </div>
+            
+          
+        </div>
+        <div style="padding:10px 20px 12px;">
+          <div style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:#6B6860;margin-bottom:8px;">SEA performers</div>
+          
+          
+            <div style="font-size:11px;color:#6B6860;font-style:italic;">Nothing noteworthy</div>
+          
+        </div>
+      </div>
+
+      <!-- Takes - full width rows -->
+      <div style="border-top:1px solid #E0DDD6;padding:12px 20px;background:#F7F5F0;">
+        <span style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:#1B3A6B;">Bettor signal</span>
+        <span style="font-size:12px;color:#111111;margin-left:10px;">Data pending — rolling signal analysis available above.</span>
+      </div>
+      <div style="border-top:1px solid #E0DDD6;padding:12px 20px;background:#F7F5F0;">
+        <span style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:#1A6B3C;">Fantasy signal</span>
+        <span style="font-size:12px;color:#111111;margin-left:10px;">Data pending — check injury log for lineup impact.</span>
+      </div>
+
+    </div><!-- /game-card -->
+    
+    <!-- GAME CARD -->
+    <div style="background:#FFFFFF;border:1px solid #E0DDD6;margin-bottom:16px;">
+
+      <!-- Card header -->
+      <div class="game-card-header" style="display:flex;justify-content:space-between;align-items:stretch;padding:16px 20px;border-bottom:1px solid #E0DDD6;background:#F7F5F0;">
+        <div>
+          <div style="font-family:'DM Sans',sans-serif;font-size:16px;font-weight:600;color:#111111;letter-spacing:-0.2px;">
+            
+              <span style="color:#1B3A6B;">NYY</span>
+            
+            <span style="color:#E0DDD6;margin:0 6px;font-weight:300;">@</span>
+            
+              <span>SF</span>
+            
+          </div>
+          <div style="font-family:'DM Mono',monospace;font-size:10px;color:#6B6860;margin-top:5px;letter-spacing:0.5px;">Oracle Park</div>
+        </div>
+        <div class="game-score" style="display:flex;align-items:stretch;gap:0;border-left:1px solid #E0DDD6;margin-left:16px;">
+          <div style="display:flex;flex-direction:column;align-items:center;justify-content:center;padding:6px 16px;min-width:52px;">
+            <div style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:2px;color:#6B6860;text-transform:uppercase;">NYY</div>
+            <div style="font-family:'Playfair Display',serif;font-size:24px;font-weight:600;line-height:1.1;color:#1B3A6B;">3</div>
+          </div>
+          <div style="display:flex;flex-direction:column;align-items:center;justify-content:center;padding:6px 16px;min-width:52px;border-left:1px solid #E0DDD6;">
+            <div style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:2px;color:#6B6860;text-transform:uppercase;">SF</div>
+            <div style="font-family:'Playfair Display',serif;font-size:24px;font-weight:600;line-height:1.1;color:#111111;">0</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Polymarket strip deferred to v2 -->
+
+      <!-- Quick read -->
+      
+
+      <!-- Away team: starter + performers -->
+      <div class="two-col" style="display:grid;grid-template-columns:1fr 1fr;border-bottom:1px solid #E0DDD6;">
+        <div style="padding:14px 20px;border-right:1px solid #E0DDD6;">
+          <div style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:#6B6860;margin-bottom:6px;">NYY starter</div>
+          
+          
+          <div style="font-weight:600;font-size:14px;margin-bottom:5px;">Cam Schlittler</div>
+          <div class="pitcher-line" style="font-family:'DM Mono',monospace;font-size:11px;background:#F7F5F0;padding:4px 8px;color:#111111;margin-bottom:5px;">5.3 IP · 0 ER · 8 K · 1 H · 68 pitches</div>
+          
+          
+        </div>
+        <div style="padding:14px 20px;">
+          <div style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:#6B6860;margin-bottom:6px;">SF starter</div>
+          
+          
+          <div style="font-weight:600;font-size:14px;margin-bottom:5px;">Robbie Ray</div>
+          <div class="pitcher-line" style="font-family:'DM Mono',monospace;font-size:11px;background:#F7F5F0;padding:4px 8px;color:#111111;margin-bottom:5px;">5.3 IP · 2 ER · 4 K · 5 H · 89 pitches</div>
+          
+          
+        </div>
+      </div>
+
+      <!-- Top batters: away left, home right -->
+      <div class="two-col" style="border-bottom:1px solid #E0DDD6;display:grid;grid-template-columns:1fr 1fr;">
+        <div style="padding:10px 20px 12px;border-right:1px solid #E0DDD6;">
+          <div style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:#6B6860;margin-bottom:8px;">NYY performers</div>
+          
+          
+            
+            <div style="font-size:12px;margin-bottom:5px;">
+              <span style="font-weight:600;">Giancarlo Stanton</span>
+              <span style="font-family:'DM Mono',monospace;font-size:11px;color:#1B3A6B;margin-left:6px;">2-4 (1 HR, 1 RBI)</span>
+            </div>
+            
+            <div style="font-size:12px;margin-bottom:5px;">
+              <span style="font-weight:600;">José Caballero</span>
+              <span style="font-family:'DM Mono',monospace;font-size:11px;color:#1B3A6B;margin-left:6px;">2-4</span>
+            </div>
+            
+          
+        </div>
+        <div style="padding:10px 20px 12px;">
+          <div style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:#6B6860;margin-bottom:8px;">SF performers</div>
+          
+          
+            <div style="font-size:11px;color:#6B6860;font-style:italic;">Nothing noteworthy</div>
+          
+        </div>
+      </div>
+
+      <!-- Takes - full width rows -->
+      <div style="border-top:1px solid #E0DDD6;padding:12px 20px;background:#F7F5F0;">
+        <span style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:#1B3A6B;">Bettor signal</span>
+        <span style="font-size:12px;color:#111111;margin-left:10px;">Data pending — rolling signal analysis available above.</span>
+      </div>
+      <div style="border-top:1px solid #E0DDD6;padding:12px 20px;background:#F7F5F0;">
+        <span style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:#1A6B3C;">Fantasy signal</span>
+        <span style="font-size:12px;color:#111111;margin-left:10px;">Data pending — check injury log for lineup impact.</span>
+      </div>
+
+    </div><!-- /game-card -->
+    
+    <!-- GAME CARD -->
+    <div style="background:#FFFFFF;border:1px solid #E0DDD6;margin-bottom:16px;">
+
+      <!-- Card header -->
+      <div class="game-card-header" style="display:flex;justify-content:space-between;align-items:stretch;padding:16px 20px;border-bottom:1px solid #E0DDD6;background:#F7F5F0;">
+        <div>
+          <div style="font-family:'DM Sans',sans-serif;font-size:16px;font-weight:600;color:#111111;letter-spacing:-0.2px;">
+            
+              <span style="color:#1B3A6B;">DET</span>
+            
+            <span style="color:#E0DDD6;margin:0 6px;font-weight:300;">@</span>
+            
+              <span>SD</span>
+            
+          </div>
+          <div style="font-family:'DM Mono',monospace;font-size:10px;color:#6B6860;margin-top:5px;letter-spacing:0.5px;">Petco Park</div>
+        </div>
+        <div class="game-score" style="display:flex;align-items:stretch;gap:0;border-left:1px solid #E0DDD6;margin-left:16px;">
+          <div style="display:flex;flex-direction:column;align-items:center;justify-content:center;padding:6px 16px;min-width:52px;">
+            <div style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:2px;color:#6B6860;text-transform:uppercase;">DET</div>
+            <div style="font-family:'Playfair Display',serif;font-size:24px;font-weight:600;line-height:1.1;color:#1B3A6B;">5</div>
+          </div>
+          <div style="display:flex;flex-direction:column;align-items:center;justify-content:center;padding:6px 16px;min-width:52px;border-left:1px solid #E0DDD6;">
+            <div style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:2px;color:#6B6860;text-transform:uppercase;">SD</div>
+            <div style="font-family:'Playfair Display',serif;font-size:24px;font-weight:600;line-height:1.1;color:#111111;">2</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Polymarket strip deferred to v2 -->
+
+      <!-- Quick read -->
+      
+
+      <!-- Away team: starter + performers -->
+      <div class="two-col" style="display:grid;grid-template-columns:1fr 1fr;border-bottom:1px solid #E0DDD6;">
+        <div style="padding:14px 20px;border-right:1px solid #E0DDD6;">
+          <div style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:#6B6860;margin-bottom:6px;">DET starter</div>
+          
+          
+          <div style="font-weight:600;font-size:14px;margin-bottom:5px;">Framber Valdez</div>
+          <div class="pitcher-line" style="font-family:'DM Mono',monospace;font-size:11px;background:#F7F5F0;padding:4px 8px;color:#111111;margin-bottom:5px;">6.0 IP · 1 ER · 5 K · 7 H · 83 pitches</div>
+          
+          
+        </div>
+        <div style="padding:14px 20px;">
+          <div style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:#6B6860;margin-bottom:6px;">SD starter</div>
+          
+          
+          <div style="font-weight:600;font-size:14px;margin-bottom:5px;">Michael King</div>
+          <div class="pitcher-line" style="font-family:'DM Mono',monospace;font-size:11px;background:#F7F5F0;padding:4px 8px;color:#111111;margin-bottom:5px;">5.0 IP · 0 ER · 6 K · 1 H · 82 pitches</div>
+          
+          
+        </div>
+      </div>
+
+      <!-- Top batters: away left, home right -->
+      <div class="two-col" style="border-bottom:1px solid #E0DDD6;display:grid;grid-template-columns:1fr 1fr;">
+        <div style="padding:10px 20px 12px;border-right:1px solid #E0DDD6;">
+          <div style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:#6B6860;margin-bottom:8px;">DET performers</div>
+          
+          
+            <div style="font-size:11px;color:#6B6860;font-style:italic;">Nothing noteworthy</div>
+          
+        </div>
+        <div style="padding:10px 20px 12px;">
+          <div style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:#6B6860;margin-bottom:8px;">SD performers</div>
+          
+          
+            
+            <div style="font-size:12px;margin-bottom:5px;">
+              <span style="font-weight:600;">Jackson Merrill</span>
+              <span style="font-family:'DM Mono',monospace;font-size:11px;color:#1B3A6B;margin-left:6px;">2-3 (1 R, 1 BB)</span>
+            </div>
+            
+            <div style="font-size:12px;margin-bottom:5px;">
+              <span style="font-weight:600;">Jake Cronenworth</span>
+              <span style="font-family:'DM Mono',monospace;font-size:11px;color:#1B3A6B;margin-left:6px;">2-4</span>
+            </div>
+            
+          
+        </div>
+      </div>
+
+      <!-- Takes - full width rows -->
+      <div style="border-top:1px solid #E0DDD6;padding:12px 20px;background:#F7F5F0;">
+        <span style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:#1B3A6B;">Bettor signal</span>
+        <span style="font-size:12px;color:#111111;margin-left:10px;">Data pending — rolling signal analysis available above.</span>
+      </div>
+      <div style="border-top:1px solid #E0DDD6;padding:12px 20px;background:#F7F5F0;">
+        <span style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:#1A6B3C;">Fantasy signal</span>
+        <span style="font-size:12px;color:#111111;margin-left:10px;">Data pending — check injury log for lineup impact.</span>
+      </div>
+
+    </div><!-- /game-card -->
+    
+    <!-- GAME CARD -->
+    <div style="background:#FFFFFF;border:1px solid #E0DDD6;margin-bottom:16px;">
+
+      <!-- Card header -->
+      <div class="game-card-header" style="display:flex;justify-content:space-between;align-items:stretch;padding:16px 20px;border-bottom:1px solid #E0DDD6;background:#F7F5F0;">
+        <div>
+          <div style="font-family:'DM Sans',sans-serif;font-size:16px;font-weight:600;color:#111111;letter-spacing:-0.2px;">
+            
+              <span>COL</span>
+            
+            <span style="color:#E0DDD6;margin:0 6px;font-weight:300;">@</span>
+            
+              <span style="color:#1B3A6B;">MIA</span>
+            
+          </div>
+          <div style="font-family:'DM Mono',monospace;font-size:10px;color:#6B6860;margin-top:5px;letter-spacing:0.5px;">loanDepot park</div>
+        </div>
+        <div class="game-score" style="display:flex;align-items:stretch;gap:0;border-left:1px solid #E0DDD6;margin-left:16px;">
+          <div style="display:flex;flex-direction:column;align-items:center;justify-content:center;padding:6px 16px;min-width:52px;">
+            <div style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:2px;color:#6B6860;text-transform:uppercase;">COL</div>
+            <div style="font-family:'Playfair Display',serif;font-size:24px;font-weight:600;line-height:1.1;color:#111111;">1</div>
+          </div>
+          <div style="display:flex;flex-direction:column;align-items:center;justify-content:center;padding:6px 16px;min-width:52px;border-left:1px solid #E0DDD6;">
+            <div style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:2px;color:#6B6860;text-transform:uppercase;">MIA</div>
+            <div style="font-family:'Playfair Display',serif;font-size:24px;font-weight:600;line-height:1.1;color:#1B3A6B;">2</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Polymarket strip deferred to v2 -->
+
+      <!-- Quick read -->
+      
+
+      <!-- Away team: starter + performers -->
+      <div class="two-col" style="display:grid;grid-template-columns:1fr 1fr;border-bottom:1px solid #E0DDD6;">
+        <div style="padding:14px 20px;border-right:1px solid #E0DDD6;">
+          <div style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:#6B6860;margin-bottom:6px;">COL starter</div>
+          
+          
+          <div style="font-weight:600;font-size:14px;margin-bottom:5px;">Kyle Freeland</div>
+          <div class="pitcher-line" style="font-family:'DM Mono',monospace;font-size:11px;background:#F7F5F0;padding:4px 8px;color:#111111;margin-bottom:5px;">4.3 IP · 2 ER · 2 K · 5 H · 81 pitches</div>
+          
+          
+        </div>
+        <div style="padding:14px 20px;">
+          <div style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:#6B6860;margin-bottom:6px;">MIA starter</div>
+          
+          
+          <div style="font-weight:600;font-size:14px;margin-bottom:5px;">Sandy Alcantara</div>
+          <div class="pitcher-line" style="font-family:'DM Mono',monospace;font-size:11px;background:#F7F5F0;padding:4px 8px;color:#111111;margin-bottom:5px;">7.0 IP · 0 ER · 5 K · 4 H · 73 pitches</div>
+          
+          
+        </div>
+      </div>
+
+      <!-- Top batters: away left, home right -->
+      <div class="two-col" style="border-bottom:1px solid #E0DDD6;display:grid;grid-template-columns:1fr 1fr;">
+        <div style="padding:10px 20px 12px;border-right:1px solid #E0DDD6;">
+          <div style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:#6B6860;margin-bottom:8px;">COL performers</div>
+          
+          
+            
+            <div style="font-size:12px;margin-bottom:5px;">
+              <span style="font-weight:600;">Hunter Goodman</span>
+              <span style="font-family:'DM Mono',monospace;font-size:11px;color:#1B3A6B;margin-left:6px;">2-4</span>
+            </div>
+            
+          
+        </div>
+        <div style="padding:10px 20px 12px;">
+          <div style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:#6B6860;margin-bottom:8px;">MIA performers</div>
+          
+          
+            
+            <div style="font-size:12px;margin-bottom:5px;">
+              <span style="font-weight:600;">Javier Sanoja</span>
+              <span style="font-family:'DM Mono',monospace;font-size:11px;color:#1B3A6B;margin-left:6px;">3-3 (1 RBI)</span>
+            </div>
+            
+            <div style="font-size:12px;margin-bottom:5px;">
+              <span style="font-weight:600;">Connor Norby</span>
+              <span style="font-family:'DM Mono',monospace;font-size:11px;color:#1B3A6B;margin-left:6px;">2-3</span>
+            </div>
+            
+          
+        </div>
+      </div>
+
+      <!-- Takes - full width rows -->
+      <div style="border-top:1px solid #E0DDD6;padding:12px 20px;background:#F7F5F0;">
+        <span style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:#1B3A6B;">Bettor signal</span>
+        <span style="font-size:12px;color:#111111;margin-left:10px;">Data pending — rolling signal analysis available above.</span>
+      </div>
+      <div style="border-top:1px solid #E0DDD6;padding:12px 20px;background:#F7F5F0;">
+        <span style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:#1A6B3C;">Fantasy signal</span>
+        <span style="font-size:12px;color:#111111;margin-left:10px;">Data pending — check injury log for lineup impact.</span>
+      </div>
+
+    </div><!-- /game-card -->
+    
+    <!-- GAME CARD -->
+    <div style="background:#FFFFFF;border:1px solid #E0DDD6;margin-bottom:16px;">
+
+      <!-- Card header -->
+      <div class="game-card-header" style="display:flex;justify-content:space-between;align-items:stretch;padding:16px 20px;border-bottom:1px solid #E0DDD6;background:#F7F5F0;">
+        <div>
+          <div style="font-family:'DM Sans',sans-serif;font-size:16px;font-weight:600;color:#111111;letter-spacing:-0.2px;">
+            
+              <span>ARI</span>
+            
+            <span style="color:#E0DDD6;margin:0 6px;font-weight:300;">@</span>
+            
+              <span style="color:#1B3A6B;">LAD</span>
+            
+          </div>
+          <div style="font-family:'DM Mono',monospace;font-size:10px;color:#6B6860;margin-top:5px;letter-spacing:0.5px;">UNIQLO Field at Dodger Stadium</div>
+        </div>
+        <div class="game-score" style="display:flex;align-items:stretch;gap:0;border-left:1px solid #E0DDD6;margin-left:16px;">
+          <div style="display:flex;flex-direction:column;align-items:center;justify-content:center;padding:6px 16px;min-width:52px;">
+            <div style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:2px;color:#6B6860;text-transform:uppercase;">ARI</div>
+            <div style="font-family:'Playfair Display',serif;font-size:24px;font-weight:600;line-height:1.1;color:#111111;">4</div>
+          </div>
+          <div style="display:flex;flex-direction:column;align-items:center;justify-content:center;padding:6px 16px;min-width:52px;border-left:1px solid #E0DDD6;">
+            <div style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:2px;color:#6B6860;text-transform:uppercase;">LAD</div>
+            <div style="font-family:'Playfair Display',serif;font-size:24px;font-weight:600;line-height:1.1;color:#1B3A6B;">5</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Polymarket strip deferred to v2 -->
+
+      <!-- Quick read -->
+      
+
+      <!-- Away team: starter + performers -->
+      <div class="two-col" style="display:grid;grid-template-columns:1fr 1fr;border-bottom:1px solid #E0DDD6;">
+        <div style="padding:14px 20px;border-right:1px solid #E0DDD6;">
+          <div style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:#6B6860;margin-bottom:6px;">ARI starter</div>
+          
+          
+          <div style="font-weight:600;font-size:14px;margin-bottom:5px;">Ryne Nelson</div>
+          <div class="pitcher-line" style="font-family:'DM Mono',monospace;font-size:11px;background:#F7F5F0;padding:4px 8px;color:#111111;margin-bottom:5px;">4.7 IP · 4 ER · 4 K · 2 H · 83 pitches</div>
+          
+          
+        </div>
+        <div style="padding:14px 20px;">
+          <div style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:#6B6860;margin-bottom:6px;">LAD starter</div>
+          
+          
+          <div style="font-weight:600;font-size:14px;margin-bottom:5px;">Emmet Sheehan</div>
+          <div class="pitcher-line" style="font-family:'DM Mono',monospace;font-size:11px;background:#F7F5F0;padding:4px 8px;color:#111111;margin-bottom:5px;">3.3 IP · 4 ER · 6 K · 5 H · 83 pitches</div>
+          
+          
+        </div>
+      </div>
+
+      <!-- Top batters: away left, home right -->
+      <div class="two-col" style="border-bottom:1px solid #E0DDD6;display:grid;grid-template-columns:1fr 1fr;">
+        <div style="padding:10px 20px 12px;border-right:1px solid #E0DDD6;">
+          <div style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:#6B6860;margin-bottom:8px;">ARI performers</div>
+          
+          
+            
+            <div style="font-size:12px;margin-bottom:5px;">
+              <span style="font-weight:600;">Ketel Marte</span>
+              <span style="font-family:'DM Mono',monospace;font-size:11px;color:#1B3A6B;margin-left:6px;">2-5 (1 HR, 1 RBI)</span>
+            </div>
+            
+            <div style="font-size:12px;margin-bottom:5px;">
+              <span style="font-weight:600;">Alek Thomas</span>
+              <span style="font-family:'DM Mono',monospace;font-size:11px;color:#1B3A6B;margin-left:6px;">2-3 (3 RBI, 1 BB)</span>
+            </div>
+            
+            <div style="font-size:12px;margin-bottom:5px;">
+              <span style="font-weight:600;">Gabriel Moreno</span>
+              <span style="font-family:'DM Mono',monospace;font-size:11px;color:#1B3A6B;margin-left:6px;">2-4 (1 R)</span>
+            </div>
+            
+          
+        </div>
+        <div style="padding:10px 20px 12px;">
+          <div style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:#6B6860;margin-bottom:8px;">LAD performers</div>
+          
+          
+            
+            <div style="font-size:12px;margin-bottom:5px;">
+              <span style="font-weight:600;">Alex Freeland</span>
+              <span style="font-family:'DM Mono',monospace;font-size:11px;color:#1B3A6B;margin-left:6px;">2-3 (1 HR, 1 RBI)</span>
+            </div>
+            
+          
+        </div>
+      </div>
+
+      <!-- Takes - full width rows -->
+      <div style="border-top:1px solid #E0DDD6;padding:12px 20px;background:#F7F5F0;">
+        <span style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:#1B3A6B;">Bettor signal</span>
+        <span style="font-size:12px;color:#111111;margin-left:10px;">Data pending — rolling signal analysis available above.</span>
+      </div>
+      <div style="border-top:1px solid #E0DDD6;padding:12px 20px;background:#F7F5F0;">
+        <span style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:#1A6B3C;">Fantasy signal</span>
+        <span style="font-size:12px;color:#111111;margin-left:10px;">Data pending — check injury log for lineup impact.</span>
+      </div>
+
+    </div><!-- /game-card -->
+    
+    <!-- GAME CARD -->
+    <div style="background:#FFFFFF;border:1px solid #E0DDD6;margin-bottom:16px;">
+
+      <!-- Card header -->
+      <div class="game-card-header" style="display:flex;justify-content:space-between;align-items:stretch;padding:16px 20px;border-bottom:1px solid #E0DDD6;background:#F7F5F0;">
+        <div>
+          <div style="font-family:'DM Sans',sans-serif;font-size:16px;font-weight:600;color:#111111;letter-spacing:-0.2px;">
+            
+              <span style="color:#1B3A6B;">LAA</span>
+            
+            <span style="color:#E0DDD6;margin:0 6px;font-weight:300;">@</span>
+            
+              <span>HOU</span>
+            
+          </div>
+          <div style="font-family:'DM Mono',monospace;font-size:10px;color:#6B6860;margin-top:5px;letter-spacing:0.5px;">Daikin Park</div>
+        </div>
+        <div class="game-score" style="display:flex;align-items:stretch;gap:0;border-left:1px solid #E0DDD6;margin-left:16px;">
+          <div style="display:flex;flex-direction:column;align-items:center;justify-content:center;padding:6px 16px;min-width:52px;">
+            <div style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:2px;color:#6B6860;text-transform:uppercase;">LAA</div>
+            <div style="font-family:'Playfair Display',serif;font-size:24px;font-weight:600;line-height:1.1;color:#1B3A6B;">6</div>
+          </div>
+          <div style="display:flex;flex-direction:column;align-items:center;justify-content:center;padding:6px 16px;min-width:52px;border-left:1px solid #E0DDD6;">
+            <div style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:2px;color:#6B6860;text-transform:uppercase;">HOU</div>
+            <div style="font-family:'Playfair Display',serif;font-size:24px;font-weight:600;line-height:1.1;color:#111111;">2</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Polymarket strip deferred to v2 -->
+
+      <!-- Quick read -->
+      
+
+      <!-- Away team: starter + performers -->
+      <div class="two-col" style="display:grid;grid-template-columns:1fr 1fr;border-bottom:1px solid #E0DDD6;">
+        <div style="padding:14px 20px;border-right:1px solid #E0DDD6;">
+          <div style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:#6B6860;margin-bottom:6px;">LAA starter</div>
+          
+          
+          <div style="font-weight:600;font-size:14px;margin-bottom:5px;">Yusei Kikuchi</div>
+          <div class="pitcher-line" style="font-family:'DM Mono',monospace;font-size:11px;background:#F7F5F0;padding:4px 8px;color:#111111;margin-bottom:5px;">4.3 IP · 2 ER · 3 K · 8 H · 86 pitches</div>
+          
+          
+        </div>
+        <div style="padding:14px 20px;">
+          <div style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:#6B6860;margin-bottom:6px;">HOU starter</div>
+          
+          
+          <div style="font-weight:600;font-size:14px;margin-bottom:5px;">Mike Burrows</div>
+          <div class="pitcher-line" style="font-family:'DM Mono',monospace;font-size:11px;background:#F7F5F0;padding:4px 8px;color:#111111;margin-bottom:5px;">5.7 IP · 5 ER · 6 K · 9 H · 94 pitches</div>
+          
+          
+        </div>
+      </div>
+
+      <!-- Top batters: away left, home right -->
+      <div class="two-col" style="border-bottom:1px solid #E0DDD6;display:grid;grid-template-columns:1fr 1fr;">
+        <div style="padding:10px 20px 12px;border-right:1px solid #E0DDD6;">
+          <div style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:#6B6860;margin-bottom:8px;">LAA performers</div>
+          
+          
+            
+            <div style="font-size:12px;margin-bottom:5px;">
+              <span style="font-weight:600;">Mike Trout</span>
+              <span style="font-family:'DM Mono',monospace;font-size:11px;color:#1B3A6B;margin-left:6px;">3-4 (1 HR, 1 RBI, 1 BB)</span>
+            </div>
+            
+            <div style="font-size:12px;margin-bottom:5px;">
+              <span style="font-weight:600;">Josh Lowe</span>
+              <span style="font-family:'DM Mono',monospace;font-size:11px;color:#1B3A6B;margin-left:6px;">2-4 (1 HR, 3 RBI)</span>
+            </div>
+            
+            <div style="font-size:12px;margin-bottom:5px;">
+              <span style="font-weight:600;">Zach Neto</span>
+              <span style="font-family:'DM Mono',monospace;font-size:11px;color:#1B3A6B;margin-left:6px;">2-5 (1 HR, 1 RBI)</span>
+            </div>
+            
+          
+        </div>
+        <div style="padding:10px 20px 12px;">
+          <div style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:#6B6860;margin-bottom:8px;">HOU performers</div>
+          
+          
+            
+            <div style="font-size:12px;margin-bottom:5px;">
+              <span style="font-weight:600;">Jeremy Peña</span>
+              <span style="font-family:'DM Mono',monospace;font-size:11px;color:#1B3A6B;margin-left:6px;">2-5 (1 R)</span>
+            </div>
+            
+            <div style="font-size:12px;margin-bottom:5px;">
+              <span style="font-weight:600;">Carlos Correa</span>
+              <span style="font-family:'DM Mono',monospace;font-size:11px;color:#1B3A6B;margin-left:6px;">2-3 (1 BB)</span>
+            </div>
+            
+          
+        </div>
+      </div>
+
+      <!-- Takes - full width rows -->
+      <div style="border-top:1px solid #E0DDD6;padding:12px 20px;background:#F7F5F0;">
+        <span style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:#1B3A6B;">Bettor signal</span>
+        <span style="font-size:12px;color:#111111;margin-left:10px;">Data pending — rolling signal analysis available above.</span>
+      </div>
+      <div style="border-top:1px solid #E0DDD6;padding:12px 20px;background:#F7F5F0;">
+        <span style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:#1A6B3C;">Fantasy signal</span>
+        <span style="font-size:12px;color:#111111;margin-left:10px;">Data pending — check injury log for lineup impact.</span>
+      </div>
+
+    </div><!-- /game-card -->
+    
+    <!-- GAME CARD -->
+    <div style="background:#FFFFFF;border:1px solid #E0DDD6;margin-bottom:16px;">
+
+      <!-- Card header -->
+      <div class="game-card-header" style="display:flex;justify-content:space-between;align-items:stretch;padding:16px 20px;border-bottom:1px solid #E0DDD6;background:#F7F5F0;">
+        <div>
+          <div style="font-family:'DM Sans',sans-serif;font-size:16px;font-weight:600;color:#111111;letter-spacing:-0.2px;">
+            
+              <span>KC</span>
+            
+            <span style="color:#E0DDD6;margin:0 6px;font-weight:300;">@</span>
+            
+              <span style="color:#1B3A6B;">ATL</span>
+            
+          </div>
+          <div style="font-family:'DM Mono',monospace;font-size:10px;color:#6B6860;margin-top:5px;letter-spacing:0.5px;">Truist Park</div>
+        </div>
+        <div class="game-score" style="display:flex;align-items:stretch;gap:0;border-left:1px solid #E0DDD6;margin-left:16px;">
+          <div style="display:flex;flex-direction:column;align-items:center;justify-content:center;padding:6px 16px;min-width:52px;">
+            <div style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:2px;color:#6B6860;text-transform:uppercase;">KC</div>
+            <div style="font-family:'Playfair Display',serif;font-size:24px;font-weight:600;line-height:1.1;color:#111111;">0</div>
+          </div>
+          <div style="display:flex;flex-direction:column;align-items:center;justify-content:center;padding:6px 16px;min-width:52px;border-left:1px solid #E0DDD6;">
+            <div style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:2px;color:#6B6860;text-transform:uppercase;">ATL</div>
+            <div style="font-family:'Playfair Display',serif;font-size:24px;font-weight:600;line-height:1.1;color:#1B3A6B;">6</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Polymarket strip deferred to v2 -->
+
+      <!-- Quick read -->
+      
+
+      <!-- Away team: starter + performers -->
+      <div class="two-col" style="display:grid;grid-template-columns:1fr 1fr;border-bottom:1px solid #E0DDD6;">
+        <div style="padding:14px 20px;border-right:1px solid #E0DDD6;">
+          <div style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:#6B6860;margin-bottom:6px;">KC starter</div>
+          
+          
+          <div style="font-weight:600;font-size:14px;margin-bottom:5px;">Cole Ragans</div>
+          <div class="pitcher-line" style="font-family:'DM Mono',monospace;font-size:11px;background:#F7F5F0;padding:4px 8px;color:#111111;margin-bottom:5px;">4.0 IP · 4 ER · 5 K · 6 H · 90 pitches</div>
+          
+          
+        </div>
+        <div style="padding:14px 20px;">
+          <div style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:#6B6860;margin-bottom:6px;">ATL starter</div>
+          
+          
+          <div style="font-weight:600;font-size:14px;margin-bottom:5px;">Chris Sale</div>
+          <div class="pitcher-line" style="font-family:'DM Mono',monospace;font-size:11px;background:#F7F5F0;padding:4px 8px;color:#111111;margin-bottom:5px;">6.0 IP · 0 ER · 6 K · 3 H · 88 pitches</div>
+          
+          
+        </div>
+      </div>
+
+      <!-- Top batters: away left, home right -->
+      <div class="two-col" style="border-bottom:1px solid #E0DDD6;display:grid;grid-template-columns:1fr 1fr;">
+        <div style="padding:10px 20px 12px;border-right:1px solid #E0DDD6;">
+          <div style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:#6B6860;margin-bottom:8px;">KC performers</div>
+          
+          
+            
+            <div style="font-size:12px;margin-bottom:5px;">
+              <span style="font-weight:600;">Bobby Witt Jr.</span>
+              <span style="font-family:'DM Mono',monospace;font-size:11px;color:#1B3A6B;margin-left:6px;">2-4</span>
+            </div>
+            
+          
+        </div>
+        <div style="padding:10px 20px 12px;">
+          <div style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:#6B6860;margin-bottom:8px;">ATL performers</div>
+          
+          
+            
+            <div style="font-size:12px;margin-bottom:5px;">
+              <span style="font-weight:600;">Ozzie Albies</span>
+              <span style="font-family:'DM Mono',monospace;font-size:11px;color:#1B3A6B;margin-left:6px;">2-4 (1 HR, 1 RBI)</span>
+            </div>
+            
+            <div style="font-size:12px;margin-bottom:5px;">
+              <span style="font-weight:600;">Austin Riley</span>
+              <span style="font-family:'DM Mono',monospace;font-size:11px;color:#1B3A6B;margin-left:6px;">3-3 (1 R, 1 BB)</span>
+            </div>
+            
+            <div style="font-size:12px;margin-bottom:5px;">
+              <span style="font-weight:600;">Matt Olson</span>
+              <span style="font-family:'DM Mono',monospace;font-size:11px;color:#1B3A6B;margin-left:6px;">2-4 (1 R)</span>
+            </div>
+            
+          
+        </div>
+      </div>
+
+      <!-- Takes - full width rows -->
+      <div style="border-top:1px solid #E0DDD6;padding:12px 20px;background:#F7F5F0;">
+        <span style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:#1B3A6B;">Bettor signal</span>
+        <span style="font-size:12px;color:#111111;margin-left:10px;">Data pending — rolling signal analysis available above.</span>
+      </div>
+      <div style="border-top:1px solid #E0DDD6;padding:12px 20px;background:#F7F5F0;">
+        <span style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:#1A6B3C;">Fantasy signal</span>
+        <span style="font-size:12px;color:#111111;margin-left:10px;">Data pending — check injury log for lineup impact.</span>
+      </div>
+
+    </div><!-- /game-card -->
+    
+
+
+
+    <!-- ROLLING TABLES -->
+    <div style="font-family:'DM Mono',monospace;font-size:10px;letter-spacing:3px;text-transform:uppercase;color:#6B6860;padding:28px 0 12px;border-bottom:1px solid #E0DDD6;margin-bottom:20px;" id="rankings">Rolling performance tables · updated daily</div>
+
+    <!-- BULLPEN TABLE -->
+    <div style="font-family:'DM Mono',monospace;font-size:10px;letter-spacing:2.5px;text-transform:uppercase;color:#111111;font-weight:500;margin-bottom:6px;">Bullpen rankings</div>
+    <div style="font-size:12px;color:#6B6860;line-height:1.8;margin-bottom:10px;">
+      <div>📊 Sorted by <strong style="color:#111111;">7-day ERA</strong> — most recent form. Lower = better.</div>
+      <div>🔬 <strong style="color:#111111;">FIP</strong> strips out luck and defense. ERA &gt; FIP by 1.0+ = bullpen likely to improve.</div>
+      <div>⚡ <strong style="color:#111111;">K%</strong> = strikeout rate. Higher means better raw stuff.</div>
+      <div>📈 <strong style="color:#111111;">Momentum</strong> = 28d rank minus 7d rank. Positive = trending up, possibly underpriced.</div>
+      <div>🎯 <strong style="color:#111111;">Signal</strong> = Value/Fade/Watch based on momentum + schedule strength.</div>
+    </div>
+
+    <table width="100%" cellpadding="0" cellspacing="0" style="border-collapse:collapse;font-size:12px;margin-bottom:24px;">
+      <thead>
+        <tr style="background:#111111;color:#FFFFFF;">
+          <th style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:2px;text-transform:uppercase;padding:8px 10px;text-align:left;font-weight:500;">#</th>
+          <th style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:2px;text-transform:uppercase;padding:8px 10px;text-align:left;font-weight:500;">Team</th>
+          <th style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:2px;text-transform:uppercase;padding:8px 10px;text-align:right;font-weight:500;">7d ERA</th>
+          <th class="hide-mobile" style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:2px;text-transform:uppercase;padding:8px 10px;text-align:right;font-weight:500;">14d ERA</th>
+          <th class="hide-mobile" style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:2px;text-transform:uppercase;padding:8px 10px;text-align:right;font-weight:500;">28d ERA</th>
+          <th style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:2px;text-transform:uppercase;padding:8px 10px;text-align:right;font-weight:500;">FIP</th>
+          <th style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:2px;text-transform:uppercase;padding:8px 10px;text-align:right;font-weight:500;">K%</th>
+          <th style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:2px;text-transform:uppercase;padding:8px 10px;text-align:right;font-weight:500;">Mom.</th>
+          <th style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:2px;text-transform:uppercase;padding:8px 10px;text-align:left;font-weight:500;">Signal</th>
+        </tr>
+      </thead>
+      <tbody>
+        
+        <tr style="border-bottom:1px solid #E0DDD6;background:#E8F2EC;">
+          <td style="padding:8px 10px;font-family:'DM Mono',monospace;font-size:11px;color:#6B6860;">1</td>
+          <td style="padding:8px 10px;font-weight:500;font-size:13px;">ATL</td>
+          <td style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">0.00</td>
+          <td class="hide-mobile" style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">0.00</td>
+          <td class="hide-mobile" style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">0.00</td>
+          <td style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">1.77</td>
+          <td style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">18.2%</td>
+          <td style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;color:#6B6860;">0</td>
+          <td style="padding:8px 10px;"><span style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:1px;text-transform:uppercase;padding:2px 7px;display:inline-block;background:#EFECE6;color:#6B6860;" class="signal-badge">Neutral</span></td>
+        </tr>
+        
+        <tr style="border-bottom:1px solid #E0DDD6;background:#E8F2EC;">
+          <td style="padding:8px 10px;font-family:'DM Mono',monospace;font-size:11px;color:#6B6860;">2</td>
+          <td style="padding:8px 10px;font-weight:500;font-size:13px;">BOS</td>
+          <td style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">0.00</td>
+          <td class="hide-mobile" style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">0.00</td>
+          <td class="hide-mobile" style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">0.00</td>
+          <td style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">1.43</td>
+          <td style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">36.4%</td>
+          <td style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;color:#6B6860;">0</td>
+          <td style="padding:8px 10px;"><span style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:1px;text-transform:uppercase;padding:2px 7px;display:inline-block;background:#EFECE6;color:#6B6860;" class="signal-badge">Neutral</span></td>
+        </tr>
+        
+        <tr style="border-bottom:1px solid #E0DDD6;background:#E8F2EC;">
+          <td style="padding:8px 10px;font-family:'DM Mono',monospace;font-size:11px;color:#6B6860;">3</td>
+          <td style="padding:8px 10px;font-weight:500;font-size:13px;">COL</td>
+          <td style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">0.00</td>
+          <td class="hide-mobile" style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">0.00</td>
+          <td class="hide-mobile" style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">0.00</td>
+          <td style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">1.99</td>
+          <td style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">14.5%</td>
+          <td style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;color:#6B6860;">0</td>
+          <td style="padding:8px 10px;"><span style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:1px;text-transform:uppercase;padding:2px 7px;display:inline-block;background:#EFECE6;color:#6B6860;" class="signal-badge">Neutral</span></td>
+        </tr>
+        
+        <tr style="border-bottom:1px solid #E0DDD6;background:#E8F2EC;">
+          <td style="padding:8px 10px;font-family:'DM Mono',monospace;font-size:11px;color:#6B6860;">4</td>
+          <td style="padding:8px 10px;font-weight:500;font-size:13px;">LAA</td>
+          <td style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">0.00</td>
+          <td class="hide-mobile" style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">0.00</td>
+          <td class="hide-mobile" style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">0.00</td>
+          <td style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">2.32</td>
+          <td style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">32.0%</td>
+          <td style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;color:#6B6860;">0</td>
+          <td style="padding:8px 10px;"><span style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:1px;text-transform:uppercase;padding:2px 7px;display:inline-block;background:#EFECE6;color:#6B6860;" class="signal-badge">Neutral</span></td>
+        </tr>
+        
+        <tr style="border-bottom:1px solid #E0DDD6;background:#E8F2EC;">
+          <td style="padding:8px 10px;font-family:'DM Mono',monospace;font-size:11px;color:#6B6860;">5</td>
+          <td style="padding:8px 10px;font-weight:500;font-size:13px;">LAD</td>
+          <td style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">0.00</td>
+          <td class="hide-mobile" style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">0.00</td>
+          <td class="hide-mobile" style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">0.00</td>
+          <td style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">1.95</td>
+          <td style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">24.9%</td>
+          <td style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;color:#6B6860;">0</td>
+          <td style="padding:8px 10px;"><span style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:1px;text-transform:uppercase;padding:2px 7px;display:inline-block;background:#EFECE6;color:#6B6860;" class="signal-badge">Neutral</span></td>
+        </tr>
+        
+        <tr style="border-bottom:1px solid #E0DDD6;background:#FFFFFF;">
+          <td style="padding:8px 10px;font-family:'DM Mono',monospace;font-size:11px;color:#6B6860;">6</td>
+          <td style="padding:8px 10px;font-weight:500;font-size:13px;">MIA</td>
+          <td style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">0.00</td>
+          <td class="hide-mobile" style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">0.00</td>
+          <td class="hide-mobile" style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">0.00</td>
+          <td style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">-0.90</td>
+          <td style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">44.4%</td>
+          <td style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;color:#6B6860;">0</td>
+          <td style="padding:8px 10px;"><span style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:1px;text-transform:uppercase;padding:2px 7px;display:inline-block;background:#EFECE6;color:#6B6860;" class="signal-badge">Neutral</span></td>
+        </tr>
+        
+        <tr style="border-bottom:1px solid #E0DDD6;background:#FFFFFF;">
+          <td style="padding:8px 10px;font-family:'DM Mono',monospace;font-size:11px;color:#6B6860;">7</td>
+          <td style="padding:8px 10px;font-weight:500;font-size:13px;">NYY</td>
+          <td style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">0.00</td>
+          <td class="hide-mobile" style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">0.00</td>
+          <td class="hide-mobile" style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">0.00</td>
+          <td style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">2.32</td>
+          <td style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">30.2%</td>
+          <td style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;color:#6B6860;">0</td>
+          <td style="padding:8px 10px;"><span style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:1px;text-transform:uppercase;padding:2px 7px;display:inline-block;background:#EFECE6;color:#6B6860;" class="signal-badge">Neutral</span></td>
+        </tr>
+        
+        <tr style="border-bottom:1px solid #E0DDD6;background:#FFFFFF;">
+          <td style="padding:8px 10px;font-family:'DM Mono',monospace;font-size:11px;color:#6B6860;">8</td>
+          <td style="padding:8px 10px;font-weight:500;font-size:13px;">TEX</td>
+          <td style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">0.00</td>
+          <td class="hide-mobile" style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">0.00</td>
+          <td class="hide-mobile" style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">0.00</td>
+          <td style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">2.19</td>
+          <td style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">23.3%</td>
+          <td style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;color:#6B6860;">0</td>
+          <td style="padding:8px 10px;"><span style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:1px;text-transform:uppercase;padding:2px 7px;display:inline-block;background:#EFECE6;color:#6B6860;" class="signal-badge">Neutral</span></td>
+        </tr>
+        
+        <tr style="border-bottom:1px solid #E0DDD6;background:#FFFFFF;">
+          <td style="padding:8px 10px;font-family:'DM Mono',monospace;font-size:11px;color:#6B6860;">9</td>
+          <td style="padding:8px 10px;font-weight:500;font-size:13px;">SF</td>
+          <td style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">1.17</td>
+          <td class="hide-mobile" style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">1.17</td>
+          <td class="hide-mobile" style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">1.17</td>
+          <td style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">4.66</td>
+          <td style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">24.9%</td>
+          <td style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;color:#6B6860;">0</td>
+          <td style="padding:8px 10px;"><span style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:1px;text-transform:uppercase;padding:2px 7px;display:inline-block;background:#EFECE6;color:#6B6860;" class="signal-badge">Neutral</span></td>
+        </tr>
+        
+        <tr style="border-bottom:1px solid #E0DDD6;background:#FFFFFF;">
+          <td style="padding:8px 10px;font-family:'DM Mono',monospace;font-size:11px;color:#6B6860;">10</td>
+          <td style="padding:8px 10px;font-weight:500;font-size:13px;">DET</td>
+          <td style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">1.50</td>
+          <td class="hide-mobile" style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">1.50</td>
+          <td class="hide-mobile" style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">1.50</td>
+          <td style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">4.60</td>
+          <td style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">32.0%</td>
+          <td style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;color:#6B6860;">0</td>
+          <td style="padding:8px 10px;"><span style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:1px;text-transform:uppercase;padding:2px 7px;display:inline-block;background:#EFECE6;color:#6B6860;" class="signal-badge">Neutral</span></td>
+        </tr>
+        
+        <tr style="border-bottom:1px solid #E0DDD6;background:#FFFFFF;">
+          <td style="padding:8px 10px;font-family:'DM Mono',monospace;font-size:11px;color:#6B6860;">11</td>
+          <td style="padding:8px 10px;font-weight:500;font-size:13px;">WSH</td>
+          <td style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">1.70</td>
+          <td class="hide-mobile" style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">1.70</td>
+          <td class="hide-mobile" style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">1.70</td>
+          <td style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">3.29</td>
+          <td style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">16.7%</td>
+          <td style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;color:#6B6860;">0</td>
+          <td style="padding:8px 10px;"><span style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:1px;text-transform:uppercase;padding:2px 7px;display:inline-block;background:#EFECE6;color:#6B6860;" class="signal-badge">Neutral</span></td>
+        </tr>
+        
+        <tr style="border-bottom:1px solid #E0DDD6;background:#FFFFFF;">
+          <td style="padding:8px 10px;font-family:'DM Mono',monospace;font-size:11px;color:#6B6860;">12</td>
+          <td style="padding:8px 10px;font-weight:500;font-size:13px;">MIL</td>
+          <td style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">2.25</td>
+          <td class="hide-mobile" style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">2.25</td>
+          <td class="hide-mobile" style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">2.25</td>
+          <td style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">3.35</td>
+          <td style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">56.2%</td>
+          <td style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;color:#6B6860;">0</td>
+          <td style="padding:8px 10px;"><span style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:1px;text-transform:uppercase;padding:2px 7px;display:inline-block;background:#EFECE6;color:#6B6860;" class="signal-badge">Neutral</span></td>
+        </tr>
+        
+        <tr style="border-bottom:1px solid #E0DDD6;background:#FFFFFF;">
+          <td style="padding:8px 10px;font-family:'DM Mono',monospace;font-size:11px;color:#6B6860;">13</td>
+          <td style="padding:8px 10px;font-weight:500;font-size:13px;">ATH</td>
+          <td style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">2.43</td>
+          <td class="hide-mobile" style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">2.43</td>
+          <td class="hide-mobile" style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">2.43</td>
+          <td style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">3.91</td>
+          <td style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">0.0%</td>
+          <td style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;color:#6B6860;">0</td>
+          <td style="padding:8px 10px;"><span style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:1px;text-transform:uppercase;padding:2px 7px;display:inline-block;background:#EFECE6;color:#6B6860;" class="signal-badge">Neutral</span></td>
+        </tr>
+        
+        <tr style="border-bottom:1px solid #E0DDD6;background:#FFFFFF;">
+          <td style="padding:8px 10px;font-family:'DM Mono',monospace;font-size:11px;color:#6B6860;">14</td>
+          <td style="padding:8px 10px;font-weight:500;font-size:13px;">TOR</td>
+          <td style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">3.00</td>
+          <td class="hide-mobile" style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">3.00</td>
+          <td class="hide-mobile" style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">3.00</td>
+          <td style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">6.10</td>
+          <td style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">38.5%</td>
+          <td style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;color:#6B6860;">0</td>
+          <td style="padding:8px 10px;"><span style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:1px;text-transform:uppercase;padding:2px 7px;display:inline-block;background:#EFECE6;color:#6B6860;" class="signal-badge">Neutral</span></td>
+        </tr>
+        
+        <tr style="border-bottom:1px solid #E0DDD6;background:#FFFFFF;">
+          <td style="padding:8px 10px;font-family:'DM Mono',monospace;font-size:11px;color:#6B6860;">15</td>
+          <td style="padding:8px 10px;font-weight:500;font-size:13px;">CHC</td>
+          <td style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">3.40</td>
+          <td class="hide-mobile" style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">3.40</td>
+          <td class="hide-mobile" style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">3.40</td>
+          <td style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">6.68</td>
+          <td style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">22.8%</td>
+          <td style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;color:#6B6860;">0</td>
+          <td style="padding:8px 10px;"><span style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:1px;text-transform:uppercase;padding:2px 7px;display:inline-block;background:#EFECE6;color:#6B6860;" class="signal-badge">Neutral</span></td>
+        </tr>
+        
+        <tr style="border-bottom:1px solid #E0DDD6;background:#FFFFFF;">
+          <td style="padding:8px 10px;font-family:'DM Mono',monospace;font-size:11px;color:#6B6860;">16</td>
+          <td style="padding:8px 10px;font-weight:500;font-size:13px;">CLE</td>
+          <td style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">3.86</td>
+          <td class="hide-mobile" style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">3.86</td>
+          <td class="hide-mobile" style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">3.86</td>
+          <td style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">4.39</td>
+          <td style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">40.0%</td>
+          <td style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;color:#6B6860;">0</td>
+          <td style="padding:8px 10px;"><span style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:1px;text-transform:uppercase;padding:2px 7px;display:inline-block;background:#EFECE6;color:#6B6860;" class="signal-badge">Neutral</span></td>
+        </tr>
+        
+        <tr style="border-bottom:1px solid #E0DDD6;background:#FFFFFF;">
+          <td style="padding:8px 10px;font-family:'DM Mono',monospace;font-size:11px;color:#6B6860;">17</td>
+          <td style="padding:8px 10px;font-weight:500;font-size:13px;">SEA</td>
+          <td style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">4.03</td>
+          <td class="hide-mobile" style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">4.03</td>
+          <td class="hide-mobile" style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">4.03</td>
+          <td style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">4.29</td>
+          <td style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">21.8%</td>
+          <td style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;color:#6B6860;">0</td>
+          <td style="padding:8px 10px;"><span style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:1px;text-transform:uppercase;padding:2px 7px;display:inline-block;background:#EFECE6;color:#6B6860;" class="signal-badge">Neutral</span></td>
+        </tr>
+        
+        <tr style="border-bottom:1px solid #E0DDD6;background:#FFFFFF;">
+          <td style="padding:8px 10px;font-family:'DM Mono',monospace;font-size:11px;color:#6B6860;">18</td>
+          <td style="padding:8px 10px;font-weight:500;font-size:13px;">BAL</td>
+          <td style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">4.50</td>
+          <td class="hide-mobile" style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">4.50</td>
+          <td class="hide-mobile" style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">4.50</td>
+          <td style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">-0.90</td>
+          <td style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">50.0%</td>
+          <td style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;color:#6B6860;">0</td>
+          <td style="padding:8px 10px;"><span style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:1px;text-transform:uppercase;padding:2px 7px;display:inline-block;background:#EFECE6;color:#6B6860;" class="signal-badge">Neutral</span></td>
+        </tr>
+        
+        <tr style="border-bottom:1px solid #E0DDD6;background:#FFFFFF;">
+          <td style="padding:8px 10px;font-family:'DM Mono',monospace;font-size:11px;color:#6B6860;">19</td>
+          <td style="padding:8px 10px;font-weight:500;font-size:13px;">KC</td>
+          <td style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">4.50</td>
+          <td class="hide-mobile" style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">4.50</td>
+          <td class="hide-mobile" style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">4.50</td>
+          <td style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">0.60</td>
+          <td style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">29.4%</td>
+          <td style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;color:#6B6860;">0</td>
+          <td style="padding:8px 10px;"><span style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:1px;text-transform:uppercase;padding:2px 7px;display:inline-block;background:#EFECE6;color:#6B6860;" class="signal-badge">Neutral</span></td>
+        </tr>
+        
+        <tr style="border-bottom:1px solid #E0DDD6;background:#FFFFFF;">
+          <td style="padding:8px 10px;font-family:'DM Mono',monospace;font-size:11px;color:#6B6860;">20</td>
+          <td style="padding:8px 10px;font-weight:500;font-size:13px;">HOU</td>
+          <td style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">4.68</td>
+          <td class="hide-mobile" style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">4.68</td>
+          <td class="hide-mobile" style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">4.68</td>
+          <td style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">7.91</td>
+          <td style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">27.7%</td>
+          <td style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;color:#6B6860;">0</td>
+          <td style="padding:8px 10px;"><span style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:1px;text-transform:uppercase;padding:2px 7px;display:inline-block;background:#EFECE6;color:#6B6860;" class="signal-badge">Neutral</span></td>
+        </tr>
+        
+        <tr style="border-bottom:1px solid #E0DDD6;background:#FFFFFF;">
+          <td style="padding:8px 10px;font-family:'DM Mono',monospace;font-size:11px;color:#6B6860;">21</td>
+          <td style="padding:8px 10px;font-weight:500;font-size:13px;">SD</td>
+          <td style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">5.40</td>
+          <td class="hide-mobile" style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">5.40</td>
+          <td class="hide-mobile" style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">5.40</td>
+          <td style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">4.10</td>
+          <td style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">20.0%</td>
+          <td style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;color:#6B6860;">0</td>
+          <td style="padding:8px 10px;"><span style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:1px;text-transform:uppercase;padding:2px 7px;display:inline-block;background:#EFECE6;color:#6B6860;" class="signal-badge">Neutral</span></td>
+        </tr>
+        
+        <tr style="border-bottom:1px solid #E0DDD6;background:#FFFFFF;">
+          <td style="padding:8px 10px;font-family:'DM Mono',monospace;font-size:11px;color:#6B6860;">22</td>
+          <td style="padding:8px 10px;font-weight:500;font-size:13px;">ARI</td>
+          <td style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">6.16</td>
+          <td class="hide-mobile" style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">6.16</td>
+          <td class="hide-mobile" style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">6.16</td>
+          <td style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">5.29</td>
+          <td style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">9.4%</td>
+          <td style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;color:#6B6860;">0</td>
+          <td style="padding:8px 10px;"><span style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:1px;text-transform:uppercase;padding:2px 7px;display:inline-block;background:#EFECE6;color:#6B6860;" class="signal-badge">Neutral</span></td>
+        </tr>
+        
+        <tr style="border-bottom:1px solid #E0DDD6;background:#FFFFFF;">
+          <td style="padding:8px 10px;font-family:'DM Mono',monospace;font-size:11px;color:#6B6860;">23</td>
+          <td style="padding:8px 10px;font-weight:500;font-size:13px;">MIN</td>
+          <td style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">6.67</td>
+          <td class="hide-mobile" style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">6.67</td>
+          <td class="hide-mobile" style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">6.67</td>
+          <td style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">3.47</td>
+          <td style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">7.6%</td>
+          <td style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;color:#6B6860;">0</td>
+          <td style="padding:8px 10px;"><span style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:1px;text-transform:uppercase;padding:2px 7px;display:inline-block;background:#EFECE6;color:#6B6860;" class="signal-badge">Neutral</span></td>
+        </tr>
+        
+        <tr style="border-bottom:1px solid #E0DDD6;background:#FFFFFF;">
+          <td style="padding:8px 10px;font-family:'DM Mono',monospace;font-size:11px;color:#6B6860;">24</td>
+          <td style="padding:8px 10px;font-weight:500;font-size:13px;">NYM</td>
+          <td style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">6.75</td>
+          <td class="hide-mobile" style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">6.75</td>
+          <td class="hide-mobile" style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">6.75</td>
+          <td style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">4.85</td>
+          <td style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">18.8%</td>
+          <td style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;color:#6B6860;">0</td>
+          <td style="padding:8px 10px;"><span style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:1px;text-transform:uppercase;padding:2px 7px;display:inline-block;background:#EFECE6;color:#6B6860;" class="signal-badge">Neutral</span></td>
+        </tr>
+        
+        <tr style="border-bottom:1px solid #E0DDD6;background:#FFFFFF;">
+          <td style="padding:8px 10px;font-family:'DM Mono',monospace;font-size:11px;color:#6B6860;">25</td>
+          <td style="padding:8px 10px;font-weight:500;font-size:13px;">PIT</td>
+          <td style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">7.40</td>
+          <td class="hide-mobile" style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">7.40</td>
+          <td class="hide-mobile" style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">7.40</td>
+          <td style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">7.07</td>
+          <td style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">25.1%</td>
+          <td style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;color:#6B6860;">0</td>
+          <td style="padding:8px 10px;"><span style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:1px;text-transform:uppercase;padding:2px 7px;display:inline-block;background:#EFECE6;color:#6B6860;" class="signal-badge">Neutral</span></td>
+        </tr>
+        
+        <tr style="border-bottom:1px solid #E0DDD6;background:#F5EAE8;">
+          <td style="padding:8px 10px;font-family:'DM Mono',monospace;font-size:11px;color:#6B6860;">26</td>
+          <td style="padding:8px 10px;font-weight:500;font-size:13px;">CIN</td>
+          <td style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">9.00</td>
+          <td class="hide-mobile" style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">9.00</td>
+          <td class="hide-mobile" style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">9.00</td>
+          <td style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">3.10</td>
+          <td style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">18.8%</td>
+          <td style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;color:#6B6860;">0</td>
+          <td style="padding:8px 10px;"><span style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:1px;text-transform:uppercase;padding:2px 7px;display:inline-block;background:#EFECE6;color:#6B6860;" class="signal-badge">Neutral</span></td>
+        </tr>
+        
+        <tr style="border-bottom:1px solid #E0DDD6;background:#F5EAE8;">
+          <td style="padding:8px 10px;font-family:'DM Mono',monospace;font-size:11px;color:#6B6860;">27</td>
+          <td style="padding:8px 10px;font-weight:500;font-size:13px;">PHI</td>
+          <td style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">9.00</td>
+          <td class="hide-mobile" style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">9.00</td>
+          <td class="hide-mobile" style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">9.00</td>
+          <td style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">7.77</td>
+          <td style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">6.7%</td>
+          <td style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;color:#6B6860;">0</td>
+          <td style="padding:8px 10px;"><span style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:1px;text-transform:uppercase;padding:2px 7px;display:inline-block;background:#EFECE6;color:#6B6860;" class="signal-badge">Neutral</span></td>
+        </tr>
+        
+        <tr style="border-bottom:1px solid #E0DDD6;background:#F5EAE8;">
+          <td style="padding:8px 10px;font-family:'DM Mono',monospace;font-size:11px;color:#6B6860;">28</td>
+          <td style="padding:8px 10px;font-weight:500;font-size:13px;">STL</td>
+          <td style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">13.85</td>
+          <td class="hide-mobile" style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">13.85</td>
+          <td class="hide-mobile" style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">13.85</td>
+          <td style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">4.64</td>
+          <td style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">11.7%</td>
+          <td style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;color:#6B6860;">0</td>
+          <td style="padding:8px 10px;"><span style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:1px;text-transform:uppercase;padding:2px 7px;display:inline-block;background:#EFECE6;color:#6B6860;" class="signal-badge">Neutral</span></td>
+        </tr>
+        
+        <tr style="border-bottom:1px solid #E0DDD6;background:#F5EAE8;">
+          <td style="padding:8px 10px;font-family:'DM Mono',monospace;font-size:11px;color:#6B6860;">29</td>
+          <td style="padding:8px 10px;font-weight:500;font-size:13px;">CWS</td>
+          <td style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">14.29</td>
+          <td class="hide-mobile" style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">14.29</td>
+          <td class="hide-mobile" style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">14.29</td>
+          <td style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">10.72</td>
+          <td style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">2.8%</td>
+          <td style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;color:#6B6860;">0</td>
+          <td style="padding:8px 10px;"><span style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:1px;text-transform:uppercase;padding:2px 7px;display:inline-block;background:#EFECE6;color:#6B6860;" class="signal-badge">Neutral</span></td>
+        </tr>
+        
+        <tr style="border-bottom:1px solid #E0DDD6;background:#F5EAE8;">
+          <td style="padding:8px 10px;font-family:'DM Mono',monospace;font-size:11px;color:#6B6860;">30</td>
+          <td style="padding:8px 10px;font-weight:500;font-size:13px;">TB</td>
+          <td style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">24.00</td>
+          <td class="hide-mobile" style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">24.00</td>
+          <td class="hide-mobile" style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">24.00</td>
+          <td style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">7.77</td>
+          <td style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">5.0%</td>
+          <td style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;color:#6B6860;">0</td>
+          <td style="padding:8px 10px;"><span style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:1px;text-transform:uppercase;padding:2px 7px;display:inline-block;background:#EFECE6;color:#6B6860;" class="signal-badge">Neutral</span></td>
+        </tr>
+        
+      </tbody>
+    </table>
+    <div style="font-family:'DM Mono',monospace;font-size:10px;color:#6B6860;text-align:right;margin-top:-18px;margin-bottom:8px;">All 30 teams · sorted by 7d ERA · green = 7d top 5 · red = 7d bottom 5 · full table at compassreport.co</div>
+    <div style="background:#F7F5F0;border:1px solid #E0DDD6;padding:10px 14px;margin-bottom:28px;font-size:11px;color:#6B6860;line-height:1.8;">
+      <strong style="color:#111111;">ERA</strong> Earned run average over rolling window &nbsp;·&nbsp;
+      <strong style="color:#111111;">FIP</strong> Fielding independent pitching — removes defense/luck &nbsp;·&nbsp;
+      <strong style="color:#111111;">K%</strong> Strikeout rate (higher = better) &nbsp;·&nbsp;
+      <strong style="color:#111111;">Mom.</strong> Rank change: 28d rank minus 7d rank (positive = improving) &nbsp;·&nbsp;
+      <strong style="color:#111111;">Signal</strong> Value/Fade/Watch based on momentum + schedule strength
+    </div>
+
+    <hr style="border:none;border-top:1px solid #E0DDD6;margin:20px 0;">
+
+    <!-- SP TABLE -->
+    <div style="font-family:'DM Mono',monospace;font-size:10px;letter-spacing:2.5px;text-transform:uppercase;color:#111111;font-weight:500;margin-bottom:6px;">SP rotation rankings</div>
+    <div style="font-size:12px;color:#6B6860;line-height:1.8;margin-bottom:10px;">
+      <div>📊 Sorted by <strong style="color:#111111;">FIP</strong> — better predictor of future ERA than ERA itself.</div>
+      <div>📉 <strong style="color:#111111;">ERA</strong> shows actual runs allowed. High ERA + low FIP = regression candidate (ERA likely to drop).</div>
+      <div>⚡ <strong style="color:#111111;">K-BB%</strong> = strikeouts minus walks per batter. Best forward indicator of SP quality.</div>
+      <div>🚶 <strong style="color:#111111;">WHIP</strong> = walks + hits per inning. Measures baserunner control.</div>
+      <div>📈 <strong style="color:#111111;">Momentum</strong> = 28d rank minus 7d rank. Positive = rotation trending up.</div>
+    </div>
+
+    <table width="100%" cellpadding="0" cellspacing="0" style="border-collapse:collapse;font-size:12px;margin-bottom:24px;">
+      <thead>
+        <tr style="background:#111111;color:#FFFFFF;">
+          <th style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:2px;text-transform:uppercase;padding:8px 10px;text-align:left;font-weight:500;">#</th>
+          <th style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:2px;text-transform:uppercase;padding:8px 10px;text-align:left;font-weight:500;">Team</th>
+          <th style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:2px;text-transform:uppercase;padding:8px 10px;text-align:right;font-weight:500;">7d ERA</th>
+          <th class="hide-mobile" style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:2px;text-transform:uppercase;padding:8px 10px;text-align:right;font-weight:500;">14d ERA</th>
+          <th class="hide-mobile" style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:2px;text-transform:uppercase;padding:8px 10px;text-align:right;font-weight:500;">28d ERA</th>
+          <th style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:2px;text-transform:uppercase;padding:8px 10px;text-align:right;font-weight:500;">FIP</th>
+          <th style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:2px;text-transform:uppercase;padding:8px 10px;text-align:right;font-weight:500;">K-BB%</th>
+          <th class="hide-mobile" style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:2px;text-transform:uppercase;padding:8px 10px;text-align:right;font-weight:500;">WHIP</th>
+          <th style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:2px;text-transform:uppercase;padding:8px 10px;text-align:right;font-weight:500;">Mom.</th>
+          <th style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:2px;text-transform:uppercase;padding:8px 10px;text-align:left;font-weight:500;">Signal</th>
+        </tr>
+      </thead>
+      <tbody>
+        
+        <tr style="border-bottom:1px solid #E0DDD6;background:#E8F2EC;">
+          <td style="padding:8px 10px;font-family:'DM Mono',monospace;font-size:11px;color:#6B6860;">1</td>
+          <td style="padding:8px 10px;font-weight:500;font-size:13px;">PHI</td>
+          <td style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">0.00</td>
+          <td class="hide-mobile" style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">0.00</td>
+          <td class="hide-mobile" style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">0.00</td>
+          <td style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">-0.23</td>
+          <td style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">47.6%</td>
+          <td class="hide-mobile" style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">0.50</td>
+          <td style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;color:#6B6860;">0</td>
+          <td style="padding:8px 10px;"><span style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:1px;text-transform:uppercase;padding:2px 7px;display:inline-block;background:#EFECE6;color:#6B6860;" class="signal-badge">Neutral</span></td>
+        </tr>
+        
+        <tr style="border-bottom:1px solid #E0DDD6;background:#E8F2EC;">
+          <td style="padding:8px 10px;font-family:'DM Mono',monospace;font-size:11px;color:#6B6860;">2</td>
+          <td style="padding:8px 10px;font-weight:500;font-size:13px;">NYY</td>
+          <td style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">0.00</td>
+          <td class="hide-mobile" style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">0.00</td>
+          <td class="hide-mobile" style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">0.00</td>
+          <td style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">1.29</td>
+          <td style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">28.4%</td>
+          <td class="hide-mobile" style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">0.34</td>
+          <td style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;color:#6B6860;">0</td>
+          <td style="padding:8px 10px;"><span style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:1px;text-transform:uppercase;padding:2px 7px;display:inline-block;background:#EFECE6;color:#6B6860;" class="signal-badge">Neutral</span></td>
+        </tr>
+        
+        <tr style="border-bottom:1px solid #E0DDD6;background:#E8F2EC;">
+          <td style="padding:8px 10px;font-family:'DM Mono',monospace;font-size:11px;color:#6B6860;">3</td>
+          <td style="padding:8px 10px;font-weight:500;font-size:13px;">BOS</td>
+          <td style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">0.00</td>
+          <td class="hide-mobile" style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">0.00</td>
+          <td class="hide-mobile" style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">0.00</td>
+          <td style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">1.43</td>
+          <td style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">26.1%</td>
+          <td class="hide-mobile" style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">0.83</td>
+          <td style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;color:#6B6860;">0</td>
+          <td style="padding:8px 10px;"><span style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:1px;text-transform:uppercase;padding:2px 7px;display:inline-block;background:#EFECE6;color:#6B6860;" class="signal-badge">Neutral</span></td>
+        </tr>
+        
+        <tr style="border-bottom:1px solid #E0DDD6;background:#E8F2EC;">
+          <td style="padding:8px 10px;font-family:'DM Mono',monospace;font-size:11px;color:#6B6860;">4</td>
+          <td style="padding:8px 10px;font-weight:500;font-size:13px;">DET</td>
+          <td style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">0.75</td>
+          <td class="hide-mobile" style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">0.75</td>
+          <td class="hide-mobile" style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">0.75</td>
+          <td style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">1.52</td>
+          <td style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">21.3%</td>
+          <td class="hide-mobile" style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">0.92</td>
+          <td style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;color:#6B6860;">0</td>
+          <td style="padding:8px 10px;"><span style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:1px;text-transform:uppercase;padding:2px 7px;display:inline-block;background:#EFECE6;color:#6B6860;" class="signal-badge">Neutral</span></td>
+        </tr>
+        
+        <tr style="border-bottom:1px solid #E0DDD6;background:#E8F2EC;">
+          <td style="padding:8px 10px;font-family:'DM Mono',monospace;font-size:11px;color:#6B6860;">5</td>
+          <td style="padding:8px 10px;font-weight:500;font-size:13px;">MIN</td>
+          <td style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">0.00</td>
+          <td class="hide-mobile" style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">0.00</td>
+          <td class="hide-mobile" style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">0.00</td>
+          <td style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">1.59</td>
+          <td style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">26.5%</td>
+          <td class="hide-mobile" style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">0.57</td>
+          <td style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;color:#6B6860;">0</td>
+          <td style="padding:8px 10px;"><span style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:1px;text-transform:uppercase;padding:2px 7px;display:inline-block;background:#EFECE6;color:#6B6860;" class="signal-badge">Neutral</span></td>
+        </tr>
+        
+        <tr style="border-bottom:1px solid #E0DDD6;background:#FFFFFF;">
+          <td style="padding:8px 10px;font-family:'DM Mono',monospace;font-size:11px;color:#6B6860;">6</td>
+          <td style="padding:8px 10px;font-weight:500;font-size:13px;">TOR</td>
+          <td style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">1.50</td>
+          <td class="hide-mobile" style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">1.50</td>
+          <td class="hide-mobile" style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">1.50</td>
+          <td style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">1.60</td>
+          <td style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">57.9%</td>
+          <td class="hide-mobile" style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">0.17</td>
+          <td style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;color:#6B6860;">0</td>
+          <td style="padding:8px 10px;"><span style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:1px;text-transform:uppercase;padding:2px 7px;display:inline-block;background:#EFECE6;color:#6B6860;" class="signal-badge">Neutral</span></td>
+        </tr>
+        
+        <tr style="border-bottom:1px solid #E0DDD6;background:#FFFFFF;">
+          <td style="padding:8px 10px;font-family:'DM Mono',monospace;font-size:11px;color:#6B6860;">7</td>
+          <td style="padding:8px 10px;font-weight:500;font-size:13px;">CIN</td>
+          <td style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">0.00</td>
+          <td class="hide-mobile" style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">0.00</td>
+          <td class="hide-mobile" style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">0.00</td>
+          <td style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">2.27</td>
+          <td style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">11.5%</td>
+          <td class="hide-mobile" style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">1.33</td>
+          <td style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;color:#6B6860;">0</td>
+          <td style="padding:8px 10px;"><span style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:1px;text-transform:uppercase;padding:2px 7px;display:inline-block;background:#EFECE6;color:#6B6860;" class="signal-badge">Neutral</span></td>
+        </tr>
+        
+        <tr style="border-bottom:1px solid #E0DDD6;background:#FFFFFF;">
+          <td style="padding:8px 10px;font-family:'DM Mono',monospace;font-size:11px;color:#6B6860;">8</td>
+          <td style="padding:8px 10px;font-weight:500;font-size:13px;">SF</td>
+          <td style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">6.99</td>
+          <td class="hide-mobile" style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">6.99</td>
+          <td class="hide-mobile" style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">6.99</td>
+          <td style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">2.52</td>
+          <td style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">21.8%</td>
+          <td class="hide-mobile" style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">1.46</td>
+          <td style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;color:#6B6860;">0</td>
+          <td style="padding:8px 10px;"><span style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:1px;text-transform:uppercase;padding:2px 7px;display:inline-block;background:#EFECE6;color:#6B6860;" class="signal-badge">Neutral</span></td>
+        </tr>
+        
+        <tr style="border-bottom:1px solid #E0DDD6;background:#FFFFFF;">
+          <td style="padding:8px 10px;font-family:'DM Mono',monospace;font-size:11px;color:#6B6860;">9</td>
+          <td style="padding:8px 10px;font-weight:500;font-size:13px;">MIA</td>
+          <td style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">0.00</td>
+          <td class="hide-mobile" style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">0.00</td>
+          <td class="hide-mobile" style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">0.00</td>
+          <td style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">2.53</td>
+          <td style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">11.1%</td>
+          <td class="hide-mobile" style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">0.86</td>
+          <td style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;color:#6B6860;">0</td>
+          <td style="padding:8px 10px;"><span style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:1px;text-transform:uppercase;padding:2px 7px;display:inline-block;background:#EFECE6;color:#6B6860;" class="signal-badge">Neutral</span></td>
+        </tr>
+        
+        <tr style="border-bottom:1px solid #E0DDD6;background:#FFFFFF;">
+          <td style="padding:8px 10px;font-family:'DM Mono',monospace;font-size:11px;color:#6B6860;">10</td>
+          <td style="padding:8px 10px;font-weight:500;font-size:13px;">ATL</td>
+          <td style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">0.00</td>
+          <td class="hide-mobile" style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">0.00</td>
+          <td class="hide-mobile" style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">0.00</td>
+          <td style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">2.60</td>
+          <td style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">12.5%</td>
+          <td class="hide-mobile" style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">1.00</td>
+          <td style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;color:#6B6860;">0</td>
+          <td style="padding:8px 10px;"><span style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:1px;text-transform:uppercase;padding:2px 7px;display:inline-block;background:#EFECE6;color:#6B6860;" class="signal-badge">Neutral</span></td>
+        </tr>
+        
+        <tr style="border-bottom:1px solid #E0DDD6;background:#FFFFFF;">
+          <td style="padding:8px 10px;font-family:'DM Mono',monospace;font-size:11px;color:#6B6860;">11</td>
+          <td style="padding:8px 10px;font-weight:500;font-size:13px;">WSH</td>
+          <td style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">4.86</td>
+          <td class="hide-mobile" style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">4.86</td>
+          <td class="hide-mobile" style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">4.86</td>
+          <td style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">2.83</td>
+          <td style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">11.7%</td>
+          <td class="hide-mobile" style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">1.62</td>
+          <td style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;color:#6B6860;">0</td>
+          <td style="padding:8px 10px;"><span style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:1px;text-transform:uppercase;padding:2px 7px;display:inline-block;background:#EFECE6;color:#6B6860;" class="signal-badge">Neutral</span></td>
+        </tr>
+        
+        <tr style="border-bottom:1px solid #E0DDD6;background:#FFFFFF;">
+          <td style="padding:8px 10px;font-family:'DM Mono',monospace;font-size:11px;color:#6B6860;">12</td>
+          <td style="padding:8px 10px;font-weight:500;font-size:13px;">MIL</td>
+          <td style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">1.80</td>
+          <td class="hide-mobile" style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">1.80</td>
+          <td class="hide-mobile" style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">1.80</td>
+          <td style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">3.10</td>
+          <td style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">40.0%</td>
+          <td class="hide-mobile" style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">1.00</td>
+          <td style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;color:#6B6860;">0</td>
+          <td style="padding:8px 10px;"><span style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:1px;text-transform:uppercase;padding:2px 7px;display:inline-block;background:#EFECE6;color:#6B6860;" class="signal-badge">Neutral</span></td>
+        </tr>
+        
+        <tr style="border-bottom:1px solid #E0DDD6;background:#FFFFFF;">
+          <td style="padding:8px 10px;font-family:'DM Mono',monospace;font-size:11px;color:#6B6860;">13</td>
+          <td style="padding:8px 10px;font-weight:500;font-size:13px;">SD</td>
+          <td style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">6.75</td>
+          <td class="hide-mobile" style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">6.75</td>
+          <td class="hide-mobile" style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">6.75</td>
+          <td style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">3.23</td>
+          <td style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">7.7%</td>
+          <td class="hide-mobile" style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">1.88</td>
+          <td style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;color:#6B6860;">0</td>
+          <td style="padding:8px 10px;"><span style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:1px;text-transform:uppercase;padding:2px 7px;display:inline-block;background:#EFECE6;color:#6B6860;" class="signal-badge">Neutral</span></td>
+        </tr>
+        
+        <tr style="border-bottom:1px solid #E0DDD6;background:#FFFFFF;">
+          <td style="padding:8px 10px;font-family:'DM Mono',monospace;font-size:11px;color:#6B6860;">14</td>
+          <td style="padding:8px 10px;font-weight:500;font-size:13px;">BAL</td>
+          <td style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">0.00</td>
+          <td class="hide-mobile" style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">0.00</td>
+          <td class="hide-mobile" style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">0.00</td>
+          <td style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">3.39</td>
+          <td style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">3.6%</td>
+          <td class="hide-mobile" style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">1.00</td>
+          <td style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;color:#6B6860;">0</td>
+          <td style="padding:8px 10px;"><span style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:1px;text-transform:uppercase;padding:2px 7px;display:inline-block;background:#EFECE6;color:#6B6860;" class="signal-badge">Neutral</span></td>
+        </tr>
+        
+        <tr style="border-bottom:1px solid #E0DDD6;background:#FFFFFF;">
+          <td style="padding:8px 10px;font-family:'DM Mono',monospace;font-size:11px;color:#6B6860;">15</td>
+          <td style="padding:8px 10px;font-weight:500;font-size:13px;">COL</td>
+          <td style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">4.19</td>
+          <td class="hide-mobile" style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">4.19</td>
+          <td class="hide-mobile" style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">4.19</td>
+          <td style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">3.57</td>
+          <td style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">0.0%</td>
+          <td class="hide-mobile" style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">1.63</td>
+          <td style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;color:#6B6860;">0</td>
+          <td style="padding:8px 10px;"><span style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:1px;text-transform:uppercase;padding:2px 7px;display:inline-block;background:#EFECE6;color:#6B6860;" class="signal-badge">Neutral</span></td>
+        </tr>
+        
+        <tr style="border-bottom:1px solid #E0DDD6;background:#FFFFFF;">
+          <td style="padding:8px 10px;font-family:'DM Mono',monospace;font-size:11px;color:#6B6860;">16</td>
+          <td style="padding:8px 10px;font-weight:500;font-size:13px;">SEA</td>
+          <td style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">3.19</td>
+          <td class="hide-mobile" style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">3.19</td>
+          <td class="hide-mobile" style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">3.19</td>
+          <td style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">3.63</td>
+          <td style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">25.6%</td>
+          <td class="hide-mobile" style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">0.80</td>
+          <td style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;color:#6B6860;">0</td>
+          <td style="padding:8px 10px;"><span style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:1px;text-transform:uppercase;padding:2px 7px;display:inline-block;background:#EFECE6;color:#6B6860;" class="signal-badge">Neutral</span></td>
+        </tr>
+        
+        <tr style="border-bottom:1px solid #E0DDD6;background:#FFFFFF;">
+          <td style="padding:8px 10px;font-family:'DM Mono',monospace;font-size:11px;color:#6B6860;">17</td>
+          <td style="padding:8px 10px;font-weight:500;font-size:13px;">CHC</td>
+          <td style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">14.59</td>
+          <td class="hide-mobile" style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">14.59</td>
+          <td class="hide-mobile" style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">14.59</td>
+          <td style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">3.64</td>
+          <td style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">33.2%</td>
+          <td class="hide-mobile" style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">1.89</td>
+          <td style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;color:#6B6860;">0</td>
+          <td style="padding:8px 10px;"><span style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:1px;text-transform:uppercase;padding:2px 7px;display:inline-block;background:#EFECE6;color:#6B6860;" class="signal-badge">Neutral</span></td>
+        </tr>
+        
+        <tr style="border-bottom:1px solid #E0DDD6;background:#FFFFFF;">
+          <td style="padding:8px 10px;font-family:'DM Mono',monospace;font-size:11px;color:#6B6860;">18</td>
+          <td style="padding:8px 10px;font-weight:500;font-size:13px;">ATH</td>
+          <td style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">3.60</td>
+          <td class="hide-mobile" style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">3.60</td>
+          <td class="hide-mobile" style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">3.60</td>
+          <td style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">3.70</td>
+          <td style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">0.0%</td>
+          <td class="hide-mobile" style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">1.20</td>
+          <td style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;color:#6B6860;">0</td>
+          <td style="padding:8px 10px;"><span style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:1px;text-transform:uppercase;padding:2px 7px;display:inline-block;background:#EFECE6;color:#6B6860;" class="signal-badge">Neutral</span></td>
+        </tr>
+        
+        <tr style="border-bottom:1px solid #E0DDD6;background:#FFFFFF;">
+          <td style="padding:8px 10px;font-family:'DM Mono',monospace;font-size:11px;color:#6B6860;">19</td>
+          <td style="padding:8px 10px;font-weight:500;font-size:13px;">LAA</td>
+          <td style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">1.75</td>
+          <td class="hide-mobile" style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">1.75</td>
+          <td class="hide-mobile" style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">1.75</td>
+          <td style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">3.88</td>
+          <td style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">10.9%</td>
+          <td class="hide-mobile" style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">1.46</td>
+          <td style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;color:#6B6860;">0</td>
+          <td style="padding:8px 10px;"><span style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:1px;text-transform:uppercase;padding:2px 7px;display:inline-block;background:#EFECE6;color:#6B6860;" class="signal-badge">Neutral</span></td>
+        </tr>
+        
+        <tr style="border-bottom:1px solid #E0DDD6;background:#FFFFFF;">
+          <td style="padding:8px 10px;font-family:'DM Mono',monospace;font-size:11px;color:#6B6860;">20</td>
+          <td style="padding:8px 10px;font-weight:500;font-size:13px;">LAD</td>
+          <td style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">5.81</td>
+          <td class="hide-mobile" style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">5.81</td>
+          <td class="hide-mobile" style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">5.81</td>
+          <td style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">3.96</td>
+          <td style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">25.1%</td>
+          <td class="hide-mobile" style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">1.29</td>
+          <td style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;color:#6B6860;">0</td>
+          <td style="padding:8px 10px;"><span style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:1px;text-transform:uppercase;padding:2px 7px;display:inline-block;background:#EFECE6;color:#6B6860;" class="signal-badge">Neutral</span></td>
+        </tr>
+        
+        <tr style="border-bottom:1px solid #E0DDD6;background:#FFFFFF;">
+          <td style="padding:8px 10px;font-family:'DM Mono',monospace;font-size:11px;color:#6B6860;">21</td>
+          <td style="padding:8px 10px;font-weight:500;font-size:13px;">CWS</td>
+          <td style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">15.88</td>
+          <td class="hide-mobile" style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">15.88</td>
+          <td class="hide-mobile" style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">15.88</td>
+          <td style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">4.28</td>
+          <td style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">0.0%</td>
+          <td class="hide-mobile" style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">2.94</td>
+          <td style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;color:#6B6860;">0</td>
+          <td style="padding:8px 10px;"><span style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:1px;text-transform:uppercase;padding:2px 7px;display:inline-block;background:#EFECE6;color:#6B6860;" class="signal-badge">Neutral</span></td>
+        </tr>
+        
+        <tr style="border-bottom:1px solid #E0DDD6;background:#FFFFFF;">
+          <td style="padding:8px 10px;font-family:'DM Mono',monospace;font-size:11px;color:#6B6860;">22</td>
+          <td style="padding:8px 10px;font-weight:500;font-size:13px;">HOU</td>
+          <td style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">4.33</td>
+          <td class="hide-mobile" style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">4.33</td>
+          <td class="hide-mobile" style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">4.33</td>
+          <td style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">4.45</td>
+          <td style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">17.9%</td>
+          <td class="hide-mobile" style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">1.83</td>
+          <td style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;color:#6B6860;">0</td>
+          <td style="padding:8px 10px;"><span style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:1px;text-transform:uppercase;padding:2px 7px;display:inline-block;background:#EFECE6;color:#6B6860;" class="signal-badge">Neutral</span></td>
+        </tr>
+        
+        <tr style="border-bottom:1px solid #E0DDD6;background:#FFFFFF;">
+          <td style="padding:8px 10px;font-family:'DM Mono',monospace;font-size:11px;color:#6B6860;">23</td>
+          <td style="padding:8px 10px;font-weight:500;font-size:13px;">TB</td>
+          <td style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">1.80</td>
+          <td class="hide-mobile" style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">1.80</td>
+          <td class="hide-mobile" style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">1.80</td>
+          <td style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">4.90</td>
+          <td style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">10.5%</td>
+          <td class="hide-mobile" style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">0.80</td>
+          <td style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;color:#6B6860;">0</td>
+          <td style="padding:8px 10px;"><span style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:1px;text-transform:uppercase;padding:2px 7px;display:inline-block;background:#EFECE6;color:#6B6860;" class="signal-badge">Neutral</span></td>
+        </tr>
+        
+        <tr style="border-bottom:1px solid #E0DDD6;background:#FFFFFF;">
+          <td style="padding:8px 10px;font-family:'DM Mono',monospace;font-size:11px;color:#6B6860;">24</td>
+          <td style="padding:8px 10px;font-weight:500;font-size:13px;">NYM</td>
+          <td style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">7.20</td>
+          <td class="hide-mobile" style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">7.20</td>
+          <td class="hide-mobile" style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">7.20</td>
+          <td style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">5.50</td>
+          <td style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">33.3%</td>
+          <td class="hide-mobile" style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">1.20</td>
+          <td style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;color:#6B6860;">0</td>
+          <td style="padding:8px 10px;"><span style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:1px;text-transform:uppercase;padding:2px 7px;display:inline-block;background:#EFECE6;color:#6B6860;" class="signal-badge">Neutral</span></td>
+        </tr>
+        
+        <tr style="border-bottom:1px solid #E0DDD6;background:#FFFFFF;">
+          <td style="padding:8px 10px;font-family:'DM Mono',monospace;font-size:11px;color:#6B6860;">25</td>
+          <td style="padding:8px 10px;font-weight:500;font-size:13px;">TEX</td>
+          <td style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">9.57</td>
+          <td class="hide-mobile" style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">9.57</td>
+          <td class="hide-mobile" style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">9.57</td>
+          <td style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">5.65</td>
+          <td style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">31.7%</td>
+          <td class="hide-mobile" style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">1.70</td>
+          <td style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;color:#6B6860;">0</td>
+          <td style="padding:8px 10px;"><span style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:1px;text-transform:uppercase;padding:2px 7px;display:inline-block;background:#EFECE6;color:#6B6860;" class="signal-badge">Neutral</span></td>
+        </tr>
+        
+        <tr style="border-bottom:1px solid #E0DDD6;background:#F5EAE8;">
+          <td style="padding:8px 10px;font-family:'DM Mono',monospace;font-size:11px;color:#6B6860;">26</td>
+          <td style="padding:8px 10px;font-weight:500;font-size:13px;">STL</td>
+          <td style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">1.80</td>
+          <td class="hide-mobile" style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">1.80</td>
+          <td class="hide-mobile" style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">1.80</td>
+          <td style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">6.10</td>
+          <td style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">0.0%</td>
+          <td class="hide-mobile" style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">1.80</td>
+          <td style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;color:#6B6860;">0</td>
+          <td style="padding:8px 10px;"><span style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:1px;text-transform:uppercase;padding:2px 7px;display:inline-block;background:#EFECE6;color:#6B6860;" class="signal-badge">Neutral</span></td>
+        </tr>
+        
+        <tr style="border-bottom:1px solid #E0DDD6;background:#F5EAE8;">
+          <td style="padding:8px 10px;font-family:'DM Mono',monospace;font-size:11px;color:#6B6860;">27</td>
+          <td style="padding:8px 10px;font-weight:500;font-size:13px;">CLE</td>
+          <td style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">5.40</td>
+          <td class="hide-mobile" style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">5.40</td>
+          <td class="hide-mobile" style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">5.40</td>
+          <td style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">7.90</td>
+          <td style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">13.6%</td>
+          <td class="hide-mobile" style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">1.40</td>
+          <td style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;color:#6B6860;">0</td>
+          <td style="padding:8px 10px;"><span style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:1px;text-transform:uppercase;padding:2px 7px;display:inline-block;background:#EFECE6;color:#6B6860;" class="signal-badge">Neutral</span></td>
+        </tr>
+        
+        <tr style="border-bottom:1px solid #E0DDD6;background:#F5EAE8;">
+          <td style="padding:8px 10px;font-family:'DM Mono',monospace;font-size:11px;color:#6B6860;">28</td>
+          <td style="padding:8px 10px;font-weight:500;font-size:13px;">ARI</td>
+          <td style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">8.28</td>
+          <td class="hide-mobile" style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">8.28</td>
+          <td class="hide-mobile" style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">8.28</td>
+          <td style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">7.93</td>
+          <td style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">2.6%</td>
+          <td class="hide-mobile" style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">1.38</td>
+          <td style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;color:#6B6860;">0</td>
+          <td style="padding:8px 10px;"><span style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:1px;text-transform:uppercase;padding:2px 7px;display:inline-block;background:#EFECE6;color:#6B6860;" class="signal-badge">Neutral</span></td>
+        </tr>
+        
+        <tr style="border-bottom:1px solid #E0DDD6;background:#F5EAE8;">
+          <td style="padding:8px 10px;font-family:'DM Mono',monospace;font-size:11px;color:#6B6860;">29</td>
+          <td style="padding:8px 10px;font-weight:500;font-size:13px;">PIT</td>
+          <td style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">64.29</td>
+          <td class="hide-mobile" style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">64.29</td>
+          <td class="hide-mobile" style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">64.29</td>
+          <td style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">8.81</td>
+          <td style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">-12.4%</td>
+          <td class="hide-mobile" style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">8.57</td>
+          <td style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;color:#6B6860;">0</td>
+          <td style="padding:8px 10px;"><span style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:1px;text-transform:uppercase;padding:2px 7px;display:inline-block;background:#EFECE6;color:#6B6860;" class="signal-badge">Neutral</span></td>
+        </tr>
+        
+        <tr style="border-bottom:1px solid #E0DDD6;background:#F5EAE8;">
+          <td style="padding:8px 10px;font-family:'DM Mono',monospace;font-size:11px;color:#6B6860;">30</td>
+          <td style="padding:8px 10px;font-weight:500;font-size:13px;">KC</td>
+          <td style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">9.00</td>
+          <td class="hide-mobile" style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">9.00</td>
+          <td class="hide-mobile" style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">9.00</td>
+          <td style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">13.35</td>
+          <td style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">4.6%</td>
+          <td class="hide-mobile" style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">2.50</td>
+          <td style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;color:#6B6860;">0</td>
+          <td style="padding:8px 10px;"><span style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:1px;text-transform:uppercase;padding:2px 7px;display:inline-block;background:#EFECE6;color:#6B6860;" class="signal-badge">Neutral</span></td>
+        </tr>
+        
+      </tbody>
+    </table>
+
+    <div style="background:#F7F5F0;border:1px solid #E0DDD6;padding:10px 14px;margin-top:-18px;margin-bottom:28px;font-size:11px;color:#6B6860;line-height:1.8;">
+      <strong style="color:#111111;">ERA</strong> Earned run average over rolling window &nbsp;·&nbsp;
+      <strong style="color:#111111;">FIP</strong> Fielding independent pitching &nbsp;·&nbsp;
+      <strong style="color:#111111;">K-BB%</strong> Strikeouts minus walks per batter — best forward ERA predictor &nbsp;·&nbsp;
+      <strong style="color:#111111;">WHIP</strong> Walks + hits per inning pitched &nbsp;·&nbsp;
+      <strong style="color:#111111;">Mom.</strong> Rank change 28d vs 7d &nbsp;·&nbsp;
+      <strong style="color:#111111;">Signal</strong> Value/Fade/Watch classification
+    </div>
+
+    <!-- BATTING TABLE -->
+    <div style="font-family:'DM Mono',monospace;font-size:10px;letter-spacing:2.5px;text-transform:uppercase;color:#111111;font-weight:500;margin-bottom:6px;">Team batting rankings</div>
+    <div style="font-size:12px;color:#6B6860;line-height:1.8;margin-bottom:10px;">
+      <div>📊 Sorted by <strong style="color:#111111;">R/G</strong> (runs per game) — most direct measure for over/under betting.</div>
+      <div>💥 <strong style="color:#111111;">OPS</strong> = on-base + slugging. Captures both contact quality and power in one number.</div>
+      <div>🎯 <strong style="color:#111111;">wRC+</strong> = park-adjusted offensive output. 100 = league avg. 110 = 10% above avg.</div>
+      <div>📈 <strong style="color:#111111;">Momentum</strong> = 28d rank minus 7d rank. Flags lineups heating up faster than market adjusts.</div>
+      <div>🎯 <strong style="color:#111111;">Signal</strong> = Value/Fade/Watch. Value = offense trending up vs underrated schedule.</div>
+    </div>
+
+    <table width="100%" cellpadding="0" cellspacing="0" style="border-collapse:collapse;font-size:12px;margin-bottom:24px;">
+      <thead>
+        <tr style="background:#111111;color:#FFFFFF;">
+          <th style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:2px;text-transform:uppercase;padding:8px 10px;text-align:left;font-weight:500;">#</th>
+          <th style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:2px;text-transform:uppercase;padding:8px 10px;text-align:left;font-weight:500;">Team</th>
+          <th style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:2px;text-transform:uppercase;padding:8px 10px;text-align:right;font-weight:500;">7d R/G</th>
+          <th class="hide-mobile" style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:2px;text-transform:uppercase;padding:8px 10px;text-align:right;font-weight:500;">14d R/G</th>
+          <th class="hide-mobile" style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:2px;text-transform:uppercase;padding:8px 10px;text-align:right;font-weight:500;">28d R/G</th>
+          <th style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:2px;text-transform:uppercase;padding:8px 10px;text-align:right;font-weight:500;">OPS</th>
+          <th style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:2px;text-transform:uppercase;padding:8px 10px;text-align:right;font-weight:500;">wRC+</th>
+          <th style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:2px;text-transform:uppercase;padding:8px 10px;text-align:right;font-weight:500;">Mom.</th>
+          <th style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:2px;text-transform:uppercase;padding:8px 10px;text-align:left;font-weight:500;">Signal</th>
+        </tr>
+      </thead>
+      <tbody>
+        
+        <tr style="border-bottom:1px solid #E0DDD6;background:#E8F2EC;">
+          <td style="padding:8px 10px;font-family:'DM Mono',monospace;font-size:11px;color:#6B6860;">1</td>
+          <td style="padding:8px 10px;font-weight:500;font-size:13px;">MIL</td>
+          <td style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">14.00</td>
+          <td class="hide-mobile" style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">14.00</td>
+          <td class="hide-mobile" style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">14.00</td>
+          <td style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">1.118</td>
+          <td style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">227</td>
+          <td style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;color:#6B6860;">0</td>
+          <td style="padding:8px 10px;"><span style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:1px;text-transform:uppercase;padding:2px 7px;display:inline-block;background:#EFECE6;color:#6B6860;" class="signal-badge">Neutral</span></td>
+        </tr>
+        
+        <tr style="border-bottom:1px solid #E0DDD6;background:#E8F2EC;">
+          <td style="padding:8px 10px;font-family:'DM Mono',monospace;font-size:11px;color:#6B6860;">2</td>
+          <td style="padding:8px 10px;font-weight:500;font-size:13px;">NYM</td>
+          <td style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">11.00</td>
+          <td class="hide-mobile" style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">11.00</td>
+          <td class="hide-mobile" style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">11.00</td>
+          <td style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">1.055</td>
+          <td style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">193</td>
+          <td style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;color:#6B6860;">0</td>
+          <td style="padding:8px 10px;"><span style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:1px;text-transform:uppercase;padding:2px 7px;display:inline-block;background:#EFECE6;color:#6B6860;" class="signal-badge">Neutral</span></td>
+        </tr>
+        
+        <tr style="border-bottom:1px solid #E0DDD6;background:#E8F2EC;">
+          <td style="padding:8px 10px;font-family:'DM Mono',monospace;font-size:11px;color:#6B6860;">3</td>
+          <td style="padding:8px 10px;font-weight:500;font-size:13px;">WSH</td>
+          <td style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">10.00</td>
+          <td class="hide-mobile" style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">10.00</td>
+          <td class="hide-mobile" style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">10.00</td>
+          <td style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">0.918</td>
+          <td style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">164</td>
+          <td style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;color:#6B6860;">0</td>
+          <td style="padding:8px 10px;"><span style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:1px;text-transform:uppercase;padding:2px 7px;display:inline-block;background:#EFECE6;color:#6B6860;" class="signal-badge">Neutral</span></td>
+        </tr>
+        
+        <tr style="border-bottom:1px solid #E0DDD6;background:#E8F2EC;">
+          <td style="padding:8px 10px;font-family:'DM Mono',monospace;font-size:11px;color:#6B6860;">4</td>
+          <td style="padding:8px 10px;font-weight:500;font-size:13px;">STL</td>
+          <td style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">9.00</td>
+          <td class="hide-mobile" style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">9.00</td>
+          <td class="hide-mobile" style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">9.00</td>
+          <td style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">0.970</td>
+          <td style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">177</td>
+          <td style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;color:#6B6860;">0</td>
+          <td style="padding:8px 10px;"><span style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:1px;text-transform:uppercase;padding:2px 7px;display:inline-block;background:#EFECE6;color:#6B6860;" class="signal-badge">Neutral</span></td>
+        </tr>
+        
+        <tr style="border-bottom:1px solid #E0DDD6;background:#E8F2EC;">
+          <td style="padding:8px 10px;font-family:'DM Mono',monospace;font-size:11px;color:#6B6860;">5</td>
+          <td style="padding:8px 10px;font-weight:500;font-size:13px;">PIT</td>
+          <td style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">7.00</td>
+          <td class="hide-mobile" style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">7.00</td>
+          <td class="hide-mobile" style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">7.00</td>
+          <td style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">0.865</td>
+          <td style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">135</td>
+          <td style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;color:#6B6860;">0</td>
+          <td style="padding:8px 10px;"><span style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:1px;text-transform:uppercase;padding:2px 7px;display:inline-block;background:#EFECE6;color:#6B6860;" class="signal-badge">Neutral</span></td>
+        </tr>
+        
+        <tr style="border-bottom:1px solid #E0DDD6;background:#FFFFFF;">
+          <td style="padding:8px 10px;font-family:'DM Mono',monospace;font-size:11px;color:#6B6860;">6</td>
+          <td style="padding:8px 10px;font-weight:500;font-size:13px;">TB</td>
+          <td style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">7.00</td>
+          <td class="hide-mobile" style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">7.00</td>
+          <td class="hide-mobile" style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">7.00</td>
+          <td style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">0.925</td>
+          <td style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">196</td>
+          <td style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;color:#6B6860;">0</td>
+          <td style="padding:8px 10px;"><span style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:1px;text-transform:uppercase;padding:2px 7px;display:inline-block;background:#EFECE6;color:#6B6860;" class="signal-badge">Neutral</span></td>
+        </tr>
+        
+        <tr style="border-bottom:1px solid #E0DDD6;background:#FFFFFF;">
+          <td style="padding:8px 10px;font-family:'DM Mono',monospace;font-size:11px;color:#6B6860;">7</td>
+          <td style="padding:8px 10px;font-weight:500;font-size:13px;">DET</td>
+          <td style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">6.50</td>
+          <td class="hide-mobile" style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">6.50</td>
+          <td class="hide-mobile" style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">6.50</td>
+          <td style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">0.755</td>
+          <td style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">115</td>
+          <td style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;color:#6B6860;">0</td>
+          <td style="padding:8px 10px;"><span style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:1px;text-transform:uppercase;padding:2px 7px;display:inline-block;background:#EFECE6;color:#6B6860;" class="signal-badge">Neutral</span></td>
+        </tr>
+        
+        <tr style="border-bottom:1px solid #E0DDD6;background:#FFFFFF;">
+          <td style="padding:8px 10px;font-family:'DM Mono',monospace;font-size:11px;color:#6B6860;">8</td>
+          <td style="padding:8px 10px;font-weight:500;font-size:13px;">LAD</td>
+          <td style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">6.50</td>
+          <td class="hide-mobile" style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">6.50</td>
+          <td class="hide-mobile" style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">6.50</td>
+          <td style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">0.869</td>
+          <td style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">124</td>
+          <td style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;color:#6B6860;">0</td>
+          <td style="padding:8px 10px;"><span style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:1px;text-transform:uppercase;padding:2px 7px;display:inline-block;background:#EFECE6;color:#6B6860;" class="signal-badge">Neutral</span></td>
+        </tr>
+        
+        <tr style="border-bottom:1px solid #E0DDD6;background:#FFFFFF;">
+          <td style="padding:8px 10px;font-family:'DM Mono',monospace;font-size:11px;color:#6B6860;">9</td>
+          <td style="padding:8px 10px;font-weight:500;font-size:13px;">ATL</td>
+          <td style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">6.00</td>
+          <td class="hide-mobile" style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">6.00</td>
+          <td class="hide-mobile" style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">6.00</td>
+          <td style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">1.042</td>
+          <td style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">198</td>
+          <td style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;color:#6B6860;">0</td>
+          <td style="padding:8px 10px;"><span style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:1px;text-transform:uppercase;padding:2px 7px;display:inline-block;background:#EFECE6;color:#6B6860;" class="signal-badge">Neutral</span></td>
+        </tr>
+        
+        <tr style="border-bottom:1px solid #E0DDD6;background:#FFFFFF;">
+          <td style="padding:8px 10px;font-family:'DM Mono',monospace;font-size:11px;color:#6B6860;">10</td>
+          <td style="padding:8px 10px;font-weight:500;font-size:13px;">NYY</td>
+          <td style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">5.00</td>
+          <td class="hide-mobile" style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">5.00</td>
+          <td class="hide-mobile" style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">5.00</td>
+          <td style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">0.697</td>
+          <td style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">101</td>
+          <td style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;color:#6B6860;">0</td>
+          <td style="padding:8px 10px;"><span style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:1px;text-transform:uppercase;padding:2px 7px;display:inline-block;background:#EFECE6;color:#6B6860;" class="signal-badge">Neutral</span></td>
+        </tr>
+        
+        <tr style="border-bottom:1px solid #E0DDD6;background:#FFFFFF;">
+          <td style="padding:8px 10px;font-family:'DM Mono',monospace;font-size:11px;color:#6B6860;">11</td>
+          <td style="padding:8px 10px;font-weight:500;font-size:13px;">PHI</td>
+          <td style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">5.00</td>
+          <td class="hide-mobile" style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">5.00</td>
+          <td class="hide-mobile" style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">5.00</td>
+          <td style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">0.862</td>
+          <td style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">134</td>
+          <td style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;color:#6B6860;">0</td>
+          <td style="padding:8px 10px;"><span style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:1px;text-transform:uppercase;padding:2px 7px;display:inline-block;background:#EFECE6;color:#6B6860;" class="signal-badge">Neutral</span></td>
+        </tr>
+        
+        <tr style="border-bottom:1px solid #E0DDD6;background:#FFFFFF;">
+          <td style="padding:8px 10px;font-family:'DM Mono',monospace;font-size:11px;color:#6B6860;">12</td>
+          <td style="padding:8px 10px;font-weight:500;font-size:13px;">LAA</td>
+          <td style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">4.50</td>
+          <td class="hide-mobile" style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">4.50</td>
+          <td class="hide-mobile" style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">4.50</td>
+          <td style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">0.846</td>
+          <td style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">168</td>
+          <td style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;color:#6B6860;">0</td>
+          <td style="padding:8px 10px;"><span style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:1px;text-transform:uppercase;padding:2px 7px;display:inline-block;background:#EFECE6;color:#6B6860;" class="signal-badge">Neutral</span></td>
+        </tr>
+        
+        <tr style="border-bottom:1px solid #E0DDD6;background:#FFFFFF;">
+          <td style="padding:8px 10px;font-family:'DM Mono',monospace;font-size:11px;color:#6B6860;">13</td>
+          <td style="padding:8px 10px;font-weight:500;font-size:13px;">SEA</td>
+          <td style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">4.50</td>
+          <td class="hide-mobile" style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">4.50</td>
+          <td class="hide-mobile" style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">4.50</td>
+          <td style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">0.832</td>
+          <td style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">113</td>
+          <td style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;color:#6B6860;">0</td>
+          <td style="padding:8px 10px;"><span style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:1px;text-transform:uppercase;padding:2px 7px;display:inline-block;background:#EFECE6;color:#6B6860;" class="signal-badge">Neutral</span></td>
+        </tr>
+        
+        <tr style="border-bottom:1px solid #E0DDD6;background:#FFFFFF;">
+          <td style="padding:8px 10px;font-family:'DM Mono',monospace;font-size:11px;color:#6B6860;">14</td>
+          <td style="padding:8px 10px;font-weight:500;font-size:13px;">CHC</td>
+          <td style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">4.00</td>
+          <td class="hide-mobile" style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">4.00</td>
+          <td class="hide-mobile" style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">4.00</td>
+          <td style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">0.644</td>
+          <td style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">89</td>
+          <td style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;color:#6B6860;">0</td>
+          <td style="padding:8px 10px;"><span style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:1px;text-transform:uppercase;padding:2px 7px;display:inline-block;background:#EFECE6;color:#6B6860;" class="signal-badge">Neutral</span></td>
+        </tr>
+        
+        <tr style="border-bottom:1px solid #E0DDD6;background:#FFFFFF;">
+          <td style="padding:8px 10px;font-family:'DM Mono',monospace;font-size:11px;color:#6B6860;">15</td>
+          <td style="padding:8px 10px;font-weight:500;font-size:13px;">CLE</td>
+          <td style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">3.50</td>
+          <td class="hide-mobile" style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">3.50</td>
+          <td class="hide-mobile" style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">3.50</td>
+          <td style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">0.839</td>
+          <td style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">100</td>
+          <td style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;color:#6B6860;">0</td>
+          <td style="padding:8px 10px;"><span style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:1px;text-transform:uppercase;padding:2px 7px;display:inline-block;background:#EFECE6;color:#6B6860;" class="signal-badge">Neutral</span></td>
+        </tr>
+        
+        <tr style="border-bottom:1px solid #E0DDD6;background:#FFFFFF;">
+          <td style="padding:8px 10px;font-family:'DM Mono',monospace;font-size:11px;color:#6B6860;">16</td>
+          <td style="padding:8px 10px;font-weight:500;font-size:13px;">ARI</td>
+          <td style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">3.00</td>
+          <td class="hide-mobile" style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">3.00</td>
+          <td class="hide-mobile" style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">3.00</td>
+          <td style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">0.587</td>
+          <td style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">76</td>
+          <td style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;color:#6B6860;">0</td>
+          <td style="padding:8px 10px;"><span style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:1px;text-transform:uppercase;padding:2px 7px;display:inline-block;background:#EFECE6;color:#6B6860;" class="signal-badge">Neutral</span></td>
+        </tr>
+        
+        <tr style="border-bottom:1px solid #E0DDD6;background:#FFFFFF;">
+          <td style="padding:8px 10px;font-family:'DM Mono',monospace;font-size:11px;color:#6B6860;">17</td>
+          <td style="padding:8px 10px;font-weight:500;font-size:13px;">BOS</td>
+          <td style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">3.00</td>
+          <td class="hide-mobile" style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">3.00</td>
+          <td class="hide-mobile" style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">3.00</td>
+          <td style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">0.746</td>
+          <td style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">125</td>
+          <td style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;color:#6B6860;">0</td>
+          <td style="padding:8px 10px;"><span style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:1px;text-transform:uppercase;padding:2px 7px;display:inline-block;background:#EFECE6;color:#6B6860;" class="signal-badge">Neutral</span></td>
+        </tr>
+        
+        <tr style="border-bottom:1px solid #E0DDD6;background:#FFFFFF;">
+          <td style="padding:8px 10px;font-family:'DM Mono',monospace;font-size:11px;color:#6B6860;">18</td>
+          <td style="padding:8px 10px;font-weight:500;font-size:13px;">TEX</td>
+          <td style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">3.00</td>
+          <td class="hide-mobile" style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">3.00</td>
+          <td class="hide-mobile" style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">3.00</td>
+          <td style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">0.593</td>
+          <td style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">65</td>
+          <td style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;color:#6B6860;">0</td>
+          <td style="padding:8px 10px;"><span style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:1px;text-transform:uppercase;padding:2px 7px;display:inline-block;background:#EFECE6;color:#6B6860;" class="signal-badge">Neutral</span></td>
+        </tr>
+        
+        <tr style="border-bottom:1px solid #E0DDD6;background:#FFFFFF;">
+          <td style="padding:8px 10px;font-family:'DM Mono',monospace;font-size:11px;color:#6B6860;">19</td>
+          <td style="padding:8px 10px;font-weight:500;font-size:13px;">TOR</td>
+          <td style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">3.00</td>
+          <td class="hide-mobile" style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">3.00</td>
+          <td class="hide-mobile" style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">3.00</td>
+          <td style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">0.650</td>
+          <td style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">69</td>
+          <td style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;color:#6B6860;">0</td>
+          <td style="padding:8px 10px;"><span style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:1px;text-transform:uppercase;padding:2px 7px;display:inline-block;background:#EFECE6;color:#6B6860;" class="signal-badge">Neutral</span></td>
+        </tr>
+        
+        <tr style="border-bottom:1px solid #E0DDD6;background:#FFFFFF;">
+          <td style="padding:8px 10px;font-family:'DM Mono',monospace;font-size:11px;color:#6B6860;">20</td>
+          <td style="padding:8px 10px;font-weight:500;font-size:13px;">ATH</td>
+          <td style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">2.00</td>
+          <td class="hide-mobile" style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">2.00</td>
+          <td class="hide-mobile" style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">2.00</td>
+          <td style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">0.456</td>
+          <td style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">28</td>
+          <td style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;color:#6B6860;">0</td>
+          <td style="padding:8px 10px;"><span style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:1px;text-transform:uppercase;padding:2px 7px;display:inline-block;background:#EFECE6;color:#6B6860;" class="signal-badge">Neutral</span></td>
+        </tr>
+        
+        <tr style="border-bottom:1px solid #E0DDD6;background:#FFFFFF;">
+          <td style="padding:8px 10px;font-family:'DM Mono',monospace;font-size:11px;color:#6B6860;">21</td>
+          <td style="padding:8px 10px;font-weight:500;font-size:13px;">BAL</td>
+          <td style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">2.00</td>
+          <td class="hide-mobile" style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">2.00</td>
+          <td class="hide-mobile" style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">2.00</td>
+          <td style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">0.464</td>
+          <td style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">33</td>
+          <td style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;color:#6B6860;">0</td>
+          <td style="padding:8px 10px;"><span style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:1px;text-transform:uppercase;padding:2px 7px;display:inline-block;background:#EFECE6;color:#6B6860;" class="signal-badge">Neutral</span></td>
+        </tr>
+        
+        <tr style="border-bottom:1px solid #E0DDD6;background:#FFFFFF;">
+          <td style="padding:8px 10px;font-family:'DM Mono',monospace;font-size:11px;color:#6B6860;">22</td>
+          <td style="padding:8px 10px;font-weight:500;font-size:13px;">CWS</td>
+          <td style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">2.00</td>
+          <td class="hide-mobile" style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">2.00</td>
+          <td class="hide-mobile" style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">2.00</td>
+          <td style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">0.573</td>
+          <td style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">71</td>
+          <td style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;color:#6B6860;">0</td>
+          <td style="padding:8px 10px;"><span style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:1px;text-transform:uppercase;padding:2px 7px;display:inline-block;background:#EFECE6;color:#6B6860;" class="signal-badge">Neutral</span></td>
+        </tr>
+        
+        <tr style="border-bottom:1px solid #E0DDD6;background:#FFFFFF;">
+          <td style="padding:8px 10px;font-family:'DM Mono',monospace;font-size:11px;color:#6B6860;">23</td>
+          <td style="padding:8px 10px;font-weight:500;font-size:13px;">MIA</td>
+          <td style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">2.00</td>
+          <td class="hide-mobile" style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">2.00</td>
+          <td class="hide-mobile" style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">2.00</td>
+          <td style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">0.658</td>
+          <td style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">73</td>
+          <td style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;color:#6B6860;">0</td>
+          <td style="padding:8px 10px;"><span style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:1px;text-transform:uppercase;padding:2px 7px;display:inline-block;background:#EFECE6;color:#6B6860;" class="signal-badge">Neutral</span></td>
+        </tr>
+        
+        <tr style="border-bottom:1px solid #E0DDD6;background:#FFFFFF;">
+          <td style="padding:8px 10px;font-family:'DM Mono',monospace;font-size:11px;color:#6B6860;">24</td>
+          <td style="padding:8px 10px;font-weight:500;font-size:13px;">SD</td>
+          <td style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">2.00</td>
+          <td class="hide-mobile" style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">2.00</td>
+          <td class="hide-mobile" style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">2.00</td>
+          <td style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">0.522</td>
+          <td style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">52</td>
+          <td style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;color:#6B6860;">0</td>
+          <td style="padding:8px 10px;"><span style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:1px;text-transform:uppercase;padding:2px 7px;display:inline-block;background:#EFECE6;color:#6B6860;" class="signal-badge">Neutral</span></td>
+        </tr>
+        
+        <tr style="border-bottom:1px solid #E0DDD6;background:#FFFFFF;">
+          <td style="padding:8px 10px;font-family:'DM Mono',monospace;font-size:11px;color:#6B6860;">25</td>
+          <td style="padding:8px 10px;font-weight:500;font-size:13px;">COL</td>
+          <td style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">1.00</td>
+          <td class="hide-mobile" style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">1.00</td>
+          <td class="hide-mobile" style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">1.00</td>
+          <td style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">0.484</td>
+          <td style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">38</td>
+          <td style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;color:#6B6860;">0</td>
+          <td style="padding:8px 10px;"><span style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:1px;text-transform:uppercase;padding:2px 7px;display:inline-block;background:#EFECE6;color:#6B6860;" class="signal-badge">Neutral</span></td>
+        </tr>
+        
+        <tr style="border-bottom:1px solid #E0DDD6;background:#F5EAE8;">
+          <td style="padding:8px 10px;font-family:'DM Mono',monospace;font-size:11px;color:#6B6860;">26</td>
+          <td style="padding:8px 10px;font-weight:500;font-size:13px;">HOU</td>
+          <td style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">1.00</td>
+          <td class="hide-mobile" style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">1.00</td>
+          <td class="hide-mobile" style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">1.00</td>
+          <td style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">0.474</td>
+          <td style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">52</td>
+          <td style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;color:#6B6860;">0</td>
+          <td style="padding:8px 10px;"><span style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:1px;text-transform:uppercase;padding:2px 7px;display:inline-block;background:#EFECE6;color:#6B6860;" class="signal-badge">Neutral</span></td>
+        </tr>
+        
+        <tr style="border-bottom:1px solid #E0DDD6;background:#F5EAE8;">
+          <td style="padding:8px 10px;font-family:'DM Mono',monospace;font-size:11px;color:#6B6860;">27</td>
+          <td style="padding:8px 10px;font-weight:500;font-size:13px;">MIN</td>
+          <td style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">1.00</td>
+          <td class="hide-mobile" style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">1.00</td>
+          <td class="hide-mobile" style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">1.00</td>
+          <td style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">0.527</td>
+          <td style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">39</td>
+          <td style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;color:#6B6860;">0</td>
+          <td style="padding:8px 10px;"><span style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:1px;text-transform:uppercase;padding:2px 7px;display:inline-block;background:#EFECE6;color:#6B6860;" class="signal-badge">Neutral</span></td>
+        </tr>
+        
+        <tr style="border-bottom:1px solid #E0DDD6;background:#F5EAE8;">
+          <td style="padding:8px 10px;font-family:'DM Mono',monospace;font-size:11px;color:#6B6860;">28</td>
+          <td style="padding:8px 10px;font-weight:500;font-size:13px;">CIN</td>
+          <td style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">0.00</td>
+          <td class="hide-mobile" style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">0.00</td>
+          <td class="hide-mobile" style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">0.00</td>
+          <td style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">0.388</td>
+          <td style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">-7</td>
+          <td style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;color:#6B6860;">0</td>
+          <td style="padding:8px 10px;"><span style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:1px;text-transform:uppercase;padding:2px 7px;display:inline-block;background:#EFECE6;color:#6B6860;" class="signal-badge">Neutral</span></td>
+        </tr>
+        
+        <tr style="border-bottom:1px solid #E0DDD6;background:#F5EAE8;">
+          <td style="padding:8px 10px;font-family:'DM Mono',monospace;font-size:11px;color:#6B6860;">29</td>
+          <td style="padding:8px 10px;font-weight:500;font-size:13px;">KC</td>
+          <td style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">0.00</td>
+          <td class="hide-mobile" style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">0.00</td>
+          <td class="hide-mobile" style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">0.00</td>
+          <td style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">0.432</td>
+          <td style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">30</td>
+          <td style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;color:#6B6860;">0</td>
+          <td style="padding:8px 10px;"><span style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:1px;text-transform:uppercase;padding:2px 7px;display:inline-block;background:#EFECE6;color:#6B6860;" class="signal-badge">Neutral</span></td>
+        </tr>
+        
+        <tr style="border-bottom:1px solid #E0DDD6;background:#F5EAE8;">
+          <td style="padding:8px 10px;font-family:'DM Mono',monospace;font-size:11px;color:#6B6860;">30</td>
+          <td style="padding:8px 10px;font-weight:500;font-size:13px;">SF</td>
+          <td style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">0.00</td>
+          <td class="hide-mobile" style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">0.00</td>
+          <td class="hide-mobile" style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">0.00</td>
+          <td style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">0.249</td>
+          <td style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;">-48</td>
+          <td style="padding:8px 10px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;color:#6B6860;">0</td>
+          <td style="padding:8px 10px;"><span style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:1px;text-transform:uppercase;padding:2px 7px;display:inline-block;background:#EFECE6;color:#6B6860;" class="signal-badge">Neutral</span></td>
+        </tr>
+        
+      </tbody>
+    </table>
+
+    <div style="background:#F7F5F0;border:1px solid #E0DDD6;padding:10px 14px;margin-top:-18px;margin-bottom:28px;font-size:11px;color:#6B6860;line-height:1.8;">
+      <strong style="color:#111111;">R/G</strong> Runs per game over rolling window &nbsp;·&nbsp;
+      <strong style="color:#111111;">OPS</strong> On-base plus slugging &nbsp;·&nbsp;
+      <strong style="color:#111111;">wRC+</strong> Park-adjusted runs created (100 = league avg, higher = better) &nbsp;·&nbsp;
+      <strong style="color:#111111;">Mom.</strong> Rank change 28d vs 7d &nbsp;·&nbsp;
+      <strong style="color:#111111;">Signal</strong> Value/Fade/Watch classification
+    </div>
+
+    <hr style="border:none;border-top:1px solid #E0DDD6;margin:20px 0;">
+
+    <!-- INSIGHTS -->
+    <div style="font-family:'DM Mono',monospace;font-size:10px;letter-spacing:3px;text-transform:uppercase;color:#6B6860;padding:28px 0 12px;border-bottom:1px solid #E0DDD6;margin-bottom:20px;" id="insights">Top edge signals — data extraction</div>
+    <div style="font-size:12px;color:#6B6860;margin-bottom:16px;line-height:1.6;font-style:italic;">Signals extracted from rolling tables above. Data observations only — not betting recommendations.</div>
+
+    
+
+    
+
+    
+
+    <hr style="border:none;border-top:1px solid #E0DDD6;margin:20px 0;">
+
+    <!-- INJURIES -->
+    <div style="font-family:'DM Mono',monospace;font-size:10px;letter-spacing:3px;text-transform:uppercase;color:#6B6860;padding:28px 0 12px;border-bottom:1px solid #E0DDD6;margin-bottom:20px;" id="injuries">Injury &amp; lineup log</div>
+
+    <table width="100%" cellpadding="0" cellspacing="0" style="border-collapse:collapse;font-size:12px;margin-bottom:24px;">
+      <thead>
+        <tr style="background:#EFECE6;border-bottom:1px solid #E0DDD6;">
+          <th style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:#6B6860;padding:8px 10px;text-align:left;">Player</th>
+          <th style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:#6B6860;padding:8px 10px;text-align:left;">Team</th>
+          <th style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:#6B6860;padding:8px 10px;text-align:left;">Status</th>
+          <th style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:#6B6860;padding:8px 10px;text-align:left;">Injury</th>
+          <th style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:#6B6860;padding:8px 10px;text-align:left;">Impact</th>
+        </tr>
+      </thead>
+      <tbody>
+        
+        
+        <tr style="border-bottom:1px solid #E0DDD6;">
+          <td style="padding:8px 10px;font-weight:500;">Mickey Moniak</td>
+          <td style="padding:8px 10px;font-family:'DM Mono',monospace;font-size:11px;">COL</td>
+          <td style="padding:8px 10px;"><span style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:1px;text-transform:uppercase;padding:2px 7px;display:inline-block;background:#F5EAE8;color:#C13B2A;">10-day IL</span></td>
+          <td style="padding:8px 10px;font-size:12px;color:#6B6860;">10-day IL — Right ring finger sprain</td>
+          <td style="padding:8px 10px;font-size:12px;">Colorado Rockies placed RF Mickey Moniak on the 10-day injured list retroactive </td>
+        </tr>
+        
+        <tr style="border-bottom:1px solid #E0DDD6;">
+          <td style="padding:8px 10px;font-weight:500;">Carlos Vargas</td>
+          <td style="padding:8px 10px;font-family:'DM Mono',monospace;font-size:11px;">SEA</td>
+          <td style="padding:8px 10px;"><span style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:1px;text-transform:uppercase;padding:2px 7px;display:inline-block;background:#F5EAE8;color:#C13B2A;">10-day IL</span></td>
+          <td style="padding:8px 10px;font-size:12px;color:#6B6860;">15-day IL — Right lat strain</td>
+          <td style="padding:8px 10px;font-size:12px;">Seattle Mariners placed RHP Carlos Vargas on the 15-day injured list retroactive</td>
+        </tr>
+        
+        
+      </tbody>
+    </table>
+
+    <!-- ACTIVATIONS -->
+    
+
+    <!-- FATIGUE FLAGS -->
+    
+
+    <!-- CLOSER HIERARCHY -->
+    
+
+    <!-- MLB STATS TRACKER CARD -->
+    <div style="background:#1B3A6B;padding:24px;margin-bottom:24px;">
+      <div class="app-card-inner" style="display:flex;justify-content:space-between;align-items:flex-start;">
+        <div style="flex:1;">
+          <div style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:3px;text-transform:uppercase;color:rgba(255,255,255,0.55);margin-bottom:8px;">Free Tool · mlb.up.railway.app</div>
+          <div style="font-family:'Playfair Display',serif;font-size:20px;font-weight:600;color:#FFFFFF;margin-bottom:8px;">MLB Stats Tracker</div>
+          <div style="font-size:12px;color:rgba(255,255,255,0.80);line-height:1.7;margin-bottom:16px;max-width:400px;">
+            The individual player layer behind this newsletter. Look up any batter or pitcher on today's slate with rolling performance windows and color-coded thresholds.
+          </div>
+          <div style="font-size:11px;color:rgba(255,255,255,0.65);line-height:1.8;">
+            <div>⚾ <strong style="color:rgba(255,255,255,0.85);">Batters</strong> — AVG / OBP / SLG / HR / K / RBI over last 7, 10, or 21 games with at least one at-bat</div>
+            <div>⚾ <strong style="color:rgba(255,255,255,0.85);">Pitchers</strong> — ERA / WHIP / K / BB over last 2, 3, or 4 starts (actual outings, not calendar days)</div>
+            <div>🔄 Cache refreshes at 6AM PT daily</div>
+          </div>
+        </div>
+        <div class="app-card-btn" style="flex-shrink:0;margin-left:24px;display:flex;flex-direction:column;align-items:flex-end;gap:10px;">
+          <a href="https://mlb.up.railway.app" target="_blank" rel="noopener" style="display:inline-block;background:#FFFFFF;color:#1B3A6B;font-family:'DM Mono',monospace;font-size:10px;letter-spacing:2px;text-transform:uppercase;padding:10px 18px;text-decoration:none;font-weight:600;white-space:nowrap;">View App →</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- METHODOLOGY -->
+    <div style="background:#EFECE6;border:1px solid #E0DDD6;padding:16px 20px;margin-bottom:24px;">
+      <div style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:3px;text-transform:uppercase;color:#6B6860;margin-bottom:8px;">Methodology</div>
+      <div style="font-size:12px;line-height:1.9;color:#6B6860;">
+        <div><strong style="color:#111111;">Rolling windows</strong> — 7, 14, and 28-day stats calculated from completed games only. Postponed games excluded. All three windows shown side by side so you can spot trends.</div>
+        <div><strong style="color:#111111;">Momentum</strong> — rank_28d minus rank_7d. Positive = team is outperforming their season baseline recently. Negative = declining. This is the core signal driver.</div>
+        <div><strong style="color:#111111;">Schedule strength (SOS)</strong> — based on opponent quality over the window. Easy / Avg / Hard. A Value signal on a Hard schedule is stronger than one on an Easy schedule.</div>
+        <div><strong style="color:#111111;">ERA-FIP gap</strong> — ERA minus FIP. Gap over 1.0 means ERA is likely to regress down (pitcher got unlucky). Gap under -1.0 means ERA may regress up.</div>
+        <div><strong style="color:#111111;">Signals</strong> — Value = momentum +5 or more on Avg/Hard schedule. Fade = -5 or worse on Easy/Avg. Watch = divergence of 3–4. Neutral = insufficient movement.</div>
+        <div><strong style="color:#111111;">wRC+</strong> — park-adjusted offensive output. 100 = league average. Approximated from box score data using 2026 wOBA weights.</div>
+        <div><strong style="color:#111111;">Data sources</strong> — MLB Stats API (games, box scores, transactions). Stats API is unofficial but stable.</div>
+        <div style="margin-top:4px;color:#9B9890;font-size:11px;">V1 note: Straight rolling ERA with no leverage weighting. Leverage-weighted bullpen ERA planned for V2.</div>
+      </div>
+    </div>
+
+  </div><!-- /content -->
+
+  <!-- DISCLAIMER -->
+  <div class="disclaimer-pad" style="background:#EFECE6;border-top:1px solid #E0DDD6;padding:16px 40px;font-family:'DM Mono',monospace;font-size:10px;color:#6B6860;line-height:1.7;text-align:center;">
+    Compass publishes statistical analysis and data signals for informational purposes only. Nothing in this newsletter constitutes betting advice or a recommendation to wager. Sports betting involves significant financial risk — please gamble responsibly.
+  </div>
+
+  <!-- FOOTER -->
+  <div class="footer-pad" style="background:#111111;padding:20px 40px;display:flex;justify-content:space-between;align-items:center;">
+    <div style="display:flex;align-items:center;gap:10px;">
+      <svg width="20" height="20" viewBox="0 0 36 36" fill="none">
+        <circle cx="18" cy="18" r="17" stroke="rgba(255,255,255,0.3)" stroke-width="1.5"/>
+        <circle cx="18" cy="18" r="3" fill="rgba(255,255,255,0.8)"/>
+        <path d="M18 4 L20.5 16 L18 15 L15.5 16 Z" fill="white"/>
+        <path d="M18 32 L20.5 20 L18 21 L15.5 20 Z" fill="rgba(255,255,255,0.3)"/>
+      </svg>
+      <span style="font-family:'Playfair Display',serif;font-size:18px;font-weight:600;color:#FFFFFF;letter-spacing:-0.2px;">Compass</span>
+    </div>
+    <div class="footer-links" style="display:flex;gap:16px;">
+      <a href="https://compass.beehiiv.com" style="font-family:'DM Mono',monospace;font-size:10px;letter-spacing:1.5px;text-transform:uppercase;color:rgba(255,255,255,0.45);text-decoration:none;">Web version</a>
+      <a href="{{unsubscribe_url}}" style="font-family:'DM Mono',monospace;font-size:10px;letter-spacing:1.5px;text-transform:uppercase;color:rgba(255,255,255,0.45);text-decoration:none;">Unsubscribe</a>
+      <a href="grantgamble.io" style="font-family:'DM Mono',monospace;font-size:10px;letter-spacing:1.5px;text-transform:uppercase;color:rgba(255,255,255,0.45);text-decoration:none;">grantgamble.io</a>
+    </div>
+  </div>
+
+</div><!-- /email -->
+
+</body>
+</html>
