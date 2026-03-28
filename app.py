@@ -6,15 +6,13 @@ Main application file for the MLB Stats Tracker.
 import os
 import logging
 import threading
-from flask import Flask
+from flask import Flask, app
 
 from config import config_by_name
 from extensions import cache
 from routes import main_bp
 from utils import get_stat_class
 from tasks import daily_cache_refresh, warm_cache_on_startup
-from compass_routes import compass_bp
-app.register_blueprint(compass_bp)
 
 def create_app(config_name: str = 'development') -> Flask:
     """
@@ -31,6 +29,9 @@ def create_app(config_name: str = 'development') -> Flask:
     
     # Register blueprints
     app.register_blueprint(main_bp)
+
+    from compass_routes import compass_bp
+    app.register_blueprint(compass_bp)
 
     # Explicitly register the function as a Jinja2 filter
     app.jinja_env.filters['get_stat_class'] = get_stat_class
