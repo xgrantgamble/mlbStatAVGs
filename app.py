@@ -13,6 +13,8 @@ from extensions import cache
 from routes import main_bp
 from utils import get_stat_class
 from tasks import daily_cache_refresh, warm_cache_on_startup
+from compass_routes import compass_bp
+app.register_blueprint(compass_bp)
 
 def create_app(config_name: str = 'development') -> Flask:
     """
