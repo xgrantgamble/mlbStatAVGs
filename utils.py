@@ -9,7 +9,6 @@ from datetime import datetime, timedelta
 import pytz
 from typing import List, Dict, Any, Optional
 from concurrent.futures import ThreadPoolExecutor, as_completed
-import json 
 
 from mlb_api import MLBStatsAPI, MLB_API_BASE
 

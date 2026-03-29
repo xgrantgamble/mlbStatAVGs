@@ -6,7 +6,7 @@ Main application file for the MLB Stats Tracker.
 import os
 import logging
 import threading
-from flask import Flask, app
+from flask import Flask
 
 from config import config_by_name
 from extensions import cache
@@ -30,9 +30,6 @@ def create_app(config_name: str = 'development') -> Flask:
     # Register blueprints
     app.register_blueprint(main_bp)
 
-    from compass_routes import compass_bp
-    app.register_blueprint(compass_bp)
-
     # Explicitly register the function as a Jinja2 filter
     app.jinja_env.filters['get_stat_class'] = get_stat_class
 
@@ -48,16 +45,13 @@ def create_app(config_name: str = 'development') -> Flask:
 config_name = os.getenv('FLASK_CONFIG', 'production')
 app = create_app(config_name)
 
+# Start background tasks — must be outside __main__ so gunicorn picks them up
+if not app.debug or os.environ.get('WERKZEUG_RUN_MAIN') == 'true':
+    warmup_thread = threading.Thread(target=warm_cache_on_startup, args=(app,), daemon=True)
+    refresh_thread = threading.Thread(target=daily_cache_refresh, args=(app,), daemon=True)
+    warmup_thread.start()
+    refresh_thread.start()
+
 if __name__ == '__main__':
-
-    # Start background tasks for warming cache and daily refresh
-    if not app.debug or os.environ.get('WERKZEUG_RUN_MAIN') == 'true':
-        warmup_thread = threading.Thread(target=warm_cache_on_startup, args=(app,), daemon=True)
-        refresh_thread = threading.Thread(target=daily_cache_refresh, args=(app,), daemon=True)
-        warmup_thread.start()
-        refresh_thread.start()
-
     port = int(os.environ.get('PORT', 5005))
-    
-    # prevents the duplicate thread issue on Windows.
     app.run(host='0.0.0.0', port=port, use_reloader=False)

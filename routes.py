@@ -107,10 +107,6 @@ def game_details(home_id: int, away_id: int):
         logger.error(f"Error in game_details for {home_id} vs {away_id}: {e}", exc_info=True)
         return redirect(url_for('main.home'))
 
-@main_bp.route('/api/load-stats/<int:home_id>/<int:away_id>/<int:days>')
-def load_stats_api(home_id: int, away_id: int, days: int):
-    return jsonify({"message": "This API endpoint is no longer used by the primary UI.", "status": "success"})
-
 @main_bp.route('/favorites', methods=['POST'])
 def toggle_favorite():
     team_name = request.form.get('favorite')

@@ -2,7 +2,89 @@
 
 {% block title %}MLB Games - Today{% endblock %}
 
+{% block extra_css %}
+<style>
+  .app-description {
+    background: white;
+    border-radius: 12px;
+    padding: 24px 28px;
+    margin-bottom: 25px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  }
+
+  .app-description h2 {
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: #1e3c72;
+    margin-bottom: 16px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #f0f4f8;
+  }
+
+  .app-description ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .app-description li {
+    font-size: 0.92rem;
+    color: #333;
+    line-height: 1.5;
+    padding: 10px 14px;
+    background: #f8f9fa;
+    border-radius: 8px;
+    border-left: 3px solid #667eea;
+  }
+
+  .app-description li strong {
+    color: #1e3c72;
+  }
+
+  .desc-note {
+    margin-top: 12px;
+    font-size: 0.82rem;
+    color: #666;
+    font-style: italic;
+    padding: 8px 14px;
+    background: #f0f4f8;
+    border-radius: 8px;
+    text-align: center;
+  }
+
+  @media (max-width: 768px) {
+    .app-description {
+      padding: 16px;
+    }
+    .app-description li {
+      font-size: 0.85rem;
+      padding: 8px 10px;
+    }
+  }
+</style>
+{% endblock %}
+
 {% block content %}
+
+<!-- App Description -->
+<div class="app-description">
+  <h2>📖 How This App Works</h2>
+  <ul>
+    <li>📅 <strong>Live game schedule</strong> — today's MLB matchups are pulled from the MLB Stats API each morning at 6 AM PT and cached for fast page loads</li>
+    <li>👤 <strong>Per-roster player stats</strong> — for each game, the active roster is fetched and individual game logs are retrieved for every batter and pitcher on both teams</li>
+    <li>📊 <strong>Three stat windows</strong> — the <strong>7 / 10 / 21</strong> buttons on the game detail page switch between windows. The label refers to games played, not calendar days, so streaks and off days don't distort the numbers</li>
+    <li>🧢 <strong>Batters</strong> — shows AVG, OBP, SLG, HR, RBI, Hits, AB, and K across the last <strong>7, 10, or 21 games</strong> where the player had at least one at-bat. Sorted by at-bats so the most active players appear first</li>
+    <li>🎯 <strong>Pitchers</strong> — shows ERA, WHIP, Games Started, IP, Saves, H, R, K, and BB across the last <strong>2, 3, or 4 outings</strong> where the pitcher recorded at least one inning. Rest days and IL stints are excluded so the window reflects real appearances</li>
+    <li>🏆 <strong>Team comparison</strong> — rolls up individual stats into a side-by-side summary showing Team AVG, OBP, SLG, HR, Avg Hits/game, and Avg K/game for both clubs</li>
+    <li>🟢🔴 <strong>Color coding</strong> — green highlights strong performance, red flags weak performance, based on fixed MLB benchmarks (AVG above .265 = green, below .240 = red · ERA below 3.00 = green, above 5.00 = red)</li>
+    <li>⭐ <strong>Favorites</strong> — pin teams to the top of this page for quick access across visits</li>
+  </ul>
+  <p class="desc-note">💡 Early in the season some stats may show zeros — this is normal until enough games have been played to fill each rolling window.</p>
+</div>
+
 <!-- Favorites Section -->
 <div class="favorites">
     <h3>⭐ Favorite Teams</h3>
@@ -29,7 +111,7 @@
                     <div class="team-with-logo">
                         <span>{{ game.away_team }}</span>
                         {% if game.away_logo %}
-                            <img src="{{ game.away_logo }}" alt="{{ game.away_abbr }}" class="team-logo" 
+                            <img src="{{ game.away_logo }}" alt="{{ game.away_abbr }}" class="team-logo"
                                  onerror="this.style.display='none'">
                         {% endif %}
                     </div>
@@ -51,7 +133,7 @@
             {% if game.status == 'postponed' %}
                 <span class="view-details-btn disabled">View Details</span>
             {% else %}
-                <a href="{{ url_for('main.game_details', home_id=game.home_id, away_id=game.away_id) }}" 
+                <a href="{{ url_for('main.game_details', home_id=game.home_id, away_id=game.away_id) }}"
                    class="view-details-btn">View Details</a>
             {% endif %}
         </div>
