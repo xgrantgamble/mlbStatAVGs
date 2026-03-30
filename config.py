@@ -13,7 +13,7 @@ class Config:
     
     # Flask-Caching settings
     CACHE_TYPE = 'FileSystemCache'
-    CACHE_DIR = '/tmp/mlb-cache'
+    CACHE_DIR = os.path.join(os.path.dirname(__file__), '.cache', 'mlb-cache')
     CACHE_DEFAULT_TIMEOUT = 86400  
 
 class DevelopmentConfig(Config):

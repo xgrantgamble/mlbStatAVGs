@@ -21,22 +21,23 @@ logger = logging.getLogger(__name__)
 
 main_bp = Blueprint('main', __name__)
 
+
 @main_bp.route('/')
 def home():
     """Renders the home page with today's games."""
     pacific_tz = pytz.timezone('US/Pacific')
     today_str = datetime.now(pacific_tz).strftime('%Y-%m-%d')
-    
+
     games_data = MLBStatsAPI.get_todays_games(today_str)
-    
+
     games = []
     for game in games_data:
         home_team_info = game.get('teams', {}).get('home', {}).get('team', {})
         away_team_info = game.get('teams', {}).get('away', {}).get('team', {})
-        
+
         home_team_name = home_team_info.get('name', 'N/A')
         away_team_name = away_team_info.get('name', 'N/A')
-        
+
         games.append({
             'home_id': home_team_info.get('id'),
             'away_id': away_team_info.get('id'),
@@ -52,8 +53,9 @@ def home():
 
     favorites = session.get('favorites', [])
     current_date = datetime.now(pacific_tz).strftime('%A, %B %d, %Y')
-    
+
     return render_template('home.html', games=games, favorites=favorites, current_date=current_date)
+
 
 @main_bp.route('/details/<int:home_id>/<int:away_id>')
 def game_details(home_id: int, away_id: int):
@@ -71,7 +73,7 @@ def game_details(home_id: int, away_id: int):
 
         home_roster = MLBStatsAPI.get_team_roster(home_id)
         away_roster = MLBStatsAPI.get_team_roster(away_id)
-        
+
         hitter_periods = {'7': 7, '10': 10, '21': 21}
         pitcher_periods = {'7': 2, '10': 3, '21': 4}
 
@@ -84,15 +86,11 @@ def game_details(home_id: int, away_id: int):
         away_team = {'id': away_id, 'name': away_team_info.get('name'), 'fullRoster': {'batters': {}, 'pitchers': {}}, 'rollingTeamStats': {}, 'gameHistory': {}}
 
         for period in ['7', '10', '21']:
-            # Sort batters by At-Bats (ab) for the current period
             home_team['fullRoster']['batters'][period] = sorted(home_batters, key=lambda p: p['stats_by_period'][period].get('ab', 0), reverse=True)
             away_team['fullRoster']['batters'][period] = sorted(away_batters, key=lambda p: p['stats_by_period'][period].get('ab', 0), reverse=True)
-            
-            # Sort pitchers by Games Started (gs) for the current period
             home_team['fullRoster']['pitchers'][period] = sorted(home_pitchers, key=lambda p: p['stats_by_period'][period].get('gs', 0), reverse=True)
             away_team['fullRoster']['pitchers'][period] = sorted(away_pitchers, key=lambda p: p['stats_by_period'][period].get('gs', 0), reverse=True)
 
-            # Get game history and calculate rolling team stats
             home_history = get_team_game_history(home_id, int(period))
             away_history = get_team_game_history(away_id, int(period))
             home_team['gameHistory'][period] = home_history
@@ -103,9 +101,11 @@ def game_details(home_id: int, away_id: int):
         favorites = session.get('favorites', [])
 
         return render_template('details.html', home_team=home_team, away_team=away_team, favorites=favorites)
+
     except Exception as e:
         logger.error(f"Error in game_details for {home_id} vs {away_id}: {e}", exc_info=True)
-        return redirect(url_for('main.home'))
+        return render_template('error.html', message="Stats are still loading — please try again in 30 seconds."), 503
+
 
 @main_bp.route('/favorites', methods=['POST'])
 def toggle_favorite():
@@ -119,10 +119,12 @@ def toggle_favorite():
         session['favorites'] = favorites
     return redirect(request.referrer or url_for('main.home'))
 
+
 @main_bp.route('/reset_favorites', methods=['POST'])
 def reset_favorites():
     session['favorites'] = []
     return redirect(url_for('main.home'))
+
 
 @main_bp.route('/admin/clear-cache')
 def clear_cache():
