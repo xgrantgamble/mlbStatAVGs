@@ -11,7 +11,7 @@ import pytz
 
 from mlb_api import MLBStatsAPI
 from extensions import cache
-from utils import process_team_roster_in_parallel
+from utils import process_team_roster_in_parallel, get_team_game_history
 
 logger = logging.getLogger(__name__)
 
@@ -29,6 +29,15 @@ def warm_single_game(app, game, index, total):
             away_name = game['teams']['away']['team']['name']
             home_name = game['teams']['home']['team']['name']
             logger.info(f"Warming game {index}/{total}: {away_name} @ {home_name}...")
+
+            # --- PRE-LOAD TEAM INFO ---
+            MLBStatsAPI.get_team_info(home_id)
+            MLBStatsAPI.get_team_info(away_id)
+
+            # --- PRE-LOAD GAME HISTORY ---
+            for period in [7, 10, 21]:
+                get_team_game_history(home_id, period)
+                get_team_game_history(away_id, period)
 
             hitter_periods = {'7': 7, '10': 10, '21': 21}
             pitcher_periods = {'7': 2, '10': 3, '21': 4}
@@ -61,8 +70,8 @@ def warm_cache_on_startup(app):
             games = MLBStatsAPI.get_todays_games(today_str)
             logger.info(f"Found {len(games)} games today.")
 
-            # Warm up to 5 games concurrently — keeps API calls within rate limits
-            with ThreadPoolExecutor(max_workers=5) as executor:
+            # --- THROTTLE LIMIT TO PREVENT CRASHES ---
+            with ThreadPoolExecutor(max_workers=1) as executor:
                 for i, game in enumerate(games, 1):
                     executor.submit(warm_single_game, app, game, i, len(games))
 
