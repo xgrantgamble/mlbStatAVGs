@@ -1,30 +1,22 @@
-#config.py
-
-"""
-Configuration settings for the MLB Stats Tracker application.
-"""
+# config.py
 import os
 
 class Config:
-    """Base configuration class."""
-    SECRET_KEY = os.environ.get('SECRET_KEY', 'a-super-secret-key-that-you-should-change')
+    SECRET_KEY = os.environ.get('SECRET_KEY', 'a-super-secret-key')
     SEND_FILE_MAX_AGE_DEFAULT = 0
     TEMPLATES_AUTO_RELOAD = True
     
-    # Flask-Caching settings
-    CACHE_TYPE = 'FileSystemCache'
-    CACHE_DIR = os.path.join(os.path.dirname(__file__), '.cache', 'mlb-cache')
+    # NEW: Redis Cache settings
+    CACHE_TYPE = 'RedisCache'
+    CACHE_REDIS_URL = os.environ.get('REDIS_URL', 'redis://localhost:6379/0')
     CACHE_DEFAULT_TIMEOUT = 86400  
 
 class DevelopmentConfig(Config):
-    """Development configuration."""
     DEBUG = True
 
 class ProductionConfig(Config):
-    """Production configuration."""
     DEBUG = False
 
-# Dictionary to access config classes by name
 config_by_name = {
     'development': DevelopmentConfig,
     'production': ProductionConfig
