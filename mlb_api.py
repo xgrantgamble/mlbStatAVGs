@@ -80,7 +80,7 @@ class MLBStatsAPI:
             raise
 
     @staticmethod
-    @cache.memoize()
+    @cache.cached(timeout=86400, make_cache_key=lambda date_str: f"games_{date_str}")
     def get_todays_games(date_str: str) -> List[Dict[str, Any]]:
         """
         Fetches all MLB games for a given date.
@@ -103,7 +103,7 @@ class MLBStatsAPI:
             return []
 
     @staticmethod
-    @cache.memoize()
+    @cache.cached(timeout=86400, make_cache_key=lambda team_id: f"roster_{team_id}")
     def get_team_roster(team_id: int) -> Dict[str, List[Dict[str, Any]]]:
         """
         Fetches the roster for a given team ID.
@@ -135,7 +135,7 @@ class MLBStatsAPI:
             return roster
 
     @staticmethod
-    @cache.memoize()
+    @cache.cached(timeout=86400, make_cache_key=lambda player_id, stat_group, season=None: f"logs_{player_id}_{stat_group}_{season}")
     def get_player_game_logs(player_id: int, stat_group: str, season: int = None) -> List[Dict[str, Any]]:
         """
         Fetches all game logs for a player for a given season.
@@ -164,7 +164,7 @@ class MLBStatsAPI:
             return []
 
     @staticmethod
-    @cache.memoize()
+    @cache.cached(timeout=86400, make_cache_key=lambda team_id: f"info_{team_id}")
     def get_team_info(team_id: int) -> Optional[Dict[str, Any]]:
         """
         Fetches basic information for a team.

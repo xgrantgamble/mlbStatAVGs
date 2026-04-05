@@ -188,7 +188,7 @@ def calculate_rolling_team_stats(batters: List[Dict], pitchers: List[Dict], peri
     return {'AVG': team_avg, 'OBP': team_obp, 'SLG': team_slg, 'HR': b_totals['hr'], 'AVG_HITS': avg_hits, 'AVG_K': avg_k}
 
 
-@cache.memoize()
+@cache.cached(timeout=86400, make_cache_key=lambda team_id, days: f"history_{team_id}_{days}")
 def get_team_game_history(team_id: int, days: int) -> Dict[str, Any]:
     """
     Fetches a team's recent game history and calculates their win-loss record.
