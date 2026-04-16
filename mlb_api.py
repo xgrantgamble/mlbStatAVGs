@@ -136,7 +136,7 @@ class MLBStatsAPI:
 
     @staticmethod
     @cache.memoize(timeout=86400)
-    def get_player_game_logs(player_id: int, stat_group: str, season: int = None) -> List[Dict[str, Any]]:
+    def get_player_game_logs(player_id: int, stat_group: str, season: int = 2026) -> List[Dict[str, Any]]:
         """
         Fetches all game logs for a player for a given season.
 

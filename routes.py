@@ -26,7 +26,7 @@ main_bp = Blueprint('main', __name__)
 def home():
     """Renders the home page with today's games."""
     pacific_tz = pytz.timezone('US/Pacific')
-    today_str = datetime.now(pacific_tz).strftime('%Y-%m-%d')
+    today_str = datetime.now(pacific_tz).date().strftime('%Y-%m-%d')
 
     games_data = MLBStatsAPI.get_todays_games(today_str)
 
