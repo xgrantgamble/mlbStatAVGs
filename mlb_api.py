@@ -80,40 +80,33 @@ class MLBStatsAPI:
             raise
 
     @staticmethod
-    @cache.memoize(timeout=86400)
     def get_todays_games(date_str: str) -> List[Dict[str, Any]]:
-        """
-        Fetches all MLB games for a given date.
+        cache_key = f"games_{date_str}"
+        cached_data = cache.get(cache_key)
+        if cached_data is not None:
+            return cached_data
 
-        Args:
-            date_str: The date in 'YYYY-MM-DD' format.
-
-        Returns:
-            A list of dictionaries, each representing a game.
-        """
         logger.info(f"Fetching games for date: {date_str}")
         url = f"{MLB_API_BASE}/schedule"
         params = {'sportId': 1, 'date': date_str, 'hydrate': 'team'}
         try:
             data = MLBStatsAPI._make_api_request(url, params)
+            games = []
             if 'dates' in data and data['dates']:
-                return data['dates'][0].get('games', [])
-            return []
+                games = data['dates'][0].get('games', [])
+            
+            cache.set(cache_key, games, timeout=86400)
+            return games
         except requests.exceptions.RequestException:
             return []
 
     @staticmethod
-    @cache.memoize(timeout=86400)
     def get_team_roster(team_id: int) -> Dict[str, List[Dict[str, Any]]]:
-        """
-        Fetches the roster for a given team ID.
+        cache_key = f"roster_{team_id}"
+        cached_data = cache.get(cache_key)
+        if cached_data is not None:
+            return cached_data
 
-        Args:
-            team_id: The MLB team ID.
-
-        Returns:
-            A dictionary with 'batters' and 'pitchers' lists.
-        """
         logger.info(f"Fetching roster for team ID: {team_id}")
         url = f"{MLB_API_BASE}/teams/{team_id}/roster"
         params = {'rosterType': 'active'}
@@ -130,54 +123,49 @@ class MLBStatsAPI:
                     roster['pitchers'].append(player_info)
                 else:
                     roster['batters'].append(player_info)
+            
+            cache.set(cache_key, roster, timeout=86400)
             return roster
         except requests.exceptions.RequestException:
             return roster
 
     @staticmethod
-    @cache.memoize(timeout=86400)
     def get_player_game_logs(player_id: int, stat_group: str, season: int = 2026) -> List[Dict[str, Any]]:
-        """
-        Fetches all game logs for a player for a given season.
-
-        Args:
-            player_id: The MLB player ID.
-            stat_group: 'hitting' or 'pitching'.
-            season: The year of the season.
-
-        Returns:
-            A list of game log splits.
-        """
         if season is None:
             season = datetime.now().year
+            
+        cache_key = f"logs_{player_id}_{stat_group}_{season}"
+        cached_data = cache.get(cache_key)
+        if cached_data is not None:
+            return cached_data
+
         logger.info(f"Fetching {season} game logs for player {player_id} ({stat_group})")
         url = f"{MLB_API_BASE}/people/{player_id}/stats"
         params = {'stats': 'gameLog', 'group': stat_group, 'season': season}
         try:
             data = MLBStatsAPI._make_api_request(url, params)
+            games = []
             if data.get('stats') and data['stats'][0].get('splits'):
                 games = data['stats'][0]['splits']
                 games.sort(key=lambda x: x.get('date', ''), reverse=True)
-                return games
-            return []
+            
+            cache.set(cache_key, games, timeout=86400)
+            return games
         except requests.exceptions.RequestException:
             return []
 
     @staticmethod
-    @cache.memoize(timeout=86400)
     def get_team_info(team_id: int) -> Optional[Dict[str, Any]]:
-        """
-        Fetches basic information for a team.
+        cache_key = f"info_{team_id}"
+        cached_data = cache.get(cache_key)
+        if cached_data is not None:
+            return cached_data
 
-        Args:
-            team_id: The MLB team ID.
-
-        Returns:
-            A dictionary with team info or None on error.
-        """
         logger.info(f"Fetching info for team ID: {team_id}")
         url = f"{MLB_API_BASE}/teams/{team_id}"
         try:
-            return MLBStatsAPI._make_api_request(url, {'sportId': 1})
+            data = MLBStatsAPI._make_api_request(url, {'sportId': 1})
+            cache.set(cache_key, data, timeout=86400)
+            return data
         except requests.exceptions.RequestException:
             return None

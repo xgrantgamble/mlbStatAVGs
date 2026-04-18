@@ -188,11 +188,15 @@ def calculate_rolling_team_stats(batters: List[Dict], pitchers: List[Dict], peri
     return {'AVG': team_avg, 'OBP': team_obp, 'SLG': team_slg, 'HR': b_totals['hr'], 'AVG_HITS': avg_hits, 'AVG_K': avg_k}
 
 
-@cache.memoize(timeout=86400)
 def get_team_game_history(team_id: int, days: int) -> Dict[str, Any]:
     """
     Fetches a team's recent game history and calculates their win-loss record.
     """
+    cache_key = f"history_{team_id}_{days}"
+    cached_data = cache.get(cache_key)
+    if cached_data is not None:
+        return cached_data
+
     pacific = pytz.timezone('US/Pacific')
     end_date = datetime.now(pacific)
     start_date = end_date - timedelta(days=days)
@@ -244,16 +248,16 @@ def get_team_game_history(team_id: int, days: int) -> Dict[str, Any]:
                 game_date_utc = datetime.fromisoformat(game_date_str.replace('Z', '+00:00'))
                 game_date_pacific = game_date_utc.astimezone(pacific)
                 
-                
                 formatted_date = f"{game_date_pacific.month}/{game_date_pacific.day}"
-
                 game_log.append({'result': result, 'date': formatted_date, 'opponent': opponent_abbr})
 
             except Exception as e_inner:
                 logger.warning(f"Could not process game data for game pk {game.get('gamePk')}. Error: {e_inner}")
                 continue
 
-        return {'record': f"{wins}-{losses}", 'games_played': len(final_games), 'game_log': game_log}
+        result_data = {'record': f"{wins}-{losses}", 'games_played': len(final_games), 'game_log': game_log}
+        cache.set(cache_key, result_data, timeout=86400)
+        return result_data
 
     except Exception as e:
         logger.error(f"Error fetching game history for team {team_id}: {e}", exc_info=True)
